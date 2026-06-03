@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "horodatage_generation_utc": "2026-06-03T09:18:16Z",
+  "horodatage_generation_utc": "2026-06-03T14:14:57Z",
   "sites": [
     {
       "site_id": "guisseny_curnic",
@@ -13,7 +13,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 48.6,
+          "score": 48.5,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -24,7 +24,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 29.0,
+              "valeur": 28.6,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -73,7 +73,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 58.4,
+          "score": 58.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -84,7 +84,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 51.4,
+              "valeur": 50.3,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -258,45 +258,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 37.0,
-            "vent_max_kmh": 47.4,
-            "direction_dominante_deg": 237.0
+            "vent_moyen_kmh": 37.3,
+            "vent_max_kmh": 47.5,
+            "direction_dominante_deg": 238.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 43.1,
-            "vent_max_kmh": 48.8,
-            "direction_dominante_deg": 262.0
+            "vent_moyen_kmh": 43.4,
+            "vent_max_kmh": 48.9,
+            "direction_dominante_deg": 263.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 24.7,
-            "vent_max_kmh": 41.7,
-            "direction_dominante_deg": 227.0
+            "vent_moyen_kmh": 23.5,
+            "vent_max_kmh": 34.5,
+            "direction_dominante_deg": 230.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 29.1,
-            "vent_max_kmh": 44.0,
-            "direction_dominante_deg": 237.0
+            "vent_moyen_kmh": 29.8,
+            "vent_max_kmh": 39.3,
+            "direction_dominante_deg": 236.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 18.0,
-            "vent_max_kmh": 22.4,
+            "vent_moyen_kmh": 20.4,
+            "vent_max_kmh": 26.5,
             "direction_dominante_deg": 208.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 18.4,
-            "vent_max_kmh": 21.7,
-            "direction_dominante_deg": 263.0
+            "vent_moyen_kmh": 19.5,
+            "vent_max_kmh": 23.3,
+            "direction_dominante_deg": 264.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 17.4,
+            "vent_moyen_kmh": 17.5,
             "vent_max_kmh": 20.9,
-            "direction_dominante_deg": 263.0
+            "direction_dominante_deg": 266.0
           }
         ],
         "avertissement": null
@@ -412,9 +412,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 1.4
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 1.4
+        },
+        "raison": null
       }
     },
     {
@@ -439,7 +454,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 73.8,
+              "valeur": 73.6,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -488,7 +503,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 77.0,
+          "score": 77.3,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
@@ -499,7 +514,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 93.3,
+              "valeur": 94.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -578,10 +593,10 @@
         {
           "horizon": "J+6",
           "date": "2026-06-09",
-          "score": 81.8,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 69.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
@@ -589,7 +604,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 58.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -673,45 +688,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 37.5,
-            "vent_max_kmh": 42.3,
+            "vent_moyen_kmh": 37.9,
+            "vent_max_kmh": 44.8,
             "direction_dominante_deg": 243.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 41.4,
-            "vent_max_kmh": 46.0,
+            "vent_moyen_kmh": 41.5,
+            "vent_max_kmh": 49.3,
             "direction_dominante_deg": 267.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 22.0,
-            "vent_max_kmh": 31.6,
-            "direction_dominante_deg": 234.0
+            "vent_moyen_kmh": 19.6,
+            "vent_max_kmh": 26.4,
+            "direction_dominante_deg": 243.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 29.2,
-            "vent_max_kmh": 44.9,
-            "direction_dominante_deg": 241.0
+            "vent_moyen_kmh": 28.5,
+            "vent_max_kmh": 41.7,
+            "direction_dominante_deg": 238.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 16.3,
-            "vent_max_kmh": 20.8,
-            "direction_dominante_deg": 214.0
+            "vent_moyen_kmh": 17.5,
+            "vent_max_kmh": 23.5,
+            "direction_dominante_deg": 210.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 18.9,
-            "vent_max_kmh": 21.6,
-            "direction_dominante_deg": 267.0
+            "vent_moyen_kmh": 20.3,
+            "vent_max_kmh": 23.5,
+            "direction_dominante_deg": 265.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 17.5,
+            "vent_moyen_kmh": 17.3,
             "vent_max_kmh": 20.1,
-            "direction_dominante_deg": 270.0
+            "direction_dominante_deg": 274.0
           }
         ],
         "avertissement": null
@@ -827,9 +842,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 51.7
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 51.7
+        },
+        "raison": null
       }
     },
     {
@@ -843,7 +873,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 72.5,
+          "score": 72.6,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -854,7 +884,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 72.6,
+              "valeur": 72.8,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -903,7 +933,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 81.7,
+          "score": 82.0,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
@@ -914,7 +944,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 93.3,
+              "valeur": 94.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -1088,45 +1118,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 33.8,
-            "vent_max_kmh": 41.8,
+            "vent_moyen_kmh": 34.1,
+            "vent_max_kmh": 41.9,
             "direction_dominante_deg": 245.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 42.1,
-            "vent_max_kmh": 46.9,
+            "vent_moyen_kmh": 42.0,
+            "vent_max_kmh": 49.4,
             "direction_dominante_deg": 267.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 23.6,
-            "vent_max_kmh": 31.6,
-            "direction_dominante_deg": 231.0
+            "vent_moyen_kmh": 21.2,
+            "vent_max_kmh": 28.1,
+            "direction_dominante_deg": 238.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 29.2,
-            "vent_max_kmh": 44.9,
-            "direction_dominante_deg": 241.0
+            "vent_moyen_kmh": 28.5,
+            "vent_max_kmh": 41.7,
+            "direction_dominante_deg": 238.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 14.4,
-            "vent_max_kmh": 18.3,
-            "direction_dominante_deg": 212.0
+            "vent_moyen_kmh": 16.2,
+            "vent_max_kmh": 22.7,
+            "direction_dominante_deg": 211.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 16.5,
-            "vent_max_kmh": 19.9,
-            "direction_dominante_deg": 266.0
+            "vent_moyen_kmh": 17.3,
+            "vent_max_kmh": 20.8,
+            "direction_dominante_deg": 262.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 15.1,
+            "vent_moyen_kmh": 14.8,
             "vent_max_kmh": 19.1,
-            "direction_dominante_deg": 271.0
+            "direction_dominante_deg": 277.0
           }
         ],
         "avertissement": null
@@ -1242,9 +1272,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 54.6
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 54.6
+        },
+        "raison": null
       }
     },
     {
@@ -1258,7 +1303,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 77.4,
+          "score": 77.6,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
@@ -1269,7 +1314,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 73.4,
+              "valeur": 74.1,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -1503,45 +1548,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 33.5,
-            "vent_max_kmh": 42.1,
+            "vent_moyen_kmh": 33.9,
+            "vent_max_kmh": 41.9,
             "direction_dominante_deg": 245.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 41.6,
-            "vent_max_kmh": 46.9,
+            "vent_moyen_kmh": 41.2,
+            "vent_max_kmh": 47.7,
             "direction_dominante_deg": 266.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 21.5,
-            "vent_max_kmh": 30.0,
-            "direction_dominante_deg": 228.0
+            "vent_moyen_kmh": 20.5,
+            "vent_max_kmh": 27.8,
+            "direction_dominante_deg": 235.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 24.6,
-            "vent_max_kmh": 37.2,
-            "direction_dominante_deg": 243.0
+            "vent_moyen_kmh": 24.5,
+            "vent_max_kmh": 34.0,
+            "direction_dominante_deg": 242.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 13.9,
-            "vent_max_kmh": 18.3,
-            "direction_dominante_deg": 214.0
+            "vent_moyen_kmh": 15.4,
+            "vent_max_kmh": 21.1,
+            "direction_dominante_deg": 213.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 16.5,
-            "vent_max_kmh": 19.9,
-            "direction_dominante_deg": 266.0
+            "vent_moyen_kmh": 17.3,
+            "vent_max_kmh": 20.8,
+            "direction_dominante_deg": 262.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 15.1,
+            "vent_moyen_kmh": 14.8,
             "vent_max_kmh": 19.1,
-            "direction_dominante_deg": 271.0
+            "direction_dominante_deg": 277.0
           }
         ],
         "avertissement": null
@@ -1657,9 +1702,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 55.9
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 55.9
+        },
+        "raison": null
       }
     },
     {
@@ -1673,7 +1733,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 64.2,
+          "score": 64.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1684,7 +1744,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 35.9,
+              "valeur": 36.2,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -1918,45 +1978,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 25.5,
-            "vent_max_kmh": 32.8,
-            "direction_dominante_deg": 243.0
+            "vent_moyen_kmh": 25.7,
+            "vent_max_kmh": 31.8,
+            "direction_dominante_deg": 242.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 38.8,
-            "vent_max_kmh": 45.7,
+            "vent_moyen_kmh": 38.6,
+            "vent_max_kmh": 45.1,
             "direction_dominante_deg": 267.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 21.0,
-            "vent_max_kmh": 31.9,
-            "direction_dominante_deg": 226.0
+            "vent_moyen_kmh": 20.3,
+            "vent_max_kmh": 29.0,
+            "direction_dominante_deg": 229.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 24.6,
-            "vent_max_kmh": 37.2,
-            "direction_dominante_deg": 243.0
+            "vent_moyen_kmh": 24.5,
+            "vent_max_kmh": 34.0,
+            "direction_dominante_deg": 242.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 13.6,
-            "vent_max_kmh": 17.6,
-            "direction_dominante_deg": 213.0
+            "vent_moyen_kmh": 15.3,
+            "vent_max_kmh": 21.0,
+            "direction_dominante_deg": 212.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 17.1,
-            "vent_max_kmh": 20.8,
-            "direction_dominante_deg": 268.0
+            "vent_moyen_kmh": 17.6,
+            "vent_max_kmh": 21.8,
+            "direction_dominante_deg": 261.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 15.5,
+            "vent_moyen_kmh": 15.4,
             "vent_max_kmh": 19.6,
-            "direction_dominante_deg": 274.0
+            "direction_dominante_deg": 279.0
           }
         ],
         "avertissement": null
@@ -2072,9 +2132,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 60.1
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 60.1
+        },
+        "raison": null
       }
     },
     {
@@ -2088,7 +2163,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 64.1,
+          "score": 63.8,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2099,7 +2174,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 54.0,
+              "valeur": 53.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2208,10 +2283,10 @@
         {
           "horizon": "J+5",
           "date": "2026-06-08",
-          "score": 83.1,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 70.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
@@ -2219,7 +2294,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 58.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2333,45 +2408,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 29.6,
-            "vent_max_kmh": 39.1,
-            "direction_dominante_deg": 244.0
+            "vent_moyen_kmh": 33.0,
+            "vent_max_kmh": 41.9,
+            "direction_dominante_deg": 245.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 27.5,
+            "vent_moyen_kmh": 28.1,
             "vent_max_kmh": 33.6,
-            "direction_dominante_deg": 267.0
+            "direction_dominante_deg": 268.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 18.7,
-            "vent_max_kmh": 30.0,
-            "direction_dominante_deg": 225.0
+            "vent_moyen_kmh": 17.5,
+            "vent_max_kmh": 27.6,
+            "direction_dominante_deg": 228.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 24.6,
-            "vent_max_kmh": 37.2,
-            "direction_dominante_deg": 243.0
+            "vent_moyen_kmh": 24.5,
+            "vent_max_kmh": 34.0,
+            "direction_dominante_deg": 242.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 14.2,
-            "vent_max_kmh": 18.3,
-            "direction_dominante_deg": 214.0
+            "vent_moyen_kmh": 15.6,
+            "vent_max_kmh": 21.7,
+            "direction_dominante_deg": 212.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 18.4,
-            "vent_max_kmh": 20.9,
-            "direction_dominante_deg": 272.0
+            "vent_moyen_kmh": 20.2,
+            "vent_max_kmh": 25.8,
+            "direction_dominante_deg": 264.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 16.3,
+            "vent_moyen_kmh": 16.7,
             "vent_max_kmh": 19.5,
-            "direction_dominante_deg": 275.0
+            "direction_dominante_deg": 280.0
           }
         ],
         "avertissement": null
@@ -2487,9 +2562,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 59.1
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 59.1
+        },
+        "raison": null
       }
     },
     {
@@ -2503,7 +2593,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 65.0,
+          "score": 65.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2514,7 +2604,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 51.0,
+              "valeur": 51.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2563,7 +2653,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 68.0,
+          "score": 67.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2574,7 +2664,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 51.0,
+              "valeur": 50.8,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2748,45 +2838,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 23.0,
-            "vent_max_kmh": 30.6,
+            "vent_moyen_kmh": 22.9,
+            "vent_max_kmh": 33.2,
             "direction_dominante_deg": 230.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 29.4,
-            "vent_max_kmh": 34.6,
-            "direction_dominante_deg": 256.0
+            "vent_moyen_kmh": 29.1,
+            "vent_max_kmh": 36.0,
+            "direction_dominante_deg": 257.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 18.2,
-            "vent_max_kmh": 28.4,
-            "direction_dominante_deg": 219.0
+            "vent_moyen_kmh": 16.7,
+            "vent_max_kmh": 25.1,
+            "direction_dominante_deg": 218.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 29.4,
+            "vent_moyen_kmh": 29.5,
             "vent_max_kmh": 37.9,
-            "direction_dominante_deg": 237.0
+            "direction_dominante_deg": 235.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 15.6,
-            "vent_max_kmh": 19.6,
-            "direction_dominante_deg": 212.0
+            "vent_moyen_kmh": 18.3,
+            "vent_max_kmh": 22.6,
+            "direction_dominante_deg": 214.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 17.0,
-            "vent_max_kmh": 21.4,
-            "direction_dominante_deg": 260.0
+            "vent_moyen_kmh": 18.0,
+            "vent_max_kmh": 21.7,
+            "direction_dominante_deg": 255.0
           },
           {
             "date": "2026-06-09",
             "vent_moyen_kmh": 15.1,
             "vent_max_kmh": 19.7,
-            "direction_dominante_deg": 257.0
+            "direction_dominante_deg": 263.0
           }
         ],
         "avertissement": null
@@ -2902,9 +2992,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Locquirec",
+          "lat": 48.6778249999995,
+          "lon": -3.646455555550774,
+          "distance_km": 0.9
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 7.0,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 10.2,
+          "max_7j_ug_m3": 15.4,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "perceptible",
+          "couleur": "#A8D86C",
+          "description_seuil": "Odeur d'œuf pourri perceptible, sans effet sanitaire.",
+          "distance_km": 0.9
+        },
+        "raison": null
       }
     },
     {
@@ -2918,7 +3023,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 61.0,
+          "score": 61.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2929,7 +3034,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 47.3,
+              "valeur": 47.8,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2978,7 +3083,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 65.1,
+          "score": 65.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2989,7 +3094,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 51.0,
+              "valeur": 50.8,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3163,45 +3268,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 26.2,
-            "vent_max_kmh": 34.0,
+            "vent_moyen_kmh": 26.5,
+            "vent_max_kmh": 37.1,
             "direction_dominante_deg": 232.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 31.7,
-            "vent_max_kmh": 38.3,
-            "direction_dominante_deg": 257.0
+            "vent_moyen_kmh": 31.4,
+            "vent_max_kmh": 39.7,
+            "direction_dominante_deg": 258.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 18.9,
-            "vent_max_kmh": 28.4,
+            "vent_moyen_kmh": 17.3,
+            "vent_max_kmh": 25.1,
             "direction_dominante_deg": 222.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 29.4,
+            "vent_moyen_kmh": 29.5,
             "vent_max_kmh": 37.9,
-            "direction_dominante_deg": 237.0
+            "direction_dominante_deg": 235.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 15.6,
-            "vent_max_kmh": 19.6,
-            "direction_dominante_deg": 212.0
+            "vent_moyen_kmh": 18.3,
+            "vent_max_kmh": 22.6,
+            "direction_dominante_deg": 214.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 17.0,
-            "vent_max_kmh": 21.4,
-            "direction_dominante_deg": 260.0
+            "vent_moyen_kmh": 18.0,
+            "vent_max_kmh": 21.7,
+            "direction_dominante_deg": 255.0
           },
           {
             "date": "2026-06-09",
             "vent_moyen_kmh": 15.1,
             "vent_max_kmh": 19.7,
-            "direction_dominante_deg": 257.0
+            "direction_dominante_deg": 263.0
           }
         ],
         "avertissement": null
@@ -3317,9 +3422,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Locquirec",
+          "lat": 48.6778249999995,
+          "lon": -3.646455555550774,
+          "distance_km": 2.0
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 7.0,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 10.2,
+          "max_7j_ug_m3": 15.4,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "perceptible",
+          "couleur": "#A8D86C",
+          "description_seuil": "Odeur d'œuf pourri perceptible, sans effet sanitaire.",
+          "distance_km": 2.0
+        },
+        "raison": null
       }
     },
     {
@@ -3333,7 +3453,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 51.4,
+          "score": 51.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3344,7 +3464,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 38.5,
+              "valeur": 38.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3393,7 +3513,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 56.6,
+          "score": 56.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3404,7 +3524,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 46.0,
+              "valeur": 44.7,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3578,45 +3698,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 26.8,
-            "vent_max_kmh": 35.6,
+            "vent_moyen_kmh": 26.6,
+            "vent_max_kmh": 34.0,
             "direction_dominante_deg": 237.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 37.2,
-            "vent_max_kmh": 44.7,
+            "vent_moyen_kmh": 37.5,
+            "vent_max_kmh": 44.6,
             "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 22.4,
-            "vent_max_kmh": 32.1,
-            "direction_dominante_deg": 225.0
+            "vent_moyen_kmh": 21.5,
+            "vent_max_kmh": 31.6,
+            "direction_dominante_deg": 229.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 32.5,
-            "vent_max_kmh": 43.9,
-            "direction_dominante_deg": 238.0
+            "vent_moyen_kmh": 33.3,
+            "vent_max_kmh": 47.4,
+            "direction_dominante_deg": 236.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 18.1,
-            "vent_max_kmh": 22.4,
+            "vent_moyen_kmh": 20.6,
+            "vent_max_kmh": 26.8,
             "direction_dominante_deg": 207.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 19.5,
-            "vent_max_kmh": 23.8,
-            "direction_dominante_deg": 259.0
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 23.4,
+            "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 19.0,
+            "vent_moyen_kmh": 18.9,
             "vent_max_kmh": 22.0,
-            "direction_dominante_deg": 263.0
+            "direction_dominante_deg": 267.0
           }
         ],
         "avertissement": null
@@ -3732,9 +3852,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 26.5
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 26.5
+        },
+        "raison": null
       }
     },
     {
@@ -3748,7 +3883,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 57.3,
+          "score": 57.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3759,7 +3894,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 49.7,
+              "valeur": 49.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3808,7 +3943,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 60.2,
+          "score": 59.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3819,7 +3954,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 49.5,
+              "valeur": 48.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3993,45 +4128,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 23.5,
-            "vent_max_kmh": 31.4,
+            "vent_moyen_kmh": 24.4,
+            "vent_max_kmh": 32.1,
             "direction_dominante_deg": 237.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 30.2,
-            "vent_max_kmh": 36.8,
+            "vent_moyen_kmh": 30.4,
+            "vent_max_kmh": 37.2,
             "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 19.8,
-            "vent_max_kmh": 31.0,
-            "direction_dominante_deg": 224.0
+            "vent_moyen_kmh": 18.4,
+            "vent_max_kmh": 25.1,
+            "direction_dominante_deg": 227.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 30.3,
-            "vent_max_kmh": 39.3,
-            "direction_dominante_deg": 239.0
+            "vent_moyen_kmh": 31.0,
+            "vent_max_kmh": 41.6,
+            "direction_dominante_deg": 236.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 17.9,
-            "vent_max_kmh": 22.4,
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 25.1,
             "direction_dominante_deg": 208.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 19.5,
-            "vent_max_kmh": 23.8,
-            "direction_dominante_deg": 259.0
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 23.4,
+            "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 19.0,
+            "vent_moyen_kmh": 18.9,
             "vent_max_kmh": 22.0,
-            "direction_dominante_deg": 263.0
+            "direction_dominante_deg": 267.0
           }
         ],
         "avertissement": null
@@ -4147,9 +4282,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Guisseny",
+          "lat": 48.63964999999943,
+          "lon": -4.428969444439882,
+          "distance_km": 28.2
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 2.8,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 3.5,
+          "max_7j_ug_m3": 21.0,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "négligeable",
+          "couleur": "#3CB371",
+          "description_seuil": "Niveau de fond, sans odeur perceptible.",
+          "distance_km": 28.2
+        },
+        "raison": null
       }
     },
     {
@@ -4163,7 +4313,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 44.6,
+          "score": 44.4,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -4174,7 +4324,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 39.8,
+              "valeur": 39.3,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -4223,7 +4373,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 50.5,
+          "score": 50.2,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
@@ -4234,7 +4384,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 49.5,
+              "valeur": 48.4,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -4408,45 +4558,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 26.6,
-            "vent_max_kmh": 35.9,
+            "vent_moyen_kmh": 26.7,
+            "vent_max_kmh": 34.4,
             "direction_dominante_deg": 236.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 36.4,
-            "vent_max_kmh": 44.7,
+            "vent_moyen_kmh": 36.7,
+            "vent_max_kmh": 44.4,
             "direction_dominante_deg": 259.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 21.6,
-            "vent_max_kmh": 31.0,
-            "direction_dominante_deg": 225.0
+            "vent_moyen_kmh": 20.9,
+            "vent_max_kmh": 28.3,
+            "direction_dominante_deg": 230.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 30.3,
-            "vent_max_kmh": 39.3,
-            "direction_dominante_deg": 239.0
+            "vent_moyen_kmh": 31.0,
+            "vent_max_kmh": 41.6,
+            "direction_dominante_deg": 236.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 17.9,
-            "vent_max_kmh": 22.4,
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 25.1,
             "direction_dominante_deg": 208.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 19.5,
-            "vent_max_kmh": 23.8,
-            "direction_dominante_deg": 259.0
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 23.4,
+            "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 19.0,
+            "vent_moyen_kmh": 18.9,
             "vent_max_kmh": 22.0,
-            "direction_dominante_deg": 263.0
+            "direction_dominante_deg": 267.0
           }
         ],
         "avertissement": null
@@ -4562,9 +4712,24 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Locquirec",
+          "lat": 48.6778249999995,
+          "lon": -3.646455555550774,
+          "distance_km": 28.7
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 7.0,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 10.2,
+          "max_7j_ug_m3": 15.4,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "perceptible",
+          "couleur": "#A8D86C",
+          "description_seuil": "Odeur d'œuf pourri perceptible, sans effet sanitaire.",
+          "distance_km": 28.7
+        },
+        "raison": null
       }
     },
     {
@@ -4578,7 +4743,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-04",
-          "score": 53.1,
+          "score": 53.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -4589,7 +4754,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 40.4,
+              "valeur": 41.7,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -4638,7 +4803,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-06",
-          "score": 61.2,
+          "score": 61.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -4649,7 +4814,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 57.4,
+              "valeur": 57.8,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -4823,45 +4988,45 @@
         "previsions": [
           {
             "date": "2026-06-03",
-            "vent_moyen_kmh": 28.4,
-            "vent_max_kmh": 37.7,
+            "vent_moyen_kmh": 29.0,
+            "vent_max_kmh": 40.6,
             "direction_dominante_deg": 233.0
           },
           {
             "date": "2026-06-04",
-            "vent_moyen_kmh": 36.0,
-            "vent_max_kmh": 44.4,
-            "direction_dominante_deg": 258.0
+            "vent_moyen_kmh": 35.2,
+            "vent_max_kmh": 44.1,
+            "direction_dominante_deg": 260.0
           },
           {
             "date": "2026-06-05",
-            "vent_moyen_kmh": 19.8,
-            "vent_max_kmh": 28.5,
-            "direction_dominante_deg": 222.0
+            "vent_moyen_kmh": 17.8,
+            "vent_max_kmh": 27.7,
+            "direction_dominante_deg": 220.0
           },
           {
             "date": "2026-06-06",
-            "vent_moyen_kmh": 25.4,
-            "vent_max_kmh": 34.6,
-            "direction_dominante_deg": 234.0
+            "vent_moyen_kmh": 25.1,
+            "vent_max_kmh": 33.1,
+            "direction_dominante_deg": 233.0
           },
           {
             "date": "2026-06-07",
-            "vent_moyen_kmh": 16.2,
-            "vent_max_kmh": 21.1,
+            "vent_moyen_kmh": 17.9,
+            "vent_max_kmh": 22.9,
             "direction_dominante_deg": 209.0
           },
           {
             "date": "2026-06-08",
-            "vent_moyen_kmh": 18.3,
-            "vent_max_kmh": 22.7,
+            "vent_moyen_kmh": 18.5,
+            "vent_max_kmh": 22.1,
             "direction_dominante_deg": 259.0
           },
           {
             "date": "2026-06-09",
-            "vent_moyen_kmh": 16.7,
+            "vent_moyen_kmh": 16.5,
             "vent_max_kmh": 21.0,
-            "direction_dominante_deg": 259.0
+            "direction_dominante_deg": 264.0
           }
         ],
         "avertissement": null
@@ -4977,20 +5142,33 @@
         "avertissement": null
       },
       "airbreizh": {
-        "station": null,
-        "mesure": null,
-        "raison": "Service AirBreizh indisponible."
+        "station": {
+          "nom": "Locquirec",
+          "lat": 48.6778249999995,
+          "lon": -3.646455555550774,
+          "distance_km": 19.5
+        },
+        "mesure": {
+          "derniere_mesure_ug_m3": 7.0,
+          "horodate_derniere_mesure": "2026-06-01T13:00:00Z",
+          "moyenne_24h_ug_m3": 10.2,
+          "max_7j_ug_m3": 15.4,
+          "nb_mesures_7j": 169,
+          "niveau_sanitaire": "perceptible",
+          "couleur": "#A8D86C",
+          "description_seuil": "Odeur d'œuf pourri perceptible, sans effet sanitaire.",
+          "distance_km": 19.5
+        },
+        "raison": null
       }
     }
   ],
-  "avertissements_globaux": [
-    "Données AirBreizh H2S indisponibles : Service WFS AirBreizh injoignable. Vérifier AIRBREIZH_WFS_URL dans la configuration (.env ou GitHub Secret)."
-  ],
+  "avertissements_globaux": [],
   "poids_appliques": {
     "fai_zone_2": 0.4,
     "vent": 0.3,
     "coef_maree": 0.2,
     "ndvi_zone_1": 0.1
   },
-  "airbreizh_statut": "indisponible"
+  "airbreizh_statut": "ok"
 }

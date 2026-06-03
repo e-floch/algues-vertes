@@ -56,39 +56,46 @@ def _en_saison(aujourd_hui: date) -> bool:
 
 
 def _appel_wfs(url: str, layer: str, depuis: date, jusqu_a: date) -> list[dict] | None:
-    """Appelle le service WFS et renvoie une liste de mesures brutes.
+    """Appelle le service WFS avec pagination pour couvrir toutes les stations.
 
-    Stratégie : on demande le GetFeature en GeoJSON (la plupart des
-    GeoServers le supportent via outputFormat=application/json), filtré
-    par intervalle temporel via le paramètre CQL_FILTER.
+    On pagine par blocs de 5000 jusqu'à avoir collecté des mesures pour
+    toutes les stations connues ou atteint 10 pages (50 000 entrées max).
     """
-    cql = (
-        f"date_debut >= '{depuis.isoformat()}T00:00:00Z' "
-        f"AND date_debut <= '{jusqu_a.isoformat()}T23:59:59Z'"
-    )
-    params = {
-        "service": "WFS",
-        "version": "2.0.0",
-        "request": "GetFeature",
-        "typeNames": layer,
-        "outputFormat": "application/json",
-        "CQL_FILTER": cql,
-        "srsName": "EPSG:4326",
+    PAGE = 5000
+    MAX_PAGES = 10
+    toutes = []
+    stations_connues = {
+        _normaliser(v["code_wfs"]) for v in STATIONS_AIRBREIZH.values()
     }
-    try:
-        rep = requests.get(url, params=params, timeout=45)
-        rep.raise_for_status()
-        # On essaie d'interpréter en JSON ; en cas d'erreur (le serveur a
-        # renvoyé du XML), on retombe sur une lecture XML/GML basique.
+
+    for page in range(MAX_PAGES):
+        params = {
+            "service": "WFS",
+            "version": "2.0.0",
+            "request": "GetFeature",
+            "typeName": layer,
+            "count": str(PAGE),
+            "startIndex": str(page * PAGE),
+        }
         try:
-            data = rep.json()
-            features = data.get("features", [])
-            return [_extraire_feature_json(f) for f in features if _extraire_feature_json(f)]
-        except ValueError:
-            return _parser_gml(rep.text)
-    except requests.RequestException as exc:
-        logger.error("Échec appel WFS AirBreizh : %s", exc)
-        return None
+            rep = requests.get(url, params=params, timeout=60)
+            rep.raise_for_status()
+            mesures_page = _parser_gml(rep.text)
+            if not mesures_page:
+                break  # plus de données
+            toutes.extend(mesures_page)
+
+            # Vérifier si on a toutes les stations nécessaires
+            stations_recues = {_normaliser(m["station"]) for m in toutes}
+            if stations_connues.issubset(stations_recues):
+                logger.info("Toutes les stations trouvées à la page %d", page + 1)
+                break
+        except requests.RequestException as exc:
+            logger.error("Échec appel WFS AirBreizh (page %d) : %s", page, exc)
+            return None if not toutes else toutes
+
+    logger.info("AirBreizh WFS : %d mesures reçues au total", len(toutes))
+    return toutes or None
 
 
 def _extraire_feature_json(feature: dict) -> dict | None:
@@ -121,32 +128,83 @@ def _extraire_feature_json(feature: dict) -> dict | None:
 
 
 def _parser_gml(xml_text: str) -> list[dict]:
-    """Repli minimal pour parser une réponse GML (rare — utilisé seulement
-    si le serveur n'a pas renvoyé de JSON)."""
+    """Parse une réponse GML MapServer AirBreizh.
+
+    Structure attendue :
+      <ms:mes_bretagne_horaire_h2s>
+        <ms:nom_station>H2S_C6_Hoteller</ms:nom_station>
+        <ms:valeur>0.001</ms:valeur>          ← en ppm
+        <ms:unite>ppm</ms:unite>
+        <ms:date_debut><gml:timePosition>2025-06-03T00:00:00Z</gml:timePosition></ms:date_debut>
+      </ms:mes_bretagne_horaire_h2s>
+
+    Conversion ppm → µg/m³ : 1 ppm H2S ≈ 1400 µg/m³ (à 20°C, pression atm).
+    """
+    PPM_EN_UG_M3 = 1400.0  # facteur de conversion approximatif H2S
     resultats = []
     try:
         racine = ET.fromstring(xml_text)
     except ET.ParseError:
         return resultats
-    # On cherche tous les éléments dont le tag local évoque une mesure
+
     for elem in racine.iter():
         tag = elem.tag.split("}", 1)[-1].lower()
-        if "feature" not in tag and "member" not in tag and "h2s" not in tag:
+        # On cible les éléments feature de la couche h2s
+        if "h2s" not in tag:
             continue
         bloc = {}
         for enfant in elem:
             t = enfant.tag.split("}", 1)[-1].lower()
-            if t in ("nom_station", "station", "lib_station"):
+            if t == "nom_station":
                 bloc["station"] = (enfant.text or "").strip()
-            elif t in ("valeur", "value", "concentration", "h2s"):
+            elif t == "nom_com":
+                bloc["commune"] = (enfant.text or "").strip().title()
+            elif t == "x_wgs84":
                 try:
-                    bloc["valeur"] = float((enfant.text or "").strip())
+                    bloc["lon"] = float((enfant.text or "").strip())
                 except ValueError:
                     pass
-            elif t in ("date_debut", "date", "date_mesure"):
-                bloc["horodate"] = (enfant.text or "").strip()
-        if {"station", "valeur", "horodate"}.issubset(bloc):
-            resultats.append(bloc)
+            elif t == "y_wgs84":
+                try:
+                    bloc["lat"] = float((enfant.text or "").strip())
+                except ValueError:
+                    pass
+            elif t == "valeur":
+                try:
+                    bloc["valeur_ppm"] = float((enfant.text or "").strip())
+                except ValueError:
+                    pass
+            elif t == "unite":
+                bloc["unite"] = (enfant.text or "").strip().lower()
+            elif t == "date_debut":
+                # La date est dans un enfant gml:timePosition
+                for petit_enfant in enfant:
+                    pt = petit_enfant.tag.split("}", 1)[-1].lower()
+                    if pt == "timeposition":
+                        bloc["horodate"] = (petit_enfant.text or "").strip()
+                        break
+                # Fallback si texte direct
+                if "horodate" not in bloc and enfant.text:
+                    bloc["horodate"] = enfant.text.strip()
+
+        if {"station", "valeur_ppm", "horodate"}.issubset(bloc):
+            # Conversion en µg/m³
+            unite = bloc.get("unite", "ppm")
+            if unite == "ppm":
+                valeur_ug = bloc["valeur_ppm"] * PPM_EN_UG_M3
+            else:
+                valeur_ug = bloc["valeur_ppm"]  # déjà en µg/m³
+            # Clé = commune si disponible, sinon code station
+            cle = bloc.get("commune", bloc["station"])
+            resultats.append({
+                "station": cle,
+                "station_code": bloc["station"],
+                "commune": bloc.get("commune", ""),
+                "lat": bloc.get("lat"),
+                "lon": bloc.get("lon"),
+                "valeur": round(valeur_ug, 2),
+                "horodate": bloc["horodate"],
+            })
     return resultats
 
 
@@ -186,7 +244,14 @@ def _agreger_par_station(mesures: list[dict]) -> dict[str, dict]:
             valeurs_24h = [m["valeur"] for m in liste_triee[-24:]]
             valeurs_7j = [m["valeur"] for m in liste_triee[-168:]]
 
+        # Coordonnées : on prend celles de la première mesure qui en a
+        lat_station = next((m["lat"] for m in liste_triee if m.get("lat")), None)
+        lon_station = next((m["lon"] for m in liste_triee if m.get("lon")), None)
+
         resultats[station_nom] = {
+            "nom": station_nom,
+            "lat": lat_station,
+            "lon": lon_station,
             "derniere_mesure_ug_m3": round(derniere["valeur"], 1),
             "horodate_derniere_mesure": derniere["horodate"],
             "moyenne_24h_ug_m3": round(sum(valeurs_24h) / len(valeurs_24h), 1) if valeurs_24h else None,
@@ -196,56 +261,59 @@ def _agreger_par_station(mesures: list[dict]) -> dict[str, dict]:
     return resultats
 
 
+def _distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Distance approximative en km entre deux points (formule haversine simplifiée)."""
+    import math
+    R = 6371.0
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = math.sin(dlat / 2) ** 2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2) ** 2
+    return R * 2 * math.asin(math.sqrt(a))
+
+
 def _associer_aux_sites(par_station_wfs: dict[str, dict]) -> dict[str, dict]:
-    """Associe les mesures aux sites de surveillance via le mapping
-    site.station_airbreizh → STATIONS_AIRBREIZH[code].code_wfs."""
+    """Associe chaque site de surveillance à la station AirBreizh la plus proche."""
+    # Filtrer les stations qui ont des coordonnées
+    stations_avec_coords = {
+        nom: data for nom, data in par_station_wfs.items()
+        if data.get("lat") and data.get("lon")
+    }
+
     par_site = {}
     for site in SITES:
-        code_station = site.get("station_airbreizh")
-        if not code_station:
+        if not stations_avec_coords:
             par_site[site["id"]] = {
-                "site_id": site["id"],
-                "station": None,
-                "mesure": None,
-                "raison": "Pas de station AirBreizh suffisamment proche de ce site.",
+                "site_id": site["id"], "station": None, "mesure": None,
+                "raison": "Aucune station AirBreizh avec coordonnées disponible.",
             }
             continue
 
-        infos_station = STATIONS_AIRBREIZH.get(code_station)
-        if not infos_station:
-            par_site[site["id"]] = {
-                "site_id": site["id"],
-                "station": code_station,
-                "mesure": None,
-                "raison": f"Station inconnue dans STATIONS_AIRBREIZH : {code_station}",
-            }
-            continue
+        # Trouver la station la plus proche
+        site_lat, site_lon = site["lat"], site["lon"]
+        station_proche = min(
+            stations_avec_coords.items(),
+            key=lambda kv: _distance_km(site_lat, site_lon, kv[1]["lat"], kv[1]["lon"])
+        )
+        nom_station, donnees_station = station_proche
+        dist_km = _distance_km(site_lat, site_lon, donnees_station["lat"], donnees_station["lon"])
 
-        # On recherche la station dans les mesures WFS via son code_wfs
-        # (correspondance souple : insensible à la casse et aux accents)
-        code_wfs_cible = _normaliser(infos_station["code_wfs"])
-        mesure = None
-        for station_wfs, agreg in par_station_wfs.items():
-            if _normaliser(station_wfs) == code_wfs_cible:
-                mesure = agreg
-                break
-
-        if mesure:
-            seuil = classifier_h2s(mesure.get("derniere_mesure_ug_m3"))
-            mesure["niveau_sanitaire"] = seuil["niveau"] if seuil else None
-            mesure["couleur"] = seuil["couleur"] if seuil else None
-            mesure["description_seuil"] = seuil["desc"] if seuil else None
+        mesure = {k: v for k, v in donnees_station.items() if k not in ("lat", "lon", "nom")}
+        seuil = classifier_h2s(mesure.get("derniere_mesure_ug_m3"))
+        mesure["niveau_sanitaire"] = seuil["niveau"] if seuil else None
+        mesure["couleur"] = seuil["couleur"] if seuil else None
+        mesure["description_seuil"] = seuil["desc"] if seuil else None
+        mesure["distance_km"] = round(dist_km, 1)
 
         par_site[site["id"]] = {
             "site_id": site["id"],
             "station": {
-                "code": code_station,
-                "nom": infos_station["nom"],
-                "lat": infos_station["lat"],
-                "lon": infos_station["lon"],
+                "nom": nom_station,
+                "lat": donnees_station["lat"],
+                "lon": donnees_station["lon"],
+                "distance_km": round(dist_km, 1),
             },
             "mesure": mesure,
-            "raison": None if mesure else "Aucune mesure récente trouvée pour cette station.",
+            "raison": None,
         }
     return par_site
 

@@ -435,8 +435,8 @@
               <div class="h2s-niveau">${escapeHtml(m.niveau_sanitaire || "—")}</div>
             </div>
             <table class="facteurs-table">
-              <tr><th>Station</th><td>${escapeHtml(ab.station ? ab.station.nom : "—")}</td></tr>
-              <tr><th>Dernière mesure</th><td>${escapeHtml(m.horodate_derniere_mesure || "—")}</td></tr>
+              <tr><th>Station</th><td>${escapeHtml(ab.station ? ab.station.nom : "—")}${ab.station && ab.station.distance_km ? ` <span style="color:var(--texte-faible);font-size:11px">(${ab.station.distance_km} km)</span>` : ""}</td></tr>
+              <tr><th>Dernière mesure</th><td>${m.horodate_derniere_mesure ? new Date(m.horodate_derniere_mesure).toLocaleString("fr-FR", {day:"2-digit", month:"2-digit", year:"numeric", hour:"2-digit", minute:"2-digit"}) : "—"}</td></tr>
               <tr><th>Moyenne 24 h</th><td>${m.moyenne_24h_ug_m3 ?? "—"} µg/m³</td></tr>
               <tr><th>Maximum 7 j</th><td>${m.max_7j_ug_m3 ?? "—"} µg/m³</td></tr>
               <tr><th>Nb mesures (7 j)</th><td>${m.nb_mesures_7j ?? "—"}</td></tr>
