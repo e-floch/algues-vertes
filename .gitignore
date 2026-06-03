@@ -1,0 +1,29 @@
+# --- Variables d'environnement (clés API) ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# --- Fichiers temporaires de collecte ---
+data/_*.json
+
+# --- macOS ---
+.DS_Store
+Icon?
+._*
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Logs ---
+*.log

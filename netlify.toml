@@ -1,0 +1,19 @@
+# Configuration Netlify
+# Le tableau de bord est servi depuis le dossier docs/ du dépôt.
+# Aucune commande de build n'est nécessaire (page statique générée par GitHub Actions).
+
+[build]
+  publish = "docs"
+  command = ""
+
+# Cache court pour les JSON (afin que les nouvelles données du jour soient
+# visibles rapidement après chaque mise à jour quotidienne)
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
