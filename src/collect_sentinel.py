@@ -117,7 +117,10 @@ function setup() {
   };
 }
 function evaluatePixel(s) {
-  if (s.SCL === 8 || s.SCL === 9 || s.SCL === 10 || s.SCL === 3) {
+  // SCL 6 = eau — on ne calcule le FAI que sur les pixels eau pour éviter
+  // que la végétation terrestre (NIR élevé) gonfle artificiellement le score.
+  // Nuages et ombres également exclus (3 = ombre, 8/9/10 = nuages/cirrus).
+  if (s.SCL !== 6) {
     return { default: [NaN], dataMask: [0] };
   }
   // Pondération linéaire entre B04 (665nm) et B11 (1610nm) pour estimer la
