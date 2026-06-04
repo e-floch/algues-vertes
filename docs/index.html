@@ -400,11 +400,11 @@
           html += `
             <div style="margin-bottom:8px">
               <img src="${site.sentinel.image_miniature}"
-                   alt="Image Sentinel-2 fausse couleur"
-                   title="Fausse couleur NIR — les algues apparaissent en rouge"
+                   alt="Image Sentinel-2 couleurs naturelles"
+                   title="Couleurs naturelles — algues flottantes détectées en vert vif"
                    style="width:100%;max-width:300px;border-radius:6px;border:1px solid var(--bord);display:block">
               <div style="font-size:11px;color:var(--texte-faible);margin-top:4px">
-                Fausse couleur NIR · ${site.sentinel.image_la_plus_recente || ""}
+                Sentinel-2 · <span style="color:#00dc32;font-weight:600">■</span> algues flottantes détectées · ${site.sentinel.image_la_plus_recente || ""}
               </div>
             </div>`;
         } else if (site.sentinel.image_la_plus_recente) {

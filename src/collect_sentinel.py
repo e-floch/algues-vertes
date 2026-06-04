@@ -312,9 +312,10 @@ def collecter_indice_site(
 
 
 # Evalscript visualisation : couleurs naturelles (B04/B03/B02) avec surimpression
-# vert vif sur les pixels eau (SCL=6) où le FAI est positif — seules les masses
-# algales flottantes apparaissent en vert, la végétation terrestre reste en couleurs
-# naturelles et n'est plus confondue avec les algues.
+# vert vif sur les pixels eau confirmés (SCL=6 ET NDWI>0) où le FAI est positif.
+# Double filtre eau : SCL=6 seul peut classer à tort des ombres de nuages ou des
+# zones humides côtières comme "eau" ; le NDWI (vert − NIR) / (vert + NIR) > 0
+# confirme que le pixel est bien de la surface d'eau ouverte.
 EVALSCRIPT_IMAGE_RGB = """
 //VERSION=3
 function setup() {
@@ -327,11 +328,15 @@ function evaluatePixel(s) {
   // Étirement de contraste pour couleurs naturelles
   function stretch(v) { return Math.min(255, Math.max(0, Math.round(v / 0.35 * 255))); }
 
-  // Pixel eau (SCL=6) avec FAI positif → vert vif = signal algal détecté
-  if (s.SCL === 6) {
+  // Double confirmation eau : SCL=6 ET NDWI positif (évite les faux positifs
+  // sur ombres de nuages, zones humides, estran mouillé classé "eau" par erreur)
+  let ndwi = (s.B03 - s.B08) / (s.B03 + s.B08 + 1e-10);
+  if (s.SCL === 6 && ndwi > 0) {
     let baseline = s.B04 + (s.B11 - s.B04) * (842.0 - 665.0) / (1610.0 - 665.0);
     let fai = s.B08 - baseline;
-    if (fai > 0) {
+    // Seuil FAI > 0.002 pour ne marquer que les signaux algaux significatifs
+    // (élimine le bruit de fond des eaux turbides sans algues)
+    if (fai > 0.002) {
       return [0, 220, 50];
     }
   }
