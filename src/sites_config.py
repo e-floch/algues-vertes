@@ -346,11 +346,14 @@ NIVEAUX_ALERTE = [
 
 
 def niveau_alerte_pour_score(score: float) -> dict:
-    """Renvoie l'entrée de NIVEAUX_ALERTE correspondant au score donné."""
-    for niveau in NIVEAUX_ALERTE:
-        if niveau["min"] <= score <= niveau["max"]:
-            return niveau
-    # Score hors borne : on borne sur les extrêmes
+    """Renvoie l'entrée de NIVEAUX_ALERTE correspondant au score donné.
+
+    On cherche le premier niveau dont le score ne dépasse pas le max —
+    les seuils étant ordonnés, cela couvre tous les flottants sans trou.
+    """
     if score < 0:
         return NIVEAUX_ALERTE[0]
+    for niveau in NIVEAUX_ALERTE:
+        if score <= niveau["max"]:
+            return niveau
     return NIVEAUX_ALERTE[-1]

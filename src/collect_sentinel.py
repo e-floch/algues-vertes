@@ -311,20 +311,33 @@ def collecter_indice_site(
     return resultat
 
 
-# Evalscript fausse-couleur pour visualisation : NIR(B08) en rouge, vert(B03) en vert,
-# bleu(B02) en bleu — les zones riches en végétation/algues apparaissent en rouge vif.
+# Evalscript visualisation : couleurs naturelles (B04/B03/B02) avec surimpression
+# vert vif sur les pixels eau (SCL=6) où le FAI est positif — seules les masses
+# algales flottantes apparaissent en vert, la végétation terrestre reste en couleurs
+# naturelles et n'est plus confondue avec les algues.
 EVALSCRIPT_IMAGE_RGB = """
 //VERSION=3
 function setup() {
   return {
-    input: [{ bands: ["B08", "B03", "B02"] }],
+    input: [{ bands: ["B02", "B03", "B04", "B08", "B11", "SCL"] }],
     output: { bands: 3, sampleType: "UINT8" }
   };
 }
 function evaluatePixel(s) {
-  // Étirement de contraste simple : on divise par 0.35 et on clipe entre 0 et 255
+  // Étirement de contraste pour couleurs naturelles
   function stretch(v) { return Math.min(255, Math.max(0, Math.round(v / 0.35 * 255))); }
-  return [stretch(s.B08), stretch(s.B03), stretch(s.B02)];
+
+  // Pixel eau (SCL=6) avec FAI positif → vert vif = signal algal détecté
+  if (s.SCL === 6) {
+    let baseline = s.B04 + (s.B11 - s.B04) * (842.0 - 665.0) / (1610.0 - 665.0);
+    let fai = s.B08 - baseline;
+    if (fai > 0) {
+      return [0, 220, 50];
+    }
+  }
+
+  // Tous les autres pixels : couleurs naturelles (rouge=B04, vert=B03, bleu=B02)
+  return [stretch(s.B04), stretch(s.B03), stretch(s.B02)];
 }
 """
 
