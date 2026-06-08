@@ -31,7 +31,7 @@ logger = get_logger("run_pipeline")
 # Sentinel-2 repasse sur la Bretagne tous les ~5 jours (S2A + S2B).
 # Inutile d'appeler l'API Statistics chaque jour : on réutilise les données
 # existantes si la dernière image connue date de moins de SENTINEL_CACHE_JOURS.
-SENTINEL_CACHE_JOURS = 5
+SENTINEL_CACHE_JOURS = 14
 
 
 def _recuperer_sentinel_cache(jour: date) -> dict | None:
