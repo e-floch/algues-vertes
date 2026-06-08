@@ -72,8 +72,20 @@ def _recuperer_sentinel_cache(jour: date) -> dict | None:
             for s in (sites if isinstance(sites, list) else sites.values()):
                 sid = s.get("id") or s.get("site_id")
                 if sid and s.get("sentinel"):
-                    sent = dict(s["sentinel"])
-                    sent["_depuis_cache"] = True
+                    sent_out = s["sentinel"]
+                    # Le JSON de sortie utilise des clés courtes (ndvi_zone_0, fai_zone_2).
+                    # compute_risk.py attend les clés d'origine de collect_sentinel
+                    # (ndvi_zone_0_estran, ndvi_zone_1_cotier, fai_zone_2_pelagique).
+                    # On les restitue ici pour que les scores soient bien calculés.
+                    sent = {
+                        "ndvi_zone_0_estran":   sent_out.get("ndvi_zone_0"),
+                        "ndvi_zone_1_cotier":   sent_out.get("ndvi_zone_1"),
+                        "fai_zone_2_pelagique": sent_out.get("fai_zone_2"),
+                        "image_la_plus_recente": sent_out.get("image_la_plus_recente"),
+                        "image_miniature":       sent_out.get("image_miniature"),
+                        "avertissement":         sent_out.get("avertissement"),
+                        "_depuis_cache":         True,
+                    }
                     sites_sentinel[sid] = sent
             return {
                 "date_collecte": (jour - timedelta(days=delta)).isoformat(),
