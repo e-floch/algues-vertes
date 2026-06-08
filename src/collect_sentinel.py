@@ -200,6 +200,19 @@ def _appeler_process_api(
             json=payload,
             timeout=60,
         )
+        # Détection explicite du manque de crédits CDSE avant raise_for_status
+        if reponse.status_code == 403:
+            try:
+                code_erreur = reponse.json().get("error", {}).get("code", "")
+            except Exception:
+                code_erreur = ""
+            if code_erreur == "ACCESS_INSUFFICIENT_PROCESSING_UNITS":
+                logger.error(
+                    "Crédits CDSE épuisés — recharger le compte sur "
+                    "https://shapps.dataspace.copernicus.eu/dashboard/"
+                )
+                # Valeur sentinelle distincte de None pour signaler ce cas précis
+                return "CREDITS_EPUISES"
         reponse.raise_for_status()
         return reponse.json()
     except requests.RequestException as exc:
@@ -269,6 +282,12 @@ def collecter_indice_site(
         token, zones["zone_0_estran"], date_debut, date_fin,
         EVALSCRIPT_NDVI, resolution=0.0001,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["ndvi_zone_0_estran"] = stat
@@ -279,6 +298,12 @@ def collecter_indice_site(
         token, zones["zone_1_cotier"], date_debut, date_fin,
         EVALSCRIPT_NDVI, resolution=0.0001,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["ndvi_zone_1_cotier"] = stat
@@ -290,6 +315,12 @@ def collecter_indice_site(
         token, zones["zone_2_pelagique"], date_debut, date_fin,
         EVALSCRIPT_FAI, resolution=0.0002,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["fai_zone_2_pelagique"] = stat
