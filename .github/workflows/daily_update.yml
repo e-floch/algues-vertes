@@ -57,5 +57,6 @@ jobs:
             echo "Aucune modification à committer."
           else
             git commit -m "Mise à jour automatique du $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
