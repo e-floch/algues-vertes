@@ -82,7 +82,10 @@ def _recuperer_sentinel_cache(jour: date) -> dict | None:
                         "ndvi_zone_1_cotier":   sent_out.get("ndvi_zone_1"),
                         "fai_zone_2_pelagique": sent_out.get("fai_zone_2"),
                         "image_la_plus_recente": sent_out.get("image_la_plus_recente"),
-                        "image_miniature":       sent_out.get("image_miniature"),
+                        # image_miniature volontairement absent : la miniature est
+                        # retéléchargée à chaque run (~2 PU/site) pour rester à jour
+                        # avec l'evalscript courant (couleurs naturelles + vert algues).
+                        "image_miniature":       None,
                         "avertissement":         sent_out.get("avertissement"),
                         "_depuis_cache":         True,
                     }
@@ -102,12 +105,21 @@ def lancer_pipeline(jour: date | None = None) -> dict:
         jour = date.today()
     logger.info("=== Lancement du pipeline pour le %s ===", jour.isoformat())
 
-    # 1. Sentinel-2 — réutilise le cache si l'image a moins de 5 jours
+    # 1. Sentinel-2 — réutilise le cache si l'image a moins de SENTINEL_CACHE_JOURS
     try:
         donnees_sentinel = _recuperer_sentinel_cache(jour)
         if donnees_sentinel is None:
             logger.info("Sentinel-2 : pas de cache valide — appel API CDSE")
             donnees_sentinel = collect_sentinel.collecter_tous_les_sites(jour)
+        else:
+            # En mode cache, les statistiques (NDVI/FAI) sont réutilisées mais
+            # les miniatures sont retéléchargées (~2 PU/site) pour rester à jour
+            # avec l'evalscript courant (couleurs naturelles + vert pour les algues).
+            logger.info("Sentinel-2 : retéléchargement des miniatures (cache stats)")
+            miniatures = collect_sentinel.telecharger_miniatures(jour)
+            for sid, chemin in miniatures.items():
+                if sid in donnees_sentinel.get("sites", {}):
+                    donnees_sentinel["sites"][sid]["image_miniature"] = chemin
     except Exception as exc:
         logger.error("Sentinel-2 — échec critique : %s", exc)
         donnees_sentinel = {

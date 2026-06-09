@@ -498,6 +498,44 @@ def collecter_tous_les_sites(aujourd_hui: date | None = None) -> dict:
     }
 
 
+def telecharger_miniatures(aujourd_hui: date | None = None) -> dict[str, str | None]:
+    """Télécharge uniquement les miniatures pour tous les sites (mode cache).
+
+    Utilisé par le pipeline quand les statistiques NDVI/FAI viennent du cache
+    mais que les images doivent être régénérées avec l'evalscript courant.
+    Coût : ~2 PU/site (très faible vs ~100 PU pour les statistiques).
+
+    Renvoie un dict {site_id: chemin_relatif_image | None}.
+    """
+    charger_env()
+    if aujourd_hui is None:
+        aujourd_hui = date.today()
+
+    token = _recuperer_token_oauth()
+    if not token:
+        logger.warning("Miniatures : impossible d'obtenir un token CDSE.")
+        return {}
+
+    dossier_images = (
+        Path(__file__).parent.parent / "docs" / "images" / aujourd_hui.isoformat()
+    )
+    date_debut = aujourd_hui - timedelta(days=FENETRE_RECHERCHE_JOURS)
+    resultats = {}
+
+    for site in SITES:
+        zones = get_zones(site)
+        chemin_img = dossier_images / f"{site['id']}.jpg"
+        ok = _telecharger_image_site(
+            token, zones["zone_1_cotier"], date_debut, aujourd_hui, chemin_img
+        )
+        resultats[site["id"]] = (
+            f"images/{aujourd_hui.isoformat()}/{site['id']}.jpg" if ok else None
+        )
+        logger.info("Miniature %s : %s", site["id"], "ok" if ok else "échec")
+
+    return resultats
+
+
 if __name__ == "__main__":
     # Lancement direct : python src/collect_sentinel.py
     donnees = collecter_tous_les_sites()
