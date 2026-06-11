@@ -1,6 +1,6 @@
 {
   "date": "2026-06-11",
-  "horodatage_generation_utc": "2026-06-11T09:23:05Z",
+  "horodatage_generation_utc": "2026-06-11T12:49:48Z",
   "sites": [
     {
       "site_id": "guisseny_curnic",
@@ -13,13 +13,13 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 64.2,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 83.7,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -43,13 +43,13 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 62.8,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 82.2,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -73,13 +73,13 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 61.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 80.8,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -103,13 +103,13 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 59.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 78.8,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -133,13 +133,13 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 57.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 76.8,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -163,13 +163,13 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 55.6,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 75.1,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -193,13 +193,13 @@
         {
           "horizon": "J+7",
           "date": "2026-06-18",
-          "score": 55.0,
+          "score": 74.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 65.9,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -1129,29 +1129,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 77.8,
+          "score": 86.3,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 52.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1159,29 +1159,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 75.2,
+          "score": 84.9,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 52.8,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 47.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1189,29 +1189,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 75.8,
+          "score": 83.4,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1219,29 +1219,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 74.4,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 81.4,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1249,29 +1249,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 83.6,
+          "score": 79.4,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 93.2,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1279,29 +1279,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 73.6,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 77.7,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.4,
+              "poids_applique": 0.571,
               "disponible": true
             },
             "vent": {
-              "valeur": 64.0,
-              "poids_applique": 0.3,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 22.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.286,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 100.0,
-              "poids_applique": 0.1,
+              "poids_applique": 0.143,
               "disponible": true
             }
           }
@@ -1370,52 +1370,9 @@
         "avertissement": null
       },
       "meteo": {
-        "source": "Open-Meteo",
-        "previsions": [
-          {
-            "date": "2026-06-11",
-            "vent_moyen_kmh": 20.4,
-            "vent_max_kmh": 27.2,
-            "direction_dominante_deg": 259.0
-          },
-          {
-            "date": "2026-06-12",
-            "vent_moyen_kmh": 17.1,
-            "vent_max_kmh": 26.4,
-            "direction_dominante_deg": 275.0
-          },
-          {
-            "date": "2026-06-13",
-            "vent_moyen_kmh": 8.7,
-            "vent_max_kmh": 11.6,
-            "direction_dominante_deg": 56.0
-          },
-          {
-            "date": "2026-06-14",
-            "vent_moyen_kmh": 15.8,
-            "vent_max_kmh": 18.6,
-            "direction_dominante_deg": 106.0
-          },
-          {
-            "date": "2026-06-15",
-            "vent_moyen_kmh": 10.6,
-            "vent_max_kmh": 15.6,
-            "direction_dominante_deg": 138.0
-          },
-          {
-            "date": "2026-06-16",
-            "vent_moyen_kmh": 8.3,
-            "vent_max_kmh": 14.8,
-            "direction_dominante_deg": 193.0
-          },
-          {
-            "date": "2026-06-17",
-            "vent_moyen_kmh": 3.9,
-            "vent_max_kmh": 7.2,
-            "direction_dominante_deg": 267.0
-          }
-        ],
-        "avertissement": null
+        "source": null,
+        "previsions": [],
+        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
       },
       "maree": {
         "port": "Brest",
@@ -1544,29 +1501,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 83.4,
+          "score": 88.4,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 100.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 52.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1574,29 +1531,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 82.0,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 74.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 47.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1604,29 +1561,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 80.6,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 73.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1634,29 +1591,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 78.6,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 72.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1664,29 +1621,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 76.6,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 69.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 51.2,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1694,29 +1651,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 74.9,
+          "score": 71.6,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 64.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 22.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 80.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1785,9 +1742,52 @@
         "avertissement": null
       },
       "meteo": {
-        "source": null,
-        "previsions": [],
-        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-06-11",
+            "vent_moyen_kmh": 17.6,
+            "vent_max_kmh": 24.2,
+            "direction_dominante_deg": 246.0
+          },
+          {
+            "date": "2026-06-12",
+            "vent_moyen_kmh": 15.1,
+            "vent_max_kmh": 23.8,
+            "direction_dominante_deg": 279.0
+          },
+          {
+            "date": "2026-06-13",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 12.7,
+            "direction_dominante_deg": 39.0
+          },
+          {
+            "date": "2026-06-14",
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 13.5,
+            "direction_dominante_deg": 79.0
+          },
+          {
+            "date": "2026-06-15",
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 17.4,
+            "direction_dominante_deg": 152.0
+          },
+          {
+            "date": "2026-06-16",
+            "vent_moyen_kmh": 8.3,
+            "vent_max_kmh": 13.9,
+            "direction_dominante_deg": 193.0
+          },
+          {
+            "date": "2026-06-17",
+            "vent_moyen_kmh": 4.1,
+            "vent_max_kmh": 8.9,
+            "direction_dominante_deg": 285.0
+          }
+        ],
+        "avertissement": null
       },
       "maree": {
         "port": "Brest",
@@ -1916,29 +1916,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 75.6,
+          "score": 82.9,
           "niveau": 4,
           "nom_niveau": "Critique",
           "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 100.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 52.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1946,29 +1946,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 74.2,
+          "score": 69.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 47.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -1976,29 +1976,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 72.8,
+          "score": 68.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2006,29 +2006,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 70.8,
+          "score": 66.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2036,29 +2036,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 68.8,
+          "score": 63.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 49.6,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2066,29 +2066,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 67.0,
+          "score": 66.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 64.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 22.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 25.3,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2157,9 +2157,52 @@
         "avertissement": null
       },
       "meteo": {
-        "source": null,
-        "previsions": [],
-        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-06-11",
+            "vent_moyen_kmh": 20.3,
+            "vent_max_kmh": 28.9,
+            "direction_dominante_deg": 256.0
+          },
+          {
+            "date": "2026-06-12",
+            "vent_moyen_kmh": 11.0,
+            "vent_max_kmh": 13.9,
+            "direction_dominante_deg": 280.0
+          },
+          {
+            "date": "2026-06-13",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 12.7,
+            "direction_dominante_deg": 39.0
+          },
+          {
+            "date": "2026-06-14",
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 13.5,
+            "direction_dominante_deg": 79.0
+          },
+          {
+            "date": "2026-06-15",
+            "vent_moyen_kmh": 12.2,
+            "vent_max_kmh": 17.4,
+            "direction_dominante_deg": 147.0
+          },
+          {
+            "date": "2026-06-16",
+            "vent_moyen_kmh": 7.9,
+            "vent_max_kmh": 14.4,
+            "direction_dominante_deg": 193.0
+          },
+          {
+            "date": "2026-06-17",
+            "vent_moyen_kmh": 4.3,
+            "vent_max_kmh": 7.8,
+            "direction_dominante_deg": 310.0
+          }
+        ],
+        "avertissement": null
       },
       "maree": {
         "port": "Brest",
@@ -2318,10 +2361,10 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 83.9,
-          "niveau": 4,
-          "nom_niveau": "Critique",
-          "couleur": "#C0392B",
+          "score": 70.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
@@ -2329,7 +2372,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 55.6,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2348,10 +2391,10 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 70.0,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 82.7,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
@@ -2359,7 +2402,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 100.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2378,7 +2421,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 67.8,
+          "score": 68.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2389,7 +2432,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 55.2,
+              "valeur": 58.0,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -2533,8 +2576,8 @@
         "previsions": [
           {
             "date": "2026-06-11",
-            "vent_moyen_kmh": 18.4,
-            "vent_max_kmh": 27.2,
+            "vent_moyen_kmh": 18.9,
+            "vent_max_kmh": 30.1,
             "direction_dominante_deg": 227.0
           },
           {
@@ -2545,21 +2588,21 @@
           },
           {
             "date": "2026-06-13",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 18.9,
-            "direction_dominante_deg": 41.0
+            "vent_moyen_kmh": 9.4,
+            "vent_max_kmh": 14.9,
+            "direction_dominante_deg": 336.0
           },
           {
             "date": "2026-06-14",
-            "vent_moyen_kmh": 15.0,
-            "vent_max_kmh": 19.4,
-            "direction_dominante_deg": 98.0
+            "vent_moyen_kmh": 12.6,
+            "vent_max_kmh": 16.9,
+            "direction_dominante_deg": 85.0
           },
           {
             "date": "2026-06-15",
-            "vent_moyen_kmh": 9.3,
-            "vent_max_kmh": 14.7,
-            "direction_dominante_deg": 108.0
+            "vent_moyen_kmh": 10.4,
+            "vent_max_kmh": 15.5,
+            "direction_dominante_deg": 123.0
           },
           {
             "date": "2026-06-16",
@@ -2703,29 +2746,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 74.0,
+          "score": 69.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 59.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2733,29 +2776,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 72.9,
+          "score": 67.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 55.6,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 55.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2763,29 +2806,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 71.1,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 79.8,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 100.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 49.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2793,29 +2836,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 69.1,
+          "score": 65.8,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2823,29 +2866,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 67.1,
+          "score": 61.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 48.4,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2853,29 +2896,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 65.1,
+          "score": 52.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 100.0,
-              "poids_applique": 0.571,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 22.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 0.0,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -2944,9 +2987,52 @@
         "avertissement": null
       },
       "meteo": {
-        "source": null,
-        "previsions": [],
-        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-06-11",
+            "vent_moyen_kmh": 21.9,
+            "vent_max_kmh": 33.2,
+            "direction_dominante_deg": 238.0
+          },
+          {
+            "date": "2026-06-12",
+            "vent_moyen_kmh": 17.4,
+            "vent_max_kmh": 23.6,
+            "direction_dominante_deg": 273.0
+          },
+          {
+            "date": "2026-06-13",
+            "vent_moyen_kmh": 9.4,
+            "vent_max_kmh": 14.9,
+            "direction_dominante_deg": 336.0
+          },
+          {
+            "date": "2026-06-14",
+            "vent_moyen_kmh": 12.6,
+            "vent_max_kmh": 16.9,
+            "direction_dominante_deg": 85.0
+          },
+          {
+            "date": "2026-06-15",
+            "vent_moyen_kmh": 10.4,
+            "vent_max_kmh": 15.5,
+            "direction_dominante_deg": 123.0
+          },
+          {
+            "date": "2026-06-16",
+            "vent_moyen_kmh": 7.6,
+            "vent_max_kmh": 10.3,
+            "direction_dominante_deg": 264.0
+          },
+          {
+            "date": "2026-06-17",
+            "vent_moyen_kmh": 3.9,
+            "vent_max_kmh": 8.0,
+            "direction_dominante_deg": 355.0
+          }
+        ],
+        "avertissement": null
       },
       "maree": {
         "port": "Roscoff",
@@ -3075,29 +3161,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 64.0,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 77.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 59.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3105,29 +3191,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 62.9,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 89.4,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 100.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 55.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3135,29 +3221,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 61.2,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 75.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 49.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3165,29 +3251,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 59.2,
+          "score": 74.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3195,29 +3281,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 57.2,
+          "score": 71.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 54.4,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3225,29 +3311,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 55.2,
+          "score": 73.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 64.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 83.9,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -3255,13 +3341,13 @@
         {
           "horizon": "J+7",
           "date": "2026-06-18",
-          "score": 54.6,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 76.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 61.6,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -3316,9 +3402,52 @@
         "avertissement": null
       },
       "meteo": {
-        "source": null,
-        "previsions": [],
-        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-06-11",
+            "vent_moyen_kmh": 20.6,
+            "vent_max_kmh": 29.1,
+            "direction_dominante_deg": 238.0
+          },
+          {
+            "date": "2026-06-12",
+            "vent_moyen_kmh": 20.7,
+            "vent_max_kmh": 26.8,
+            "direction_dominante_deg": 267.0
+          },
+          {
+            "date": "2026-06-13",
+            "vent_moyen_kmh": 10.5,
+            "vent_max_kmh": 16.1,
+            "direction_dominante_deg": 2.0
+          },
+          {
+            "date": "2026-06-14",
+            "vent_moyen_kmh": 17.7,
+            "vent_max_kmh": 24.7,
+            "direction_dominante_deg": 71.0
+          },
+          {
+            "date": "2026-06-15",
+            "vent_moyen_kmh": 11.4,
+            "vent_max_kmh": 14.4,
+            "direction_dominante_deg": 80.0
+          },
+          {
+            "date": "2026-06-16",
+            "vent_moyen_kmh": 9.1,
+            "vent_max_kmh": 14.5,
+            "direction_dominante_deg": 266.0
+          },
+          {
+            "date": "2026-06-17",
+            "vent_moyen_kmh": 4.2,
+            "vent_max_kmh": 7.4,
+            "direction_dominante_deg": 319.0
+          }
+        ],
+        "avertissement": null
       },
       "maree": {
         "port": "Roscoff",
@@ -3447,13 +3576,13 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 64.8,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 78.9,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3477,18 +3606,18 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 64.0,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 90.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 99.6,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3507,13 +3636,13 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 62.8,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 76.9,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3537,13 +3666,13 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 61.4,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 75.5,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3567,13 +3696,13 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 58.9,
+          "score": 73.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3597,13 +3726,13 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 60.4,
+          "score": 74.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3627,13 +3756,13 @@
         {
           "horizon": "J+7",
           "date": "2026-06-18",
-          "score": 58.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 78.5,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 64.6,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -3692,33 +3821,33 @@
         "previsions": [
           {
             "date": "2026-06-11",
-            "vent_moyen_kmh": 17.5,
-            "vent_max_kmh": 25.7,
-            "direction_dominante_deg": 235.0
+            "vent_moyen_kmh": 18.0,
+            "vent_max_kmh": 27.3,
+            "direction_dominante_deg": 237.0
           },
           {
             "date": "2026-06-12",
-            "vent_moyen_kmh": 16.2,
+            "vent_moyen_kmh": 16.3,
             "vent_max_kmh": 21.7,
-            "direction_dominante_deg": 267.0
+            "direction_dominante_deg": 268.0
           },
           {
             "date": "2026-06-13",
-            "vent_moyen_kmh": 11.6,
-            "vent_max_kmh": 19.3,
-            "direction_dominante_deg": 66.0
+            "vent_moyen_kmh": 9.9,
+            "vent_max_kmh": 15.1,
+            "direction_dominante_deg": 360.0
           },
           {
             "date": "2026-06-14",
             "vent_moyen_kmh": 16.1,
-            "vent_max_kmh": 20.6,
-            "direction_dominante_deg": 69.0
+            "vent_max_kmh": 23.6,
+            "direction_dominante_deg": 65.0
           },
           {
             "date": "2026-06-15",
-            "vent_moyen_kmh": 10.8,
+            "vent_moyen_kmh": 10.6,
             "vent_max_kmh": 13.5,
-            "direction_dominante_deg": 61.0
+            "direction_dominante_deg": 82.0
           },
           {
             "date": "2026-06-16",
@@ -3862,13 +3991,13 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 55.1,
+          "score": 74.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3892,18 +4021,18 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 54.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 86.5,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 99.6,
               "poids_applique": 0.3,
               "disponible": true
             },
@@ -3922,13 +4051,13 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 53.1,
+          "score": 72.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3952,13 +4081,13 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 51.7,
+          "score": 71.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -3982,13 +4111,13 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 49.2,
-          "niveau": 2,
-          "nom_niveau": "Vigilance",
-          "couleur": "#F1C40F",
+          "score": 69.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -4012,13 +4141,13 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 50.7,
+          "score": 70.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.4,
               "disponible": true
             },
@@ -4042,13 +4171,13 @@
         {
           "horizon": "J+7",
           "date": "2026-06-18",
-          "score": 44.4,
-          "niveau": 2,
-          "nom_niveau": "Vigilance",
-          "couleur": "#F1C40F",
+          "score": 72.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 49.4,
+              "valeur": 98.9,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -4107,9 +4236,9 @@
         "previsions": [
           {
             "date": "2026-06-11",
-            "vent_moyen_kmh": 20.5,
-            "vent_max_kmh": 28.4,
-            "direction_dominante_deg": 238.0
+            "vent_moyen_kmh": 21.0,
+            "vent_max_kmh": 29.0,
+            "direction_dominante_deg": 240.0
           },
           {
             "date": "2026-06-12",
@@ -4119,21 +4248,21 @@
           },
           {
             "date": "2026-06-13",
-            "vent_moyen_kmh": 11.6,
-            "vent_max_kmh": 19.3,
-            "direction_dominante_deg": 66.0
+            "vent_moyen_kmh": 9.9,
+            "vent_max_kmh": 15.1,
+            "direction_dominante_deg": 360.0
           },
           {
             "date": "2026-06-14",
             "vent_moyen_kmh": 16.1,
-            "vent_max_kmh": 20.6,
-            "direction_dominante_deg": 69.0
+            "vent_max_kmh": 23.6,
+            "direction_dominante_deg": 65.0
           },
           {
             "date": "2026-06-15",
-            "vent_moyen_kmh": 10.8,
+            "vent_moyen_kmh": 10.6,
             "vent_max_kmh": 13.5,
-            "direction_dominante_deg": 61.0
+            "direction_dominante_deg": 82.0
           },
           {
             "date": "2026-06-16",
@@ -4277,29 +4406,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-12",
-          "score": 65.7,
+          "score": 70.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 59.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4307,29 +4436,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-13",
-          "score": 64.5,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 80.5,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 92.4,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 55.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4337,29 +4466,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-14",
-          "score": 62.8,
+          "score": 68.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 49.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4367,29 +4496,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-15",
-          "score": 60.8,
+          "score": 67.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 58.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 42.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4397,29 +4526,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-16",
-          "score": 58.8,
+          "score": 63.6,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 49.6,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 35.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4427,29 +4556,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-17",
-          "score": 56.8,
+          "score": 66.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
-              "poids_applique": 0.571,
+              "valeur": 100.0,
+              "poids_applique": 0.4,
               "disponible": true
             },
             "vent": {
-              "valeur": null,
-              "poids_applique": 0,
-              "disponible": false
+              "valeur": 64.0,
+              "poids_applique": 0.3,
+              "disponible": true
             },
             "coef_maree": {
               "valeur": 28.0,
-              "poids_applique": 0.286,
+              "poids_applique": 0.2,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 17.4,
-              "poids_applique": 0.143,
+              "poids_applique": 0.1,
               "disponible": true
             }
           }
@@ -4457,13 +4586,13 @@
         {
           "horizon": "J+7",
           "date": "2026-06-18",
-          "score": 56.3,
+          "score": 67.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
-              "valeur": 81.1,
+              "valeur": 100.0,
               "poids_applique": 0.571,
               "disponible": true
             },
@@ -4518,9 +4647,52 @@
         "avertissement": null
       },
       "meteo": {
-        "source": null,
-        "previsions": [],
-        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-06-11",
+            "vent_moyen_kmh": 21.9,
+            "vent_max_kmh": 33.4,
+            "direction_dominante_deg": 235.0
+          },
+          {
+            "date": "2026-06-12",
+            "vent_moyen_kmh": 18.2,
+            "vent_max_kmh": 26.2,
+            "direction_dominante_deg": 266.0
+          },
+          {
+            "date": "2026-06-13",
+            "vent_moyen_kmh": 8.1,
+            "vent_max_kmh": 14.3,
+            "direction_dominante_deg": 354.0
+          },
+          {
+            "date": "2026-06-14",
+            "vent_moyen_kmh": 10.0,
+            "vent_max_kmh": 14.3,
+            "direction_dominante_deg": 74.0
+          },
+          {
+            "date": "2026-06-15",
+            "vent_moyen_kmh": 10.2,
+            "vent_max_kmh": 14.8,
+            "direction_dominante_deg": 97.0
+          },
+          {
+            "date": "2026-06-16",
+            "vent_moyen_kmh": 7.9,
+            "vent_max_kmh": 12.7,
+            "direction_dominante_deg": 271.0
+          },
+          {
+            "date": "2026-06-17",
+            "vent_moyen_kmh": 4.2,
+            "vent_max_kmh": 7.9,
+            "direction_dominante_deg": 338.0
+          }
+        ],
+        "avertissement": null
       },
       "maree": {
         "port": "Roscoff",
