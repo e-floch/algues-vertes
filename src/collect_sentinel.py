@@ -246,9 +246,16 @@ def _extraire_stat_la_plus_recente(reponse_api: dict) -> dict | None:
         stats = outputs[nom_bande].get("stats", {})
         if stats.get("sampleCount", 0) == 0:
             continue
+        # Extraction des percentiles (p10, p50=médiane, p90) si disponibles.
+        # La médiane est plus robuste que la moyenne pour le FAI car quelques
+        # pixels aberrants (eau turbide, reflets) ne la dévient pas.
+        percentiles = stats.get("percentiles", {})
         return {
             "date_image": it.get("interval", {}).get("from", "")[:10],
             "mean": stats.get("mean"),
+            "percentile_10": percentiles.get("10.0"),
+            "percentile_50": percentiles.get("50.0"),
+            "percentile_90": percentiles.get("90.0"),
             "min": stats.get("min"),
             "max": stats.get("max"),
             "stDev": stats.get("stDev"),
