@@ -474,41 +474,44 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         const dateImg = site.sentinel.image_la_plus_recente || "";
         const legende = `<span style="color:#00dc32;font-weight:600">■</span> algues flottantes · ${dateImg}`;
 
-        // Image pélagique (~30 km) — zone du calcul FAI
+        // Deux images côte à côte : pélagique (FAI) + côtière (NDVI)
+        html += `<div style="display:flex;gap:10px;flex-wrap:wrap">`;
+
         if (site.sentinel.image_miniature_pelagique) {
           const fai = site.sentinel.fai_zone_2;
           const faiVal = fai ? (fai.percentile_50 ?? fai.mean) : null;
-          const faiTxt = faiVal !== null ? ` · FAI médian = ${faiVal.toFixed(4)}` : "";
+          const faiTxt = faiVal !== null ? `FAI médian = ${faiVal.toFixed(4)}` : "";
           html += `
-            <div style="margin-bottom:10px">
+            <div style="flex:1;min-width:140px">
               <div style="font-size:11px;font-weight:600;margin-bottom:3px;color:var(--texte)">
-                Zone pélagique (~30 km) — utilisée pour le calcul FAI
+                Zone pélagique (~30 km) — FAI
               </div>
               <img src="${site.sentinel.image_miniature_pelagique}"
                    alt="Zone pélagique Sentinel-2"
-                   title="Zone pélagique — zone du calcul FAI"
-                   style="width:100%;max-width:300px;border-radius:6px;border:2px solid #1a73e8;display:block">
-              <div style="font-size:11px;color:var(--texte-faible);margin-top:3px">${legende}${faiTxt}</div>
+                   style="width:100%;border-radius:6px;border:2px solid #1a73e8;display:block">
+              <div style="font-size:10px;color:var(--texte-faible);margin-top:3px">${legende}<br>${faiTxt}</div>
             </div>`;
         }
 
-        // Image côtière (~6 km) — zone du calcul NDVI
         if (site.sentinel.image_miniature) {
           const ndvi = site.sentinel.ndvi_zone_1;
           const ndviVal = ndvi ? ndvi.mean : null;
-          const ndviTxt = ndviVal !== null ? ` · NDVI moy = ${ndviVal.toFixed(3)}` : "";
+          const ndviTxt = ndviVal !== null ? `NDVI moy = ${ndviVal.toFixed(3)}` : "";
           html += `
-            <div style="margin-bottom:8px">
+            <div style="flex:1;min-width:140px">
               <div style="font-size:11px;font-weight:600;margin-bottom:3px;color:var(--texte)">
-                Zone côtière (~6 km) — utilisée pour le calcul NDVI
+                Zone côtière (~6 km) — NDVI
               </div>
               <img src="${site.sentinel.image_miniature}"
                    alt="Zone côtière Sentinel-2"
-                   title="Zone côtière — zone du calcul NDVI"
-                   style="width:100%;max-width:300px;border-radius:6px;border:2px solid #2ecc71;display:block">
-              <div style="font-size:11px;color:var(--texte-faible);margin-top:3px">${legende}${ndviTxt}</div>
+                   style="width:100%;border-radius:6px;border:2px solid #2ecc71;display:block">
+              <div style="font-size:10px;color:var(--texte-faible);margin-top:3px">${legende}<br>${ndviTxt}</div>
             </div>`;
-        } else if (!site.sentinel.image_miniature_pelagique && site.sentinel.image_la_plus_recente) {
+        }
+
+        html += `</div>`;
+
+        if (!site.sentinel.image_miniature_pelagique && !site.sentinel.image_miniature && site.sentinel.image_la_plus_recente) {
           html += `<div>Image la plus récente : <strong>${site.sentinel.image_la_plus_recente}</strong></div>`;
         }
 
