@@ -306,6 +306,8 @@ def construire_etat_du_jour(
         )
         risque["sentinel"] = {
             "image_la_plus_recente": s_sent.get("image_la_plus_recente"),
+            # Image récente disponible mais non exploitée (nuages > seuil qualité)
+            "image_non_exploitee": s_sent.get("image_non_exploitee"),
             # Zone côtière (~6 km) : image utilisée pour le NDVI biomasse côtière
             "image_miniature": s_sent.get("image_miniature"),
             # Zone pélagique (~30 km) : image de la zone où le FAI est calculé

@@ -47,6 +47,11 @@ COUVERTURE_NUAGEUSE_MAX = 80.0
 # Nombre de jours à remonter pour trouver une image valide
 FENETRE_RECHERCHE_JOURS = 14
 
+# Seuil de pixels noData (nuages + non-eau) pour qualifier une image FAI d'exploitable.
+# Au-delà de 30 %, l'image pélagique est considérée "trop nuageuse" et on remonte
+# dans le temps à la recherche d'une image plus nette.
+SEUIL_EXPLOITATION_FAI = 0.30
+
 
 def _recuperer_token_oauth() -> str | None:
     """Renvoie un token OAuth2 valide, ou None si l'authentification échoue."""
@@ -265,6 +270,51 @@ def _extraire_stat_la_plus_recente(reponse_api: dict) -> dict | None:
     return None
 
 
+def _extraire_stat_la_plus_recente_qualite(
+    reponse_api: dict, seuil_no_data: float
+) -> dict | None:
+    """Comme _extraire_stat_la_plus_recente mais en sautant les intervalles où
+    noDataCount / (sampleCount + noDataCount) >= seuil_no_data.
+
+    Retourne None si aucune image ne satisfait le seuil dans la fenêtre.
+    """
+    if not reponse_api:
+        return None
+    intervalles = reponse_api.get("data", [])
+    intervalles_tries = sorted(
+        intervalles,
+        key=lambda d: d.get("interval", {}).get("from", ""),
+        reverse=True,
+    )
+    for it in intervalles_tries:
+        outputs = it.get("outputs", {}).get("default", {}).get("bands", {})
+        if not outputs:
+            continue
+        nom_bande = next(iter(outputs))
+        stats = outputs[nom_bande].get("stats", {})
+        sample = stats.get("sampleCount", 0)
+        if sample == 0:
+            continue
+        no_data = stats.get("noDataCount", 0)
+        total = sample + no_data
+        if total > 0 and no_data / total >= seuil_no_data:
+            continue  # Image trop nuageuse, on remonte dans le temps
+        percentiles = stats.get("percentiles", {})
+        return {
+            "date_image": it.get("interval", {}).get("from", "")[:10],
+            "mean": stats.get("mean"),
+            "percentile_10": percentiles.get("10.0"),
+            "percentile_50": percentiles.get("50.0"),
+            "percentile_90": percentiles.get("90.0"),
+            "min": stats.get("min"),
+            "max": stats.get("max"),
+            "stDev": stats.get("stDev"),
+            "sampleCount": sample,
+            "noDataCount": no_data,
+        }
+    return None
+
+
 def collecter_indice_site(
     site: dict,
     aujourd_hui: date,
@@ -281,6 +331,7 @@ def collecter_indice_site(
         "ndvi_zone_1_cotier": None,
         "fai_zone_2_pelagique": None,
         "image_la_plus_recente": None,
+        "image_non_exploitee": None,  # {date_image, nuage_pct} si image récente trop nuageuse
         "avertissement": None,
     }
 
@@ -328,9 +379,27 @@ def collecter_indice_site(
             "https://shapps.dataspace.copernicus.eu/dashboard/"
         )
         return resultat
-    stat = _extraire_stat_la_plus_recente(rep)
-    if stat:
-        resultat["fai_zone_2_pelagique"] = stat
+    # Image la plus récente disponible (sans filtre qualité)
+    stat_brute = _extraire_stat_la_plus_recente(rep)
+    # Image la plus récente exploitable (noData < SEUIL_EXPLOITATION_FAI)
+    stat_qualite = _extraire_stat_la_plus_recente_qualite(rep, SEUIL_EXPLOITATION_FAI) if rep else None
+
+    if stat_qualite:
+        resultat["fai_zone_2_pelagique"] = stat_qualite
+        # Si la plus récente disponible est plus récente que la retenue → image non exploitée
+        if stat_brute and stat_brute["date_image"] > stat_qualite["date_image"]:
+            total_brute = stat_brute["sampleCount"] + stat_brute["noDataCount"]
+            nuage_pct = (
+                round(stat_brute["noDataCount"] / total_brute * 100)
+                if total_brute > 0 else 0
+            )
+            resultat["image_non_exploitee"] = {
+                "date_image": stat_brute["date_image"],
+                "nuage_pct": nuage_pct,
+            }
+    elif stat_brute:
+        # Aucune image suffisamment nette → utiliser la moins mauvaise
+        resultat["fai_zone_2_pelagique"] = stat_brute
 
     # Avertissement si l'image la plus récente est ancienne
     if resultat["image_la_plus_recente"]:

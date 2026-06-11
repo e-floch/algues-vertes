@@ -472,6 +472,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       if (site.sentinel) {
         html += `<div class="section"><h3>Sentinel-2</h3>`;
         const dateImg = site.sentinel.image_la_plus_recente || "—";
+        const imgNonExpl = site.sentinel.image_non_exploitee; // {date_image, nuage_pct} ou null
 
         // Estimation couverture nuageuse depuis fai_zone_2 (noDataCount / total)
         const faiRaw = site.sentinel.fai_zone_2;
@@ -491,9 +492,21 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
             badgeNuage = `<span style="display:inline-block;padding:2px 8px;border-radius:4px;background:${coulNuage};color:#fff;font-size:11px;font-weight:600;margin-left:8px">${labelNuage}</span>`;
           }
         }
-        html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
-          Dernière image : <strong style="color:var(--texte)">${dateImg}</strong>${badgeNuage}
-        </div>`;
+
+        if (imgNonExpl && imgNonExpl.date_image) {
+          // Une image plus récente existe mais n'a pas été exploitée (trop nuageuse)
+          html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:4px">
+            Image disponible : <strong style="color:#e67e22">${imgNonExpl.date_image}</strong>
+            <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:#e67e22;color:#fff;font-size:11px;font-weight:600;margin-left:6px">non exploitée — ${imgNonExpl.nuage_pct}% nuages</span>
+          </div>
+          <div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
+            Statistiques FAI basées sur : <strong style="color:var(--texte)">${dateImg}</strong>${badgeNuage}
+          </div>`;
+        } else {
+          html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
+            Dernière image : <strong style="color:var(--texte)">${dateImg}</strong>${badgeNuage}
+          </div>`;
+        }
 
         const legende = `<span style="color:#00dc32;font-weight:600">■</span> algues flottantes · ${dateImg}`;
 

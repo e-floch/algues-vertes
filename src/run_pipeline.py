@@ -29,9 +29,9 @@ from utils import (
 logger = get_logger("run_pipeline")
 
 # Sentinel-2 repasse sur la Bretagne tous les ~5 jours (S2A + S2B).
-# Inutile d'appeler l'API Statistics chaque jour : on réutilise les données
-# existantes si la dernière image connue date de moins de SENTINEL_CACHE_JOURS.
-SENTINEL_CACHE_JOURS = 14
+# On réutilise les données existantes si la dernière image exploitée date de moins
+# de SENTINEL_CACHE_JOURS. Mis à 6 pour détecter les nouvelles images à chaque passage.
+SENTINEL_CACHE_JOURS = 6
 
 
 def _recuperer_sentinel_cache(jour: date) -> dict | None:
@@ -82,6 +82,8 @@ def _recuperer_sentinel_cache(jour: date) -> dict | None:
                         "ndvi_zone_1_cotier":   sent_out.get("ndvi_zone_1"),
                         "fai_zone_2_pelagique": sent_out.get("fai_zone_2"),
                         "image_la_plus_recente": sent_out.get("image_la_plus_recente"),
+                        # Image récente non exploitée (nuages > seuil qualité)
+                        "image_non_exploitee":   sent_out.get("image_non_exploitee"),
                         # Les deux miniatures sont retéléchargées à chaque run pour
                         # rester à jour avec l'evalscript courant.
                         "image_miniature":           None,  # zone côtière (~6 km, NDVI)
