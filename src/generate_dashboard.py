@@ -137,16 +137,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       #panneau { width: 100% !important; height: auto !important; max-height: none !important; }
     }
     #carte {
-      flex: 1;
+      width: 38%;
+      min-width: 280px;
       min-height: 400px;
+      flex-shrink: 0;
     }
     #panneau {
-      width: 420px;
-      max-width: 100%;
+      flex: 1;
+      min-width: 0;
       background: var(--bg-panel);
       border-left: 1px solid var(--bord);
       overflow-y: auto;
-      padding: 18px 20px;
+      padding: 16px 20px;
     }
     #panneau h2 {
       margin: 0 0 4px 0;
@@ -168,27 +170,38 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       margin: 0 0 8px 0;
       font-weight: 600;
     }
-    .bandeau-niveau {
-      display: flex;
-      align-items: center;
-      padding: 10px 12px;
-      border-radius: 4px;
+    /* Grille J+1→J+7 en 7 colonnes */
+    .previsions-grille {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-bottom: 4px;
+    }
+    .prev-carte {
+      border-radius: 5px;
+      padding: 8px 4px;
+      text-align: center;
       color: white;
-      margin-bottom: 6px;
-      font-size: 13px;
+      font-size: 11px;
+      line-height: 1.4;
+      cursor: default;
     }
-    .bandeau-niveau .horizon {
-      font-weight: 600;
-      width: 50px;
+    .prev-carte .prev-horizon {
+      font-weight: 700;
+      font-size: 12px;
     }
-    .bandeau-niveau .nom {
-      flex-grow: 1;
+    .prev-carte .prev-nom {
+      opacity: 0.92;
+      font-size: 10px;
     }
-    .bandeau-niveau .score {
+    .prev-carte .prev-score {
       opacity: 0.85;
+      font-size: 10px;
+      margin-top: 2px;
     }
+    .niveau-2 .prev-carte, .niveau-2 { color: #5a4500; }
     .niveau-1 { background-color: var(--niveau-1); }
-    .niveau-2 { background-color: var(--niveau-2); color: #5a4500; }
+    .niveau-2 { background-color: var(--niveau-2); color: #5a4500 !important; }
     .niveau-3 { background-color: var(--niveau-3); }
     .niveau-4 { background-color: var(--niveau-4); }
     .niveau-indispo { background-color: #95a5a6; }
@@ -415,68 +428,90 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="baie">${escapeHtml(site.baie)}${site.year_round ? " · surveillance toute l'année" : ""}</div>
       `;
 
-      // Niveaux J+1 → J+7
-      html += `<div class="section"><h3>Prévision J+1 → J+7</h3>`;
+      // Niveaux J+1 → J+7 — grille 7 colonnes
+      html += `<div class="section"><h3>Prévision J+1 → J+7</h3><div class="previsions-grille">`;
       site.previsions.forEach(p => {
         const cls = p.niveau ? `niveau-${p.niveau}` : "niveau-indispo";
         const score = p.score !== null && p.score !== undefined
-          ? `score ${p.score.toFixed(0)}/100`
-          : "score indisponible";
+          ? `${p.score.toFixed(0)}/100`
+          : "—";
+        const nomCourt = (p.nom_niveau || "").replace("Vigilance", "Vigil.").replace("Critique", "Crit.");
         html += `
-          <div class="bandeau-niveau ${cls}">
-            <span class="horizon">${p.horizon}</span>
-            <span class="nom">${escapeHtml(p.nom_niveau)}</span>
-            <span class="score">${score}</span>
+          <div class="prev-carte ${cls}">
+            <div class="prev-horizon">${escapeHtml(p.horizon)}</div>
+            <div class="prev-nom">${escapeHtml(nomCourt)}</div>
+            <div class="prev-score">${score}</div>
           </div>`;
       });
-      html += `</div>`;
+      html += `</div></div>`;
 
-      // Détail des facteurs (J+1)
+      // Détail des facteurs (J+1) avec zone de référence
       const j1 = site.previsions[0];
       if (j1 && j1.facteurs) {
         html += `<div class="section"><h3>Détail des facteurs (J+1)</h3>
           <table class="facteurs-table">
-            <tr><th>Facteur</th><th>Valeur</th><th>Poids appliqué</th></tr>`;
-        const noms = {
-          fai_zone_2: "Masse algale (FAI zone 2)",
-          vent: "Vent",
-          coef_maree: "Coefficient marée",
-          ndvi_zone_1: "Biomasse côtière (NDVI)",
+            <tr><th>Facteur</th><th>Valeur</th><th>Poids</th><th style="font-size:10px;color:var(--texte-faible)">Zone de référence</th></tr>`;
+        const meta = {
+          fai_zone_2:  { label: "Masse algale (FAI zone 2)", zone: "Zone pélagique ~30 km · Sentinel-2 · médiane p50" },
+          vent:        { label: "Vent",                      zone: "Prévision météo J+1→J+7 · Open-Meteo" },
+          coef_maree:  { label: "Coefficient marée",         zone: "Port de référence · SHOM" },
+          ndvi_zone_1: { label: "Biomasse côtière (NDVI)",   zone: "Zone côtière ~6 km · Sentinel-2 · moyenne" },
         };
-        for (const [k, label] of Object.entries(noms)) {
+        for (const [k, m] of Object.entries(meta)) {
           const f = j1.facteurs[k] || {};
           if (f.disponible) {
-            html += `<tr><td>${label}</td><td>${(f.valeur ?? "—").toString()}</td><td>${(f.poids_applique * 100).toFixed(0)} %</td></tr>`;
+            html += `<tr><td>${m.label}</td><td>${(f.valeur ?? "—").toString()}</td><td>${(f.poids_applique * 100).toFixed(0)} %</td><td style="font-size:10px;color:var(--texte-faible)">${m.zone}</td></tr>`;
           } else {
-            html += `<tr class="dispo-non"><td>${label}</td><td colspan="2">indisponible</td></tr>`;
+            html += `<tr class="dispo-non"><td>${m.label}</td><td colspan="3">indisponible</td></tr>`;
           }
         }
         html += `</table></div>`;
       }
 
-      // Données Sentinel-2
+      // Données Sentinel-2 — deux images : zone côtière (NDVI) et pélagique (FAI)
       if (site.sentinel) {
         html += `<div class="section"><h3>Sentinel-2</h3>`;
+        const dateImg = site.sentinel.image_la_plus_recente || "";
+        const legende = `<span style="color:#00dc32;font-weight:600">■</span> algues flottantes · ${dateImg}`;
+
+        // Image pélagique (~30 km) — zone du calcul FAI
+        if (site.sentinel.image_miniature_pelagique) {
+          const fai = site.sentinel.fai_zone_2;
+          const faiVal = fai ? (fai.percentile_50 ?? fai.mean) : null;
+          const faiTxt = faiVal !== null ? ` · FAI médian = ${faiVal.toFixed(4)}` : "";
+          html += `
+            <div style="margin-bottom:10px">
+              <div style="font-size:11px;font-weight:600;margin-bottom:3px;color:var(--texte)">
+                Zone pélagique (~30 km) — utilisée pour le calcul FAI
+              </div>
+              <img src="${site.sentinel.image_miniature_pelagique}"
+                   alt="Zone pélagique Sentinel-2"
+                   title="Zone pélagique — zone du calcul FAI"
+                   style="width:100%;max-width:300px;border-radius:6px;border:2px solid #1a73e8;display:block">
+              <div style="font-size:11px;color:var(--texte-faible);margin-top:3px">${legende}${faiTxt}</div>
+            </div>`;
+        }
+
+        // Image côtière (~6 km) — zone du calcul NDVI
         if (site.sentinel.image_miniature) {
+          const ndvi = site.sentinel.ndvi_zone_1;
+          const ndviVal = ndvi ? ndvi.mean : null;
+          const ndviTxt = ndviVal !== null ? ` · NDVI moy = ${ndviVal.toFixed(3)}` : "";
           html += `
             <div style="margin-bottom:8px">
-              <img src="${site.sentinel.image_miniature}"
-                   alt="Image Sentinel-2 couleurs naturelles"
-                   title="Couleurs naturelles — algues flottantes détectées en vert vif"
-                   style="width:100%;max-width:300px;border-radius:6px;border:1px solid var(--bord);display:block">
-              <div style="font-size:11px;color:var(--texte-faible);margin-top:4px">
-                Sentinel-2 · <span style="color:#00dc32;font-weight:600">■</span> algues flottantes détectées · ${site.sentinel.image_la_plus_recente || ""}
+              <div style="font-size:11px;font-weight:600;margin-bottom:3px;color:var(--texte)">
+                Zone côtière (~6 km) — utilisée pour le calcul NDVI
               </div>
+              <img src="${site.sentinel.image_miniature}"
+                   alt="Zone côtière Sentinel-2"
+                   title="Zone côtière — zone du calcul NDVI"
+                   style="width:100%;max-width:300px;border-radius:6px;border:2px solid #2ecc71;display:block">
+              <div style="font-size:11px;color:var(--texte-faible);margin-top:3px">${legende}${ndviTxt}</div>
             </div>`;
-        } else if (site.sentinel.image_la_plus_recente) {
+        } else if (!site.sentinel.image_miniature_pelagique && site.sentinel.image_la_plus_recente) {
           html += `<div>Image la plus récente : <strong>${site.sentinel.image_la_plus_recente}</strong></div>`;
         }
-        if (site.sentinel.ndvi_zone_1 && site.sentinel.ndvi_zone_1.mean !== null) {
-          html += `<div>NDVI moyen côtier : ${site.sentinel.ndvi_zone_1.mean.toFixed(3)}</div>`;
-        }
-        if (site.sentinel.fai_zone_2 && site.sentinel.fai_zone_2.mean !== null) {
-          html += `<div>FAI moyen pélagique : ${site.sentinel.fai_zone_2.mean.toFixed(4)}</div>`;
-        }
+
         if (site.sentinel.avertissement) {
           html += `<div class="avert">${escapeHtml(site.sentinel.avertissement)}</div>`;
         }

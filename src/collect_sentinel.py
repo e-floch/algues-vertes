@@ -200,6 +200,19 @@ def _appeler_process_api(
             json=payload,
             timeout=60,
         )
+        # Détection explicite du manque de crédits CDSE avant raise_for_status
+        if reponse.status_code == 403:
+            try:
+                code_erreur = reponse.json().get("error", {}).get("code", "")
+            except Exception:
+                code_erreur = ""
+            if code_erreur == "ACCESS_INSUFFICIENT_PROCESSING_UNITS":
+                logger.error(
+                    "Crédits CDSE épuisés — recharger le compte sur "
+                    "https://shapps.dataspace.copernicus.eu/dashboard/"
+                )
+                # Valeur sentinelle distincte de None pour signaler ce cas précis
+                return "CREDITS_EPUISES"
         reponse.raise_for_status()
         return reponse.json()
     except requests.RequestException as exc:
@@ -233,9 +246,16 @@ def _extraire_stat_la_plus_recente(reponse_api: dict) -> dict | None:
         stats = outputs[nom_bande].get("stats", {})
         if stats.get("sampleCount", 0) == 0:
             continue
+        # Extraction des percentiles (p10, p50=médiane, p90) si disponibles.
+        # La médiane est plus robuste que la moyenne pour le FAI car quelques
+        # pixels aberrants (eau turbide, reflets) ne la dévient pas.
+        percentiles = stats.get("percentiles", {})
         return {
             "date_image": it.get("interval", {}).get("from", "")[:10],
             "mean": stats.get("mean"),
+            "percentile_10": percentiles.get("10.0"),
+            "percentile_50": percentiles.get("50.0"),
+            "percentile_90": percentiles.get("90.0"),
             "min": stats.get("min"),
             "max": stats.get("max"),
             "stDev": stats.get("stDev"),
@@ -269,6 +289,12 @@ def collecter_indice_site(
         token, zones["zone_0_estran"], date_debut, date_fin,
         EVALSCRIPT_NDVI, resolution=0.0001,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["ndvi_zone_0_estran"] = stat
@@ -279,6 +305,12 @@ def collecter_indice_site(
         token, zones["zone_1_cotier"], date_debut, date_fin,
         EVALSCRIPT_NDVI, resolution=0.0001,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["ndvi_zone_1_cotier"] = stat
@@ -290,6 +322,12 @@ def collecter_indice_site(
         token, zones["zone_2_pelagique"], date_debut, date_fin,
         EVALSCRIPT_FAI, resolution=0.0002,
     )
+    if rep == "CREDITS_EPUISES":
+        resultat["avertissement"] = (
+            "Crédits CDSE épuisés — recharger le compte sur "
+            "https://shapps.dataspace.copernicus.eu/dashboard/"
+        )
+        return resultat
     stat = _extraire_stat_la_plus_recente(rep)
     if stat:
         resultat["fai_zone_2_pelagique"] = stat
@@ -439,15 +477,29 @@ def collecter_tous_les_sites(aujourd_hui: date | None = None) -> dict:
         try:
             res = collecter_indice_site(site, aujourd_hui, token)
 
-            # Téléchargement de la miniature fausse-couleur (zone côtière, 3 km)
+            # Téléchargement des miniatures pour les deux zones :
+            # - zone côtière (zone 1, ~6 km) : utilisée pour le NDVI
+            # - zone pélagique (zone 2, ~30 km) : utilisée pour le FAI
             zones = get_zones(site)
             date_debut = aujourd_hui - timedelta(days=FENETRE_RECHERCHE_JOURS)
-            chemin_img = dossier_images / f"{site['id']}.jpg"
-            ok = _telecharger_image_site(
-                token, zones["zone_1_cotier"], date_debut, aujourd_hui, chemin_img
+
+            chemin_cotier = dossier_images / f"{site['id']}.jpg"
+            ok_cotier = _telecharger_image_site(
+                token, zones["zone_1_cotier"], date_debut, aujourd_hui, chemin_cotier
             )
-            # Chemin relatif accessible depuis docs/index.html
-            res["image_miniature"] = f"images/{aujourd_hui.isoformat()}/{site['id']}.jpg" if ok else None
+            res["image_miniature"] = (
+                f"images/{aujourd_hui.isoformat()}/{site['id']}.jpg" if ok_cotier else None
+            )
+
+            chemin_pelagique = dossier_images / f"{site['id']}_pelagique.jpg"
+            ok_pelagique = _telecharger_image_site(
+                token, zones["zone_2_pelagique"], date_debut, aujourd_hui, chemin_pelagique,
+                largeur=400, hauteur=400,
+            )
+            res["image_miniature_pelagique"] = (
+                f"images/{aujourd_hui.isoformat()}/{site['id']}_pelagique.jpg"
+                if ok_pelagique else None
+            )
 
             resultats_par_site[site["id"]] = res
         except Exception as exc:  # On ne bloque pas le pipeline pour un site
@@ -465,6 +517,63 @@ def collecter_tous_les_sites(aujourd_hui: date | None = None) -> dict:
         "statut": "ok",
         "sites": resultats_par_site,
     }
+
+
+def telecharger_miniatures(aujourd_hui: date | None = None) -> dict[str, dict]:
+    """Télécharge les miniatures zone côtière ET zone pélagique pour tous les sites.
+
+    Utilisé en mode cache quand les statistiques NDVI/FAI sont réutilisées
+    mais que les images doivent être régénérées avec l'evalscript courant.
+    Coût : ~4 PU/site (2 images × ~2 PU).
+
+    Renvoie un dict {site_id: {"cotier": chemin|None, "pelagique": chemin|None}}.
+    """
+    charger_env()
+    if aujourd_hui is None:
+        aujourd_hui = date.today()
+
+    token = _recuperer_token_oauth()
+    if not token:
+        logger.warning("Miniatures : impossible d'obtenir un token CDSE.")
+        return {}
+
+    dossier_images = (
+        Path(__file__).parent.parent / "docs" / "images" / aujourd_hui.isoformat()
+    )
+    date_debut = aujourd_hui - timedelta(days=FENETRE_RECHERCHE_JOURS)
+    resultats = {}
+
+    for site in SITES:
+        zones = get_zones(site)
+
+        # Zone côtière (~6 km) — utilisée pour le NDVI
+        chemin_cotier = dossier_images / f"{site['id']}.jpg"
+        ok_cotier = _telecharger_image_site(
+            token, zones["zone_1_cotier"], date_debut, aujourd_hui, chemin_cotier
+        )
+
+        # Zone pélagique (~30 km) — utilisée pour le FAI
+        chemin_pelagique = dossier_images / f"{site['id']}_pelagique.jpg"
+        ok_pelagique = _telecharger_image_site(
+            token, zones["zone_2_pelagique"], date_debut, aujourd_hui, chemin_pelagique,
+            largeur=400, hauteur=400,
+        )
+
+        resultats[site["id"]] = {
+            "cotier": (
+                f"images/{aujourd_hui.isoformat()}/{site['id']}.jpg" if ok_cotier else None
+            ),
+            "pelagique": (
+                f"images/{aujourd_hui.isoformat()}/{site['id']}_pelagique.jpg"
+                if ok_pelagique else None
+            ),
+        }
+        logger.info(
+            "Miniatures %s : côtier=%s, pélagique=%s",
+            site["id"], "ok" if ok_cotier else "échec", "ok" if ok_pelagique else "échec",
+        )
+    return resultats
+
 
 
 if __name__ == "__main__":

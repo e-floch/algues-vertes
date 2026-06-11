@@ -2,7 +2,7 @@
 
 Tableau de bord prédictif quotidien d'échouage d'algues vertes (*Ulva spp.*) sur les côtes bretonnes.
 
-Le système collecte chaque soir à **18h heure française** des données satellites (Sentinel-2), météorologiques (vent) et de marée, calcule un score de risque pour chaque site et chaque horizon **J+1 à J+7**, puis publie automatiquement la mise à jour sur une page web protégée par mot de passe.
+Le système collecte chaque soir à **18h heure française** des données satellites (Sentinel-2), météorologiques (vent) et de marée, calcule un score de risque pour chaque site et chaque horizon **J+1 à J+7**, puis publie automatiquement la mise à jour sur une page web publique hébergée par GitHub Pages.
 
 ---
 
@@ -12,7 +12,7 @@ Le système collecte chaque soir à **18h heure française** des données satell
 2. [Installation pas à pas (Mac)](#2-installation-pas-à-pas-mac)
 3. [Création des comptes et obtention des clés API](#3-création-des-comptes-et-obtention-des-clés-api)
 4. [Première exécution en local](#4-première-exécution-en-local)
-5. [Mise en ligne avec GitHub et Netlify](#5-mise-en-ligne-avec-github-et-netlify)
+5. [Mise en ligne avec GitHub et GitHub Pages](#5-mise-en-ligne-avec-github-et-github-pages)
 6. [Activer l'automatisation quotidienne (GitHub Actions)](#6-activer-lautomatisation-quotidienne-github-actions)
 7. [Utilisation au quotidien](#7-utilisation-au-quotidien)
 8. [Calibrer le modèle avec des observations terrain](#8-calibrer-le-modèle-avec-des-observations-terrain)
@@ -26,7 +26,7 @@ Le système collecte chaque soir à **18h heure française** des données satell
 | Élément | Choix technique |
 |---|---|
 | Langage | Python 3.11+ |
-| Hébergement | Netlify (statique) avec mot de passe |
+| Hébergement | GitHub Pages (statique, gratuit, dépôt public) |
 | Automatisation | GitHub Actions (cron quotidien à 17h UTC) |
 | Stockage historique | Fichiers JSON versionnés dans le dépôt GitHub (un par jour) |
 | Frontend | HTML + CSS + JavaScript pur, carte Leaflet via CDN |
@@ -40,12 +40,16 @@ Le système collecte chaque soir à **18h heure française** des données satell
 
 **Modèle de score (0 à 100)** :
 
-| Facteur | Poids par défaut |
-|---|---|
-| FAI moyen en zone 2 (pélagique) | 40 % |
-| Vent favorable à l'échouage | 30 % |
-| Coefficient de marée | 20 % |
-| NDVI moyen en zone 1 (côtier) | 10 % |
+| Facteur | Poids par défaut | Indicateur utilisé |
+|---|---|---|
+| FAI médian en zone 2 (pélagique) | 40 % | Médiane p50 sur pixels eau (SCL=6) — sature à FAI = 0,05 |
+| Vent favorable à l'échouage | 30 % | Direction + force (optimal 10-25 km/h) |
+| Coefficient de marée | 20 % | Linéaire coef 20→0, coef 120→100 |
+| NDVI médian en zone 1 (côtier) | 10 % | Linéaire 0→0, 0,4→100 |
+
+> **Note technique (FAI)** : le score FAI utilise la **médiane** (percentile 50) plutôt que la moyenne pour éviter qu'un petit nombre de pixels aberrants (eau turbide, reflets solaires, bords de nuages mal classifiés) ne gonfle artificiellement le score. Si la zone contient moins de 50 pixels eau valides, le FAI est considéré comme non représentatif et ignoré. L'evalscript Statistics ne retient que les pixels SCL=6 (eau confirmée).
+
+**Cache Sentinel-2** : pour économiser les crédits CDSE (~100 PU/site/run), les statistiques NDVI/FAI sont réutilisées jusqu'à 14 jours si l'image la plus récente est encore valide. Les miniatures (images couleur) sont elles retéléchargées à chaque run (~2 PU/site).
 
 **Niveaux d'alerte** : 1 Veille (0-25), 2 Vigilance (26-50), 3 Alerte (51-75), 4 Critique (76-100).
 
@@ -146,12 +150,19 @@ ssh -T git@github.com
 
 ### 3.2 Compte Copernicus Data Space (Sentinel-2, gratuit)
 
+> **Compte actif** : le projet utilise le compte `emilie.floch@gmail.com`. Les clés OAuth correspondantes sont dans le `.env` local et dans les GitHub Secrets du dépôt.
+
+Pour créer un nouveau compte ou renouveler les clés :
+
 1. Aller sur <https://dataspace.copernicus.eu/> et cliquer **Register**.
 2. Une fois connecté, aller sur <https://shapps.dataspace.copernicus.eu/dashboard/#/account/settings>.
 3. Dans **OAuth Clients**, cliquer **Create New** :
    - Nom : `algues-vertes`
    - Confidentialité : **Confidential**
-4. Copier le **Client ID** et le **Client Secret** (le secret ne sera affiché qu'une fois). Vous en aurez besoin à l'étape suivante.
+4. Copier le **Client ID** et le **Client Secret** (le secret ne sera affiché qu'une fois).
+5. Mettre à jour le `.env` local **et** les GitHub Secrets (`CDSE_CLIENT_ID`, `CDSE_CLIENT_SECRET`).
+
+> **Quota** : chaque compte gratuit dispose de 30 000 Processing Units (PU) par mois. Grâce au cache 14 jours, la consommation est réduite à ~2 PU/site/jour (miniatures seules) contre ~100 PU/site sans cache.
 
 ### 3.3 Compte Météo-France API Publique (vent, gratuit, optionnel)
 
@@ -184,10 +195,9 @@ Le panneau de détail de chaque site affichera alors la dernière concentration 
 
 Si AirBreizh ajoute une nouvelle station qui couvre l'un de vos sites actuellement non couverts, éditer `STATIONS_AIRBREIZH` puis le champ `station_airbreizh` du site concerné dans `src/sites_config.py`.
 
-### 3.5 Compte Netlify (hébergement, gratuit)
+### 3.5 Hébergement GitHub Pages (gratuit, intégré à GitHub)
 
-1. <https://app.netlify.com/signup> → s'inscrire avec votre compte GitHub (un seul clic).
-2. Aucune autre action pour le moment ; la connexion au dépôt se fera à l'étape [5](#5-mise-en-ligne-avec-github-et-netlify).
+GitHub Pages est activé directement depuis le dépôt GitHub — aucun compte tiers nécessaire. Voir [section 5](#5-mise-en-ligne-avec-github-et-github-pages) pour l'activation.
 
 ### 3.6 Configurer le fichier .env en local
 
@@ -228,15 +238,17 @@ Puis ouvrir <http://localhost:8000> dans Safari ou Chrome. Pour arrêter le serv
 
 ---
 
-## 5. Mise en ligne avec GitHub et Netlify
+## 5. Mise en ligne avec GitHub et GitHub Pages
 
 ### 5.1 Créer le dépôt GitHub
 
 1. <https://github.com/new> :
    - Nom : `algues-vertes`
-   - Visibilité : **Private** (si possible) ou Public selon votre choix
+   - Visibilité : **Public** (obligatoire pour GitHub Pages gratuit)
    - **Ne pas** initialiser avec un README (le fichier existe déjà)
 2. Récupérer l'URL SSH affichée, par exemple `git@github.com:votre-pseudo/algues-vertes.git`.
+
+> **Sécurité** : le dépôt est public mais aucune clé API n'est dans le code. Les clés sont dans le fichier `.env` local (ignoré par `.gitignore`) et dans les GitHub Secrets (chiffrés).
 
 ### 5.2 Pousser le code
 
@@ -253,33 +265,23 @@ git push -u origin main
 
 > **Attendu** : `Branch 'main' set up to track 'origin/main'.`
 
-### 5.3 Connecter Netlify au dépôt
+### 5.3 Activer GitHub Pages
 
-1. <https://app.netlify.com/start> → **Import an existing project** → **GitHub**.
-2. Autoriser Netlify à voir vos dépôts (ou seulement `algues-vertes`).
-3. Sélectionner le dépôt `algues-vertes`.
-4. **Configuration de build** (les valeurs ci-dessous sont automatiquement détectées via `netlify.toml`) :
-   - Branch to deploy : `main`
-   - Build command : *(laisser vide)*
-   - Publish directory : `docs`
-5. Cliquer **Deploy**.
+1. Sur GitHub, aller dans **Settings** de votre dépôt (onglet du haut).
+2. Dans le menu gauche, cliquer **Pages**.
+3. Sous **Source**, choisir **Deploy from a branch**.
+4. Branch : **main** / Folder : **/docs** → cliquer **Save**.
 
-Au bout de 30 secondes environ, Netlify affiche votre URL publique, par exemple `https://amazing-curie-1234.netlify.app`. Cliquez : le tableau de bord doit apparaître.
+Au bout de 1 à 2 minutes, GitHub affiche l'URL publique :
+`https://votre-pseudo.github.io/algues-vertes/`
 
-### 5.4 Activer la protection par mot de passe
+> **Attendu** : en ouvrant cette URL, le tableau de bord s'affiche.
 
-> Netlify gratuit propose la protection **Site password** (un mot de passe unique partagé).
+> 💡 GitHub Pages ne propose pas de protection par mot de passe nativement. Le tableau de bord est public. Pour restreindre l'accès, une alternative est de passer à **GitHub Pro** (~4$/mois) qui permet les dépôts privés avec Pages, ou d'ajouter une authentification côté client dans le HTML.
 
-1. Sur Netlify : votre site → **Site configuration → Visitor access → Password protection**.
-2. **Site protection** → cliquer **Enable** → choisir un mot de passe (à partager avec vos collègues uniquement) → **Save**.
+### 5.4 Déploiement automatique
 
-> **Attendu** : à la prochaine visite, Netlify demande le mot de passe avant d'afficher le tableau de bord.
-
-> 💡 Si la fonctionnalité Site password n'est pas disponible sur votre formule, alternative : utiliser **Netlify Identity** (gratuit) avec Role-based access control, ou installer un plugin Netlify d'authentification basique.
-
-### 5.5 (Optionnel) Personnaliser le sous-domaine
-
-Sur Netlify : **Domain management → Options → Edit site name** et choisir, par exemple, `surveillance-algues-bretagne` → URL : `https://surveillance-algues-bretagne.netlify.app`.
+À chaque fois que GitHub Actions pousse un commit sur `main` (mise à jour quotidienne ou manuelle), GitHub Pages redéploie automatiquement le tableau de bord en quelques secondes — aucune action supplémentaire nécessaire.
 
 ---
 
@@ -306,7 +308,7 @@ Sur GitHub → onglet **Actions**. Vous devez voir le workflow **« Mise à jour
 
 > **Attendu** : au bout de 2 à 3 minutes, le workflow se termine en vert. Un nouveau commit "Mise à jour automatique du …" apparaît sur la branche `main`.
 
-Netlify détecte automatiquement le push et redéploie le site (≈ 30 s).
+GitHub Pages détecte automatiquement le push et redéploie le site (≈ 30 s).
 
 ### 6.3 Heure d'exécution
 
@@ -322,7 +324,7 @@ Pour avoir 18h toute l'année, il faudrait deux crons saisonniers ; la solution 
 
 ### 7.1 Consulter le tableau de bord
 
-Aller sur l'URL Netlify, saisir le mot de passe, et le tableau de bord s'affiche :
+Aller sur `https://e-floch.github.io/algues-vertes/` — le tableau de bord s'affiche directement :
 - **Carte** : un marqueur par site, coloré selon le niveau d'alerte J+1
 - **Cliquer un marqueur** : ouvre le panneau latéral avec :
   - Niveaux d'alerte J+1 à J+7
@@ -394,18 +396,26 @@ git push
 
 ### "Sentinel-2 indisponible"
 
-- Vérifier que `CDSE_CLIENT_ID` et `CDSE_CLIENT_SECRET` sont corrects (bien copiés, sans espace en trop).
-- Le service CDSE peut être en maintenance : réessayer le lendemain. Le système continuera à fonctionner avec les autres sources.
+- Vérifier que `CDSE_CLIENT_ID` et `CDSE_CLIENT_SECRET` sont corrects dans les GitHub Secrets (Settings → Secrets and variables → Actions).
+- Si le log indique **"Crédits CDSE épuisés"** : le quota de 30 000 PU du mois est atteint. Créer un nouveau compte sur <https://dataspace.copernicus.eu/> avec une autre adresse email, générer de nouveaux OAuth Clients, et mettre à jour les GitHub Secrets.
+- Le service CDSE peut être en maintenance : réessayer le lendemain. Grâce au cache 14 jours, le tableau de bord continuera à afficher les données Sentinel existantes.
+
+### "Score FAI = 100 sans algues visibles sur l'image"
+
+Le FAI utilise la **médiane** (p50) des pixels eau (SCL=6). Si ce score reste anormalement élevé :
+- Vérifier la valeur `percentile_50` dans le JSON du jour (`data/YYYY-MM-DD.json` → `sentinel.fai_zone_2`) — si elle est > 0,05, une anomalie persiste dans la zone pélagique (bloom réel ou turbidité).
+- Si `sampleCount` < 50, le FAI est ignoré (trop peu de pixels eau valides).
 
 ### Le workflow GitHub Actions échoue
 
 - Onglet **Actions → Workflow → run en échec** : lire les logs pour identifier l'étape qui plante.
 - Cause fréquente : un secret a été modifié ou supprimé. Aller dans **Settings → Secrets and variables → Actions** et vérifier qu'ils existent.
 
-### Le site Netlify ne se met pas à jour
+### Le site GitHub Pages ne se met pas à jour
 
-- Vérifier que le dernier commit a bien été poussé sur `main`.
-- Sur Netlify → **Deploys** : vérifier qu'un nouveau déploiement a été déclenché. Sinon, cliquer **Trigger deploy → Deploy site**.
+- Vérifier que le dernier commit a bien été poussé sur `main` (onglet **Code** du dépôt).
+- Sur GitHub → onglet **Actions** : vérifier que le workflow s'est terminé en vert.
+- Sur GitHub → **Settings → Pages** : vérifier que la source est bien `main / docs`. Si une erreur de déploiement apparaît, cliquer **Visit site** pour voir si c'est un problème de cache navigateur.
 
 ### "ModuleNotFoundError: requests" en local
 

@@ -61,19 +61,39 @@ VENT_FAVORABLE_PAR_BAIE = {
 # ----------------------------------------------------------------------
 
 def _score_fai(donnees_sentinel: "dict | None") -> "float | None":
-    """Score 0-100 d'après le FAI moyen en zone 2 pélagique.
+    """Score 0-100 d'après le FAI médian en zone 2 pélagique.
 
-    Heuristique : FAI > 0,01 indique de la matière flottante. On normalise
-    sur une échelle 0..100 avec saturation à FAI = 0,1.
+    On utilise la médiane (percentile_50) plutôt que la moyenne : quelques pixels
+    aberrants (eau turbide, reflets solaires, bords de nuages mal classifiés SCL=6)
+    peuvent gonfler la moyenne jusqu'à 0,15+ alors que la médiane reste proche de 0.
+
+    Si moins de 50 pixels valides (eau) sont présents dans la zone, la mesure est
+    trop peu représentative — on renvoie None pour ne pas polluer le score.
+
+    Normalisation : FAI médian = 0 → score 0 ; FAI = 0,05 → score 100 (saturation).
+    Un FAI médian de 0,05 sur une zone entière correspond à une biomasse algale
+    très élevée ; des valeurs de 0,005-0,02 sont courantes lors d'échouages réels.
     """
     if not donnees_sentinel:
         return None
     fai = donnees_sentinel.get("fai_zone_2_pelagique")
-    if not fai or fai.get("mean") is None:
+    if not fai:
         return None
-    val = fai["mean"]
-    # Linéaire avec saturation : 0 → 0, 0,1 → 100
-    score = max(0.0, min(100.0, val * 1000))
+
+    # Rejet si trop peu de pixels eau valides (mesure non représentative)
+    if (fai.get("sampleCount") or 0) < 50:
+        logger.debug("FAI : seulement %d pixels eau — mesure ignorée", fai.get("sampleCount", 0))
+        return None
+
+    # Préférer la médiane (robuste aux valeurs aberrantes), sinon la moyenne
+    val = fai.get("percentile_50")
+    if val is None:
+        val = fai.get("mean")
+    if val is None:
+        return None
+
+    # Linéaire avec saturation : 0 → 0, 0,05 → 100
+    score = max(0.0, min(100.0, val * 2000))
     return round(score, 1)
 
 
@@ -286,7 +306,10 @@ def construire_etat_du_jour(
         )
         risque["sentinel"] = {
             "image_la_plus_recente": s_sent.get("image_la_plus_recente"),
+            # Zone côtière (~6 km) : image utilisée pour le NDVI biomasse côtière
             "image_miniature": s_sent.get("image_miniature"),
+            # Zone pélagique (~30 km) : image de la zone où le FAI est calculé
+            "image_miniature_pelagique": s_sent.get("image_miniature_pelagique"),
             "ndvi_zone_0": s_sent.get("ndvi_zone_0_estran"),
             "ndvi_zone_1": s_sent.get("ndvi_zone_1_cotier"),
             "fai_zone_2": s_sent.get("fai_zone_2_pelagique"),
