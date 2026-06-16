@@ -2,10 +2,10 @@
 Calcul du score et du niveau de risque d'échouage d'algues vertes.
 
 Modèle de score (0 à 100) à partir de 4 facteurs pondérés :
-  - FAI moyen en zone 2 (40 %)         — masse algale flottante en mer
-  - Vent favorable à l'échouage (30 %) — direction et force
-  - Coefficient de marée (20 %)        — vives-eaux = +
-  - NDVI moyen en zone 1 (10 %)        — biomasse en zone côtière
+  - FAI moyen en zone 2 (20 %)         — masse algale flottante en mer
+  - Vent favorable à l'échouage (35 %) — direction et force
+  - Coefficient de marée (25 %)        — vives-eaux = +
+  - NDVI moyen en zone 1 (20 %)        — biomasse en zone côtière
 
 Si une donnée est manquante, le poids correspondant est redistribué
 sur les autres facteurs proportionnellement.
@@ -91,6 +91,11 @@ def _score_fai(donnees_sentinel: "dict | None") -> "float | None":
         val = fai.get("mean")
     if val is None:
         return None
+    # Conversion explicite : l'API peut renvoyer des chaînes au lieu de nombres
+    try:
+        val = float(val)
+    except (TypeError, ValueError):
+        return None
 
     # Linéaire avec saturation : 0 → 0, 0,05 → 100
     score = max(0.0, min(100.0, val * 2000))
@@ -108,7 +113,11 @@ def _score_ndvi(donnees_sentinel: "dict | None") -> "float | None":
     ndvi = donnees_sentinel.get("ndvi_zone_1_cotier")
     if not ndvi or ndvi.get("mean") is None:
         return None
-    val = ndvi["mean"]
+    # Conversion explicite : l'API peut renvoyer des chaînes au lieu de nombres
+    try:
+        val = float(ndvi["mean"])
+    except (TypeError, ValueError):
+        return None
     score = max(0.0, min(100.0, val * 250))
     return round(score, 1)
 
