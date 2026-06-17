@@ -453,6 +453,12 @@ function evaluatePixel(s) {
   // Étirement de contraste pour couleurs naturelles
   function stretch(v) { return Math.min(255, Math.max(0, Math.round(v / 0.35 * 255))); }
 
+  // Masquer les pixels hors-fauchée (SCL=0 = no data) : valeurs aberrantes
+  // aux bords des tuiles qui sinon génèrent des faux positifs verts sur la miniature.
+  if (s.SCL === 0) {
+    return [0, 0, 0];
+  }
+
   // Double confirmation eau : SCL=6 ET NDWI positif (évite les faux positifs
   // sur ombres de nuages, zones humides, estran mouillé classé "eau" par erreur)
   let ndwi = (s.B03 - s.B08) / (s.B03 + s.B08 + 1e-10);
