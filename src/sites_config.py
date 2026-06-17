@@ -319,10 +319,10 @@ def get_site_by_id(site_id: str) -> "dict | None":
 # Ces poids peuvent être ajustés via la fonction calibrate() de compute_risk.py
 # au fur et à mesure que des observations terrain seront disponibles.
 POIDS_FACTEURS_DEFAUT = {
-    "fai_zone_2": 0.40,      # Masse algale flottante en mer
-    "vent": 0.30,            # Vent favorable à l'échouage
-    "coef_maree": 0.20,      # Coefficient de marée (vives-eaux = +)
-    "ndvi_zone_1": 0.10,     # Biomasse en zone côtière 1
+    "fai_zone_2": 0.20,      # Masse algale flottante en mer (réduit : FAI pélagique capte aussi phytoplancton/turbidité, p50=0 si algues <50% des pixels eau)
+    "vent": 0.35,            # Vent favorable à l'échouage
+    "coef_maree": 0.25,      # Coefficient de marée (vives-eaux = +)
+    "ndvi_zone_1": 0.20,     # Biomasse en zone côtière 1 (augmenté : détection plus fiable sur l'estran)
 }
 
 

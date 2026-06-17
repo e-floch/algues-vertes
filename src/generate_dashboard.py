@@ -411,10 +411,19 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           iconAnchor: [13, 13],
         });
         const marker = L.marker([site.lat, site.lon], { icon: icone })
-          .bindTooltip(site.site_nom)
+          .bindTooltip(site.site_nom, { interactive: true })
           .on("click", () => afficherDetailSite(site));
         marker.addTo(carte);
         marqueurs.push(marker);
+        // Rendre le tooltip cliquable (évite que cliquer sur le label ne fasse rien)
+        marker.on("tooltipopen", function(e) {
+          const el = e.tooltip.getElement();
+          if (el && !el._clickAdded) {
+            el.style.cursor = "pointer";
+            L.DomEvent.on(el, "click", () => afficherDetailSite(site));
+            el._clickAdded = true;
+          }
+        });
       });
     }
 
