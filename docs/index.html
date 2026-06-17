@@ -400,7 +400,7 @@
           <table class="facteurs-table">
             <tr><th>Facteur</th><th>Valeur</th><th>Poids</th><th style="font-size:10px;color:var(--texte-faible)">Zone de référence</th></tr>`;
         const meta = {
-          fai_zone_2:  { label: "Masse algale (FAI zone 2)", zone: "Zone pélagique ~30 km · Sentinel-2 · médiane p50" },
+          fai_zone_2:  { label: "Masse algale (FAI zone 2)", zone: "Zone pélagique ~30 km · Sentinel-2 · p75" },
           vent:        { label: "Vent",                      zone: "Prévision météo J+1→J+7 · Open-Meteo" },
           coef_maree:  { label: "Coefficient marée",         zone: "Port de référence · SHOM" },
           ndvi_zone_1: { label: "Biomasse côtière (NDVI)",   zone: "Zone côtière ~6 km · Sentinel-2 · moyenne" },
@@ -463,8 +463,8 @@
 
         if (site.sentinel.image_miniature_pelagique) {
           const fai = site.sentinel.fai_zone_2;
-          const faiVal = fai ? (fai.percentile_50 ?? fai.mean) : null;
-          const faiTxt = faiVal !== null ? `FAI médian = ${faiVal.toFixed(4)}` : "";
+          const faiVal = fai ? (fai.percentile_75 ?? fai.percentile_50 ?? fai.mean) : null;
+          const faiTxt = faiVal !== null ? `FAI p75 = ${faiVal.toFixed(4)}` : "";
           html += `
             <div style="flex:1;min-width:140px">
               <div style="font-size:11px;font-weight:600;margin-bottom:3px;color:var(--texte)">

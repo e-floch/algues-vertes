@@ -189,7 +189,7 @@ def _appeler_process_api(
         },
         "calculations": {
             "default": {
-                "statistics": {"default": {"percentiles": {"k": [10, 50, 90]}}}
+                "statistics": {"default": {"percentiles": {"k": [10, 50, 75, 90]}}}
             }
         },
     }
@@ -260,6 +260,7 @@ def _extraire_stat_la_plus_recente(reponse_api: dict) -> dict | None:
             "mean": stats.get("mean"),
             "percentile_10": percentiles.get("10.0"),
             "percentile_50": percentiles.get("50.0"),
+            "percentile_75": percentiles.get("75.0"),
             "percentile_90": percentiles.get("90.0"),
             "min": stats.get("min"),
             "max": stats.get("max"),
@@ -305,6 +306,7 @@ def _extraire_stat_la_plus_recente_qualite(
             "mean": stats.get("mean"),
             "percentile_10": percentiles.get("10.0"),
             "percentile_50": percentiles.get("50.0"),
+            "percentile_75": percentiles.get("75.0"),
             "percentile_90": percentiles.get("90.0"),
             "min": stats.get("min"),
             "max": stats.get("max"),

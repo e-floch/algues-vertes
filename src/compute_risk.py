@@ -61,17 +61,19 @@ VENT_FAVORABLE_PAR_BAIE = {
 # ----------------------------------------------------------------------
 
 def _score_fai(donnees_sentinel: "dict | None") -> "float | None":
-    """Score 0-100 d'après le FAI médian en zone 2 pélagique.
+    """Score 0-100 d'après le FAI p75 en zone 2 pélagique.
 
-    On utilise la médiane (percentile_50) plutôt que la moyenne : quelques pixels
-    aberrants (eau turbide, reflets solaires, bords de nuages mal classifiés SCL=6)
-    peuvent gonfler la moyenne jusqu'à 0,15+ alors que la médiane reste proche de 0.
+    On utilise le 75ème percentile (percentile_75) plutôt que la médiane (p50) :
+    avec des patches algaux épars couvrant 20-30 % de la zone, la médiane tombe
+    sur un pixel d'eau propre et renvoie 0 même quand des algues sont visibles.
+    Le p75 capture mieux ces présences éparses tout en restant robuste aux
+    quelques pixels aberrants (turbidité, reflets).
 
     Si moins de 50 pixels valides (eau) sont présents dans la zone, la mesure est
     trop peu représentative — on renvoie None pour ne pas polluer le score.
 
-    Normalisation : FAI médian = 0 → score 0 ; FAI = 0,05 → score 100 (saturation).
-    Un FAI médian de 0,05 sur une zone entière correspond à une biomasse algale
+    Normalisation : FAI p75 = 0 → score 0 ; FAI = 0,05 → score 100 (saturation).
+    Un FAI p75 de 0,05 sur une zone entière correspond à une biomasse algale
     très élevée ; des valeurs de 0,005-0,02 sont courantes lors d'échouages réels.
     """
     if not donnees_sentinel:
@@ -85,8 +87,10 @@ def _score_fai(donnees_sentinel: "dict | None") -> "float | None":
         logger.debug("FAI : seulement %d pixels eau — mesure ignorée", fai.get("sampleCount", 0))
         return None
 
-    # Préférer la médiane (robuste aux valeurs aberrantes), sinon la moyenne
-    val = fai.get("percentile_50")
+    # Préférer p75 (sensible aux patches épars), sinon p50, sinon la moyenne
+    val = fai.get("percentile_75")
+    if val is None:
+        val = fai.get("percentile_50")
     if val is None:
         val = fai.get("mean")
     if val is None:
