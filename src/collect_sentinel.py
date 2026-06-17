@@ -467,9 +467,10 @@ function evaluatePixel(s) {
   if (s.SCL === 6 && ndwi > 0 && s.B11 > 0.01) {
     let baseline = s.B04 + (s.B11 - s.B04) * (842.0 - 665.0) / (1610.0 - 665.0);
     let fai = s.B08 - baseline;
-    // Seuil FAI > 0.002 pour ne marquer que les signaux algaux significatifs
-    // (élimine le bruit de fond des eaux turbides sans algues)
-    if (fai > 0.002) {
+    // Seuil FAI > 0.01 pour l'affichage visuel (signal algal significatif).
+    // Plus strict que le seuil de calcul (p75 sans seuil fixe) pour éviter
+    // le bruit des nuages mal classifiés SCL=6 et des pixels de bord de fauchée.
+    if (fai > 0.01) {
       return [0, 220, 50];
     }
   }

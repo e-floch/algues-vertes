@@ -364,6 +364,10 @@
           }
         });
       });
+      // Recadrer la carte pour que tous les marqueurs soient visibles avec une marge
+      if (marqueurs.length > 0) {
+        carte.fitBounds(L.featureGroup(marqueurs).getBounds(), { padding: [40, 40] });
+      }
     }
 
     // ----- Panneau de détail -----
@@ -449,6 +453,11 @@
           </div>
           <div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
             Statistiques FAI basées sur : <strong style="color:var(--texte)">${dateImg}</strong>${badgeNuage}
+          </div>`;
+        } else if (site.sentinel.est_fallback) {
+          html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
+            Dernière image disponible : <strong style="color:var(--texte)">${dateImg}</strong>
+            <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:#7f8c8d;color:#fff;font-size:11px;font-weight:600;margin-left:6px">crédits CDSE épuisés — image non actualisée</span>
           </div>`;
         } else {
           html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">

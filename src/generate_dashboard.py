@@ -425,6 +425,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           }
         });
       });
+      // Recadrer la carte pour que tous les marqueurs soient visibles avec une marge
+      if (marqueurs.length > 0) {
+        carte.fitBounds(L.featureGroup(marqueurs).getBounds(), { padding: [40, 40] });
+      }
     }
 
     // ----- Panneau de détail -----
@@ -510,6 +514,11 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           </div>
           <div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
             Statistiques FAI basées sur : <strong style="color:var(--texte)">${dateImg}</strong>${badgeNuage}
+          </div>`;
+        } else if (site.sentinel.est_fallback) {
+          html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
+            Dernière image disponible : <strong style="color:var(--texte)">${dateImg}</strong>
+            <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:#7f8c8d;color:#fff;font-size:11px;font-weight:600;margin-left:6px">crédits CDSE épuisés — image non actualisée</span>
           </div>`;
         } else {
           html += `<div style="font-size:12px;color:var(--texte-faible);margin-bottom:8px">
@@ -795,9 +804,64 @@ def generer_html() -> Path:
     return chemin
 
 
+def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
+    """Pour chaque JSON de docs/data/, si un site n'a pas d'images Sentinel
+    (crédits CDSE épuisés ou pas de passage), injecte les dernières images
+    disponibles depuis un JSON précédent, avec un drapeau 'est_fallback'.
+
+    Seules les miniatures d'affichage sont reportées (image_miniature,
+    image_miniature_pelagique, image_la_plus_recente) — les valeurs FAI/NDVI
+    ne sont PAS reportées pour ne pas fausser l'interprétation des scores.
+    """
+    # Cache par site_id : dernières images connues { image_miniature, image_miniature_pelagique, date }
+    cache: dict[str, dict] = {}
+
+    # Parcourir du plus ancien au plus récent pour construire le cache
+    for date_str in sorted(dates_disponibles):
+        chemin = DOSSIER_DOCS_DATA / f"{date_str}.json"
+        if not chemin.exists():
+            continue
+        donnees = charger_json(chemin)
+        sites = donnees.get("sites", [])
+        modifie = False
+
+        for site in sites:
+            site_id = site.get("site_id")
+            if not site_id:
+                continue
+            sentinel = site.get("sentinel") or {}
+
+            img_cot = sentinel.get("image_miniature")
+            img_pel = sentinel.get("image_miniature_pelagique")
+            date_img = sentinel.get("image_la_plus_recente")
+
+            if img_cot or img_pel:
+                # Images disponibles aujourd'hui → mettre à jour le cache
+                cache[site_id] = {
+                    "image_miniature": img_cot,
+                    "image_miniature_pelagique": img_pel,
+                    "image_la_plus_recente": date_img or date_str,
+                }
+            elif cache.get(site_id):
+                # Pas d'images aujourd'hui mais on a un fallback → injecter
+                fb = cache[site_id]
+                sentinel["image_miniature"] = fb["image_miniature"]
+                sentinel["image_miniature_pelagique"] = fb["image_miniature_pelagique"]
+                sentinel["image_la_plus_recente"] = fb["image_la_plus_recente"]
+                sentinel["est_fallback"] = True
+                site["sentinel"] = sentinel
+                modifie = True
+
+        if modifie:
+            enregistrer_json(chemin, donnees)
+
+    logger.info("Fallback Sentinel appliqué (%d sites en cache)", len(cache))
+
+
 def generer_dashboard_complet():
     """Pipeline : synchronise les données puis génère le HTML."""
     dates = synchroniser_donnees()
+    patcher_fallback_sentinel(dates)
     chemin_html = generer_html()
     return {
         "html": str(chemin_html),
