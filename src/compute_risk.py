@@ -87,7 +87,10 @@ def _score_fai(donnees_sentinel: "dict | None") -> "float | None":
         logger.debug("FAI : seulement %d pixels eau — mesure ignorée", fai.get("sampleCount", 0))
         return None
 
-    # Préférer p75 (sensible aux patches épars), sinon p50, sinon la moyenne
+    # Préférer p75 (sensible aux patches épars de macroalgues flottantes),
+    # sinon p50, sinon la moyenne.
+    # Note : l'evalscript FAI filtre déjà NDWI>0 et B11>0.01, donc sampleCount
+    # peut être faible ou nul sur des images sans algues flottantes — c'est normal.
     val = fai.get("percentile_75")
     if val is None:
         val = fai.get("percentile_50")
