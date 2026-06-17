@@ -460,10 +460,11 @@ function evaluatePixel(s) {
     return [0, 0, 0];
   }
 
-  // Double confirmation eau : SCL=6 ET NDWI positif (évite les faux positifs
-  // sur ombres de nuages, zones humides, estran mouillé classé "eau" par erreur)
+  // Triple confirmation algues flottantes : même critères que EVALSCRIPT_FAI
+  //   SCL=6 (eau), NDWI>0 (eau surface), B11>0.01 (matière flottante)
+  // Sans le filtre B11, les nuages mal classifiés SCL=6 passent en vert.
   let ndwi = (s.B03 - s.B08) / (s.B03 + s.B08 + 1e-10);
-  if (s.SCL === 6 && ndwi > 0) {
+  if (s.SCL === 6 && ndwi > 0 && s.B11 > 0.01) {
     let baseline = s.B04 + (s.B11 - s.B04) * (842.0 - 665.0) / (1610.0 - 665.0);
     let fai = s.B08 - baseline;
     // Seuil FAI > 0.002 pour ne marquer que les signaux algaux significatifs
