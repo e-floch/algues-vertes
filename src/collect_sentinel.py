@@ -110,11 +110,20 @@ function evaluatePixel(s) {
 
 # FAI = B08 - (B04 + (B11 - B04) * (842 - 665) / (1610 - 665))
 # Indice de masses algales flottantes (Hu, 2009) — utilisé en zone pélagique
+#
+# Filtres appliqués en plus de SCL=6 :
+#   • NDWI = (B03 - B08) / (B03 + B08) > 0 : confirme que le pixel est bien
+#     de l'eau de surface (élimine l'estran partiellement immergé que SCL=6
+#     peut parfois mal classer)
+#   • B11 > 0.01 : le SWIR est absorbé par l'eau → B11 ≈ 0 pour du phytoplancton
+#     en colonne d'eau ou de l'eau claire. B11 > 0.01 indique une matière
+#     flottante en surface (macroalgues, Ulva). Ce seuil élimine les faux
+#     positifs liés aux blooms de phytoplancton.
 EVALSCRIPT_FAI = """
 //VERSION=3
 function setup() {
   return {
-    input: [{ bands: ["B04", "B08", "B11", "SCL"] }],
+    input: [{ bands: ["B03", "B04", "B08", "B11", "SCL"] }],
     output: [
       { id: "default", bands: 1, sampleType: "FLOAT32" },
       { id: "dataMask", bands: 1 }
@@ -122,14 +131,21 @@ function setup() {
   };
 }
 function evaluatePixel(s) {
-  // SCL 6 = eau — on ne calcule le FAI que sur les pixels eau pour éviter
-  // que la végétation terrestre (NIR élevé) gonfle artificiellement le score.
-  // Nuages et ombres également exclus (3 = ombre, 8/9/10 = nuages/cirrus).
+  // SCL 6 = eau — on exclut nuages, ombres et végétation terrestre
   if (s.SCL !== 6) {
     return { default: [NaN], dataMask: [0] };
   }
-  // Pondération linéaire entre B04 (665nm) et B11 (1610nm) pour estimer la
-  // ligne de base à 842nm (B08), puis FAI = B08 - baseline.
+  // NDWI > 0 : double confirmation eau de surface (écarte l'estran mal classifié)
+  let ndwi = (s.B03 - s.B08) / (s.B03 + s.B08 + 1e-10);
+  if (ndwi <= 0) {
+    return { default: [NaN], dataMask: [0] };
+  }
+  // Filtre flottant : l'eau absorbe le SWIR (B11 ≈ 0), les macroalgues en surface
+  // le réfléchissent (B11 > 0.01). Ce filtre écarte le phytoplancton.
+  if (s.B11 < 0.01) {
+    return { default: [NaN], dataMask: [0] };
+  }
+  // FAI : B08 - ligne de base interpolée entre B04 et B11
   let baseline = s.B04 + (s.B11 - s.B04) * (842.0 - 665.0) / (1610.0 - 665.0);
   return { default: [s.B08 - baseline], dataMask: [1] };
 }
