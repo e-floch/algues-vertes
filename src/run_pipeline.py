@@ -101,6 +101,48 @@ def _recuperer_sentinel_cache(jour: date) -> dict | None:
     return None
 
 
+def _recuperer_airbreizh_cache(jour: date) -> dict | None:
+    """Cherche dans les 30 derniers jours un résultat AirBreizh valide (statut ok).
+
+    Renvoie une structure compatible avec donnees_airbreizh, avec statut 'cache',
+    ou None si aucun cache utilisable n'est trouvé.
+    AirBreizh publie les données du mois M-1 en début de mois M, donc les mesures
+    évoluent peu au quotidien — réutiliser un cache récent est sans perte de qualité.
+    """
+    data_dir = Path(__file__).parent.parent / "data"
+    for delta in range(1, 31):
+        chemin = data_dir / f"{(jour - timedelta(days=delta)).isoformat()}.json"
+        if not chemin.exists():
+            continue
+        try:
+            etat = json.loads(chemin.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+
+        if etat.get("airbreizh_statut") != "ok":
+            continue
+
+        # Reconstituer la structure sites attendue par compute_risk
+        sites_ab = {}
+        for site in etat.get("sites", []):
+            sid = site.get("site_id")
+            ab = site.get("airbreizh")
+            if sid and ab:
+                sites_ab[sid] = ab
+
+        if not sites_ab:
+            continue
+
+        date_cache = (jour - timedelta(days=delta)).isoformat()
+        return {
+            "date_collecte": date_cache,
+            "statut": "cache",
+            "_depuis_cache": True,
+            "sites": sites_ab,
+        }
+    return None
+
+
 def lancer_pipeline(jour: date | None = None) -> dict:
     """Lance le pipeline complet pour une date donnée (par défaut : aujourd'hui)."""
     if jour is None:
@@ -153,6 +195,17 @@ def lancer_pipeline(jour: date | None = None) -> dict:
     except Exception as exc:
         logger.error("AirBreizh — échec critique : %s", exc)
         donnees_airbreizh = {"date_collecte": jour.isoformat(), "statut": "indisponible", "sites": {}}
+
+    # Si indisponible, on tente de réutiliser le dernier jeu H2S valide (≤ 30 j).
+    # AirBreizh publie mois M-1 début M, donc les données bougent peu au quotidien.
+    if (donnees_airbreizh or {}).get("statut") == "indisponible":
+        cache_ab = _recuperer_airbreizh_cache(jour)
+        if cache_ab:
+            logger.info(
+                "AirBreizh : WFS indisponible — utilisation du cache du %s",
+                cache_ab["date_collecte"],
+            )
+            donnees_airbreizh = cache_ab
 
     # 5. Calcul du risque + construction de l'état du jour
     etat = compute_risk.construire_etat_du_jour(

@@ -357,7 +357,13 @@ def construire_etat_du_jour(
             "Données Sentinel-2 indisponibles aujourd'hui : "
             f"{donnees_sentinel.get('raison', 'erreur inconnue')}"
         )
-    if donnees_airbreizh and donnees_airbreizh.get("statut") not in ("ok", "hors_saison", None):
+    if donnees_airbreizh and donnees_airbreizh.get("statut") == "cache":
+        # Données en cache : message informatif doux, pas d'alerte rouge
+        avertissements_globaux.append(
+            f"H2S AirBreizh : service WFS temporairement indisponible — "
+            f"mesures du {donnees_airbreizh.get('date_collecte', '?')} affichées."
+        )
+    elif donnees_airbreizh and donnees_airbreizh.get("statut") not in ("ok", "hors_saison", None):
         avertissements_globaux.append(
             "Données AirBreizh H2S indisponibles : "
             f"{donnees_airbreizh.get('avertissement', 'erreur inconnue')}"
