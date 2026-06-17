@@ -42,12 +42,12 @@ Le système collecte chaque soir à **18h heure française** des données satell
 
 | Facteur | Poids par défaut | Indicateur utilisé |
 |---|---|---|
-| FAI médian en zone 2 (pélagique) | 40 % | Médiane p50 sur pixels eau (SCL=6) — sature à FAI = 0,05 |
-| Vent favorable à l'échouage | 30 % | Direction + force (optimal 10-25 km/h) |
-| Coefficient de marée | 20 % | Linéaire coef 20→0, coef 120→100 |
-| NDVI médian en zone 1 (côtier) | 10 % | Linéaire 0→0, 0,4→100 |
+| FAI p75 en zone 2 (pélagique) | 20 % | Percentile 75 sur pixels eau flottante (SCL=6, NDWI>0, B11>0,01) — sature à FAI = 0,05 |
+| Vent favorable à l'échouage | 35 % | Direction + force (optimal 10-25 km/h) |
+| Coefficient de marée | 25 % | Linéaire coef 20→0, coef 120→100 |
+| NDVI médian en zone 1 (côtier) | 20 % | Linéaire 0→0, 0,4→100 |
 
-> **Note technique (FAI)** : le score FAI utilise la **médiane** (percentile 50) plutôt que la moyenne pour éviter qu'un petit nombre de pixels aberrants (eau turbide, reflets solaires, bords de nuages mal classifiés) ne gonfle artificiellement le score. Si la zone contient moins de 50 pixels eau valides, le FAI est considéré comme non représentatif et ignoré. L'evalscript Statistics ne retient que les pixels SCL=6 (eau confirmée).
+> **Note technique (FAI)** : le score FAI utilise le **percentile 75** (p75) plutôt que la médiane (p50) pour mieux capter les taches d'algues qui n'occupent pas encore 50 % des pixels eau (p50 renvoie 0 tant que les algues couvrent moins de la moitié de la zone). L'evalscript applique trois filtres successifs : SCL=6 (pixels eau confirmés par la classification Sentinel-2), NDWI > 0 (double confirmation eau de surface, élimine l'estran découvrant), B11 > 0,01 (filtre SWIR flottant : l'eau absorbe le SWIR, donc le phytoplancton en suspension a B11 ≈ 0 ; les algues Ulva flottantes en surface ont B11 > 0,01). Si la zone contient moins de 50 pixels eau valides, le FAI est ignoré.
 
 **Cache Sentinel-2** : pour économiser les crédits CDSE (~100 PU/site/run), les statistiques NDVI/FAI sont réutilisées jusqu'à 14 jours si l'image la plus récente est encore valide. Les miniatures (images couleur) sont elles retéléchargées à chaque run (~2 PU/site).
 
@@ -402,9 +402,10 @@ git push
 
 ### "Score FAI = 100 sans algues visibles sur l'image"
 
-Le FAI utilise la **médiane** (p50) des pixels eau (SCL=6). Si ce score reste anormalement élevé :
-- Vérifier la valeur `percentile_50` dans le JSON du jour (`data/YYYY-MM-DD.json` → `sentinel.fai_zone_2`) — si elle est > 0,05, une anomalie persiste dans la zone pélagique (bloom réel ou turbidité).
+Le FAI utilise le **percentile 75** (p75) des pixels eau filtrés (SCL=6, NDWI>0, B11>0,01). Si ce score reste anormalement élevé :
+- Vérifier la valeur `percentile_75` dans le JSON du jour (`data/YYYY-MM-DD.json` → `sentinel.fai_zone_2`) — si elle est > 0,05, une anomalie persiste dans la zone pélagique (bloom réel ou turbidité).
 - Si `sampleCount` < 50, le FAI est ignoré (trop peu de pixels eau valides).
+- Si la valeur semble élevée, vérifier que les filtres NDWI > 0 et B11 > 0,01 sont bien actifs dans l'evalscript (ils distinguent les algues Ulva flottantes du phytoplancton en suspension et de l'estran découvrant).
 
 ### Le workflow GitHub Actions échoue
 
