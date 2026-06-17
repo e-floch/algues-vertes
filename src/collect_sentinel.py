@@ -445,7 +445,7 @@ EVALSCRIPT_IMAGE_RGB = """
 //VERSION=3
 function setup() {
   return {
-    input: [{ bands: ["B02", "B03", "B04", "B08", "B11", "SCL"] }],
+    input: [{ bands: ["B02", "B03", "B04", "B08", "B11", "SCL", "dataMask"] }],
     output: { bands: 3, sampleType: "UINT8" }
   };
 }
@@ -453,9 +453,10 @@ function evaluatePixel(s) {
   // Étirement de contraste pour couleurs naturelles
   function stretch(v) { return Math.min(255, Math.max(0, Math.round(v / 0.35 * 255))); }
 
-  // Masquer les pixels hors-fauchée (SCL=0 = no data) : valeurs aberrantes
-  // aux bords des tuiles qui sinon génèrent des faux positifs verts sur la miniature.
-  if (s.SCL === 0) {
+  // Masquer les pixels hors-fauchée : dataMask=0 signifie "pas de donnée satellite"
+  // (bords de tuile, zone hors-swath). SCL=0 seul ne suffit pas car Sentinel Hub
+  // peut attribuer des valeurs SCL non nulles à ces pixels.
+  if (s.dataMask === 0) {
     return [0, 0, 0];
   }
 
