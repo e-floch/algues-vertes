@@ -813,8 +813,11 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
     image_miniature_pelagique, image_la_plus_recente) — les valeurs FAI/NDVI
     ne sont PAS reportées pour ne pas fausser l'interprétation des scores.
     """
-    # Cache par site_id : dernières images connues { image_miniature, image_miniature_pelagique, date }
-    cache: dict[str, dict] = {}
+    # Deux caches indépendants par site_id :
+    # - cache_img : dernières images connues dont les fichiers existent sur disque
+    # - cache_stats : dernières valeurs FAI/NDVI connues (indépendant de l'existence des fichiers)
+    cache: dict[str, dict] = {}        # images
+    cache_stats: dict[str, dict] = {}  # stats FAI/NDVI
 
     # Parcourir du plus ancien au plus récent pour construire le cache
     for date_str in sorted(dates_disponibles):
@@ -835,7 +838,15 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
             img_pel = sentinel.get("image_miniature_pelagique")
             date_img = sentinel.get("image_la_plus_recente")
 
-            # Vérifier que les fichiers existent réellement sur disque
+            # Cache des stats FAI/NDVI (indépendant de l'existence des fichiers image)
+            if sentinel.get("fai_zone_2") or sentinel.get("ndvi_zone_1"):
+                cache_stats[site_id] = {
+                    "fai_zone_2":  sentinel.get("fai_zone_2"),
+                    "ndvi_zone_1": sentinel.get("ndvi_zone_1"),
+                    "image_la_plus_recente": date_img,
+                }
+
+            # Vérifier que les fichiers image existent réellement sur disque
             # (le JSON peut référencer des chemins dont les fichiers ont été supprimés)
             if img_cot and not (DOSSIER_DOCS / img_cot).exists():
                 img_cot = None
@@ -855,24 +866,45 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
                     img_pel = candidat
 
             if img_cot or img_pel:
-                # Images disponibles aujourd'hui → mettre à jour le cache
+                # Images disponibles → mettre à jour le cache image
+                # Si image_la_plus_recente est absent (stats nulles), récupérer depuis cache_stats
+                if not date_img and cache_stats.get(site_id):
+                    date_img = cache_stats[site_id].get("image_la_plus_recente")
                 cache[site_id] = {
                     "image_miniature": img_cot,
                     "image_miniature_pelagique": img_pel,
                     "image_la_plus_recente": date_img or date_str,
                 }
-                # Mettre à jour le JSON si les chemins ont été corrigés/complétés
-                if img_cot != sentinel.get("image_miniature") or img_pel != sentinel.get("image_miniature_pelagique"):
-                    sentinel["image_miniature"] = img_cot
-                    sentinel["image_miniature_pelagique"] = img_pel
+                # Mettre à jour le JSON si nécessaire
+                maj = {}
+                if img_cot != sentinel.get("image_miniature"):
+                    maj["image_miniature"] = img_cot
+                if img_pel != sentinel.get("image_miniature_pelagique"):
+                    maj["image_miniature_pelagique"] = img_pel
+                if date_img and not sentinel.get("image_la_plus_recente"):
+                    maj["image_la_plus_recente"] = date_img
+                # Propager stats FAI/NDVI manquantes depuis cache_stats
+                if not sentinel.get("fai_zone_2") and cache_stats.get(site_id, {}).get("fai_zone_2"):
+                    maj["fai_zone_2"] = cache_stats[site_id]["fai_zone_2"]
+                    maj["est_fallback"] = True
+                if not sentinel.get("ndvi_zone_1") and cache_stats.get(site_id, {}).get("ndvi_zone_1"):
+                    maj["ndvi_zone_1"] = cache_stats[site_id]["ndvi_zone_1"]
+                    maj["est_fallback"] = True
+                if maj:
+                    sentinel.update(maj)
                     site["sentinel"] = sentinel
                     modifie = True
             elif cache.get(site_id):
-                # Pas d'images aujourd'hui mais on a un fallback → injecter
+                # Pas d'images sur disque → injecter depuis cache image
                 fb = cache[site_id]
                 sentinel["image_miniature"] = fb["image_miniature"]
                 sentinel["image_miniature_pelagique"] = fb["image_miniature_pelagique"]
                 sentinel["image_la_plus_recente"] = fb["image_la_plus_recente"]
+                # Propager stats FAI/NDVI manquantes depuis cache_stats
+                if not sentinel.get("fai_zone_2") and cache_stats.get(site_id, {}).get("fai_zone_2"):
+                    sentinel["fai_zone_2"] = cache_stats[site_id]["fai_zone_2"]
+                if not sentinel.get("ndvi_zone_1") and cache_stats.get(site_id, {}).get("ndvi_zone_1"):
+                    sentinel["ndvi_zone_1"] = cache_stats[site_id]["ndvi_zone_1"]
                 sentinel["est_fallback"] = True
                 site["sentinel"] = sentinel
                 modifie = True
