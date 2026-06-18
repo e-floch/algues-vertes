@@ -835,6 +835,25 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
             img_pel = sentinel.get("image_miniature_pelagique")
             date_img = sentinel.get("image_la_plus_recente")
 
+            # Vérifier que les fichiers existent réellement sur disque
+            # (le JSON peut référencer des chemins dont les fichiers ont été supprimés)
+            if img_cot and not (DOSSIER_DOCS / img_cot).exists():
+                img_cot = None
+            if img_pel and not (DOSSIER_DOCS / img_pel).exists():
+                img_pel = None
+
+            # Si le JSON dit null mais que les fichiers existent sur disque pour
+            # cette date (ex. : miniatures régénérées manuellement sans mise à jour
+            # du JSON), on les récupère directement.
+            if not img_cot:
+                candidat = f"images/{date_str}/{site_id}.jpg"
+                if (DOSSIER_DOCS / candidat).exists():
+                    img_cot = candidat
+            if not img_pel:
+                candidat = f"images/{date_str}/{site_id}_pelagique.jpg"
+                if (DOSSIER_DOCS / candidat).exists():
+                    img_pel = candidat
+
             if img_cot or img_pel:
                 # Images disponibles aujourd'hui → mettre à jour le cache
                 cache[site_id] = {
@@ -842,6 +861,12 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
                     "image_miniature_pelagique": img_pel,
                     "image_la_plus_recente": date_img or date_str,
                 }
+                # Mettre à jour le JSON si les chemins ont été corrigés/complétés
+                if img_cot != sentinel.get("image_miniature") or img_pel != sentinel.get("image_miniature_pelagique"):
+                    sentinel["image_miniature"] = img_cot
+                    sentinel["image_miniature_pelagique"] = img_pel
+                    site["sentinel"] = sentinel
+                    modifie = True
             elif cache.get(site_id):
                 # Pas d'images aujourd'hui mais on a un fallback → injecter
                 fb = cache[site_id]
