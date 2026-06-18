@@ -804,14 +804,84 @@ def generer_html() -> Path:
     return chemin
 
 
+def _recalculer_scores_sentinel(site: dict, fai_stats: dict | None, ndvi_stats: dict | None, poids_base: dict) -> None:
+    """Recalcule les valeurs FAI/NDVI dans previsions[] à partir des stats brutes.
+
+    Reproduit la logique de compute_risk._score_fai / _score_ndvi pour les
+    jours où les crédits CDSE étaient épuisés au moment de la collecte.
+    La date des stats est antérieure au jour affiché : l'information est
+    présentée avec est_fallback=True pour indiquer qu'il s'agit d'un proxy.
+    """
+    # Score FAI (0-100) : FAI p75 * 2000, saturé à 100
+    score_fai = None
+    if fai_stats:
+        val = fai_stats.get("percentile_75") or fai_stats.get("percentile_50") or fai_stats.get("mean")
+        sc = fai_stats.get("sampleCount") or 0
+        if val is not None and sc >= 50:
+            try:
+                score_fai = round(max(0.0, min(100.0, float(val) * 2000)), 1)
+            except (TypeError, ValueError):
+                pass
+
+    # Score NDVI (0-100) : NDVI mean * 250, saturé à 100
+    score_ndvi = None
+    if ndvi_stats and ndvi_stats.get("mean") is not None:
+        try:
+            score_ndvi = round(max(0.0, min(100.0, float(ndvi_stats["mean"]) * 250)), 1)
+        except (TypeError, ValueError):
+            pass
+
+    if score_fai is None and score_ndvi is None:
+        return  # rien à recalculer
+
+    # Recalculer pour chaque horizon de prévision
+    for prev in site.get("previsions", []):
+        facteurs = prev.get("facteurs", {})
+        # Déterminer quels facteurs sont disponibles après injection
+        disponibles = {k for k, f in facteurs.items() if f.get("disponible")}
+        if score_fai is not None:
+            disponibles.add("fai_zone_2")
+        if score_ndvi is not None:
+            disponibles.add("ndvi_zone_1")
+
+        # Re-normaliser les poids parmi les facteurs disponibles
+        poids_actifs = {k: poids_base.get(k, 0) for k in disponibles}
+        total_poids = sum(poids_actifs.values())
+        if total_poids == 0:
+            continue
+
+        # Mettre à jour FAI
+        if score_fai is not None and "fai_zone_2" in facteurs:
+            facteurs["fai_zone_2"]["valeur"] = score_fai
+            facteurs["fai_zone_2"]["disponible"] = True
+            facteurs["fai_zone_2"]["poids_applique"] = round(poids_actifs["fai_zone_2"] / total_poids, 3)
+
+        # Mettre à jour NDVI
+        if score_ndvi is not None and "ndvi_zone_1" in facteurs:
+            facteurs["ndvi_zone_1"]["valeur"] = score_ndvi
+            facteurs["ndvi_zone_1"]["disponible"] = True
+            facteurs["ndvi_zone_1"]["poids_applique"] = round(poids_actifs["ndvi_zone_1"] / total_poids, 3)
+
+        # Recalculer les poids des autres facteurs avec la nouvelle normalisation
+        for k, f in facteurs.items():
+            if k in ("fai_zone_2", "ndvi_zone_1"):
+                continue
+            if f.get("disponible") and k in poids_actifs:
+                facteurs[k]["poids_applique"] = round(poids_actifs[k] / total_poids, 3)
+
+        # Recalculer le score global
+        score_total = sum(
+            (facteurs[k].get("valeur") or 0) * facteurs[k].get("poids_applique", 0)
+            for k in facteurs if facteurs[k].get("disponible")
+        )
+        prev["score"] = round(score_total, 1)
+
+
 def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
     """Pour chaque JSON de docs/data/, si un site n'a pas d'images Sentinel
     (crédits CDSE épuisés ou pas de passage), injecte les dernières images
-    disponibles depuis un JSON précédent, avec un drapeau 'est_fallback'.
-
-    Seules les miniatures d'affichage sont reportées (image_miniature,
-    image_miniature_pelagique, image_la_plus_recente) — les valeurs FAI/NDVI
-    ne sont PAS reportées pour ne pas fausser l'interprétation des scores.
+    disponibles depuis un JSON précédent, avec les stats FAI/NDVI et un drapeau
+    'est_fallback' pour indiquer que les données sont antérieures au jour affiché.
     """
     # Deux caches indépendants par site_id :
     # - cache_img : dernières images connues dont les fichiers existent sur disque
@@ -883,16 +953,20 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
                     maj["image_miniature_pelagique"] = img_pel
                 if date_img and not sentinel.get("image_la_plus_recente"):
                     maj["image_la_plus_recente"] = date_img
-                # Propager stats FAI/NDVI manquantes depuis cache_stats
-                if not sentinel.get("fai_zone_2") and cache_stats.get(site_id, {}).get("fai_zone_2"):
-                    maj["fai_zone_2"] = cache_stats[site_id]["fai_zone_2"]
+                # Propager stats FAI/NDVI manquantes depuis cache_stats + recalculer scores
+                fai_injecte = cache_stats.get(site_id, {}).get("fai_zone_2") if not sentinel.get("fai_zone_2") else None
+                ndvi_injecte = cache_stats.get(site_id, {}).get("ndvi_zone_1") if not sentinel.get("ndvi_zone_1") else None
+                if fai_injecte:
+                    maj["fai_zone_2"] = fai_injecte
                     maj["est_fallback"] = True
-                if not sentinel.get("ndvi_zone_1") and cache_stats.get(site_id, {}).get("ndvi_zone_1"):
-                    maj["ndvi_zone_1"] = cache_stats[site_id]["ndvi_zone_1"]
+                if ndvi_injecte:
+                    maj["ndvi_zone_1"] = ndvi_injecte
                     maj["est_fallback"] = True
                 if maj:
                     sentinel.update(maj)
                     site["sentinel"] = sentinel
+                    if fai_injecte or ndvi_injecte:
+                        _recalculer_scores_sentinel(site, fai_injecte, ndvi_injecte, donnees.get("poids_appliques", {}))
                     modifie = True
             elif cache.get(site_id):
                 # Pas d'images sur disque → injecter depuis cache image
@@ -900,13 +974,17 @@ def patcher_fallback_sentinel(dates_disponibles: list[str]) -> None:
                 sentinel["image_miniature"] = fb["image_miniature"]
                 sentinel["image_miniature_pelagique"] = fb["image_miniature_pelagique"]
                 sentinel["image_la_plus_recente"] = fb["image_la_plus_recente"]
-                # Propager stats FAI/NDVI manquantes depuis cache_stats
-                if not sentinel.get("fai_zone_2") and cache_stats.get(site_id, {}).get("fai_zone_2"):
-                    sentinel["fai_zone_2"] = cache_stats[site_id]["fai_zone_2"]
-                if not sentinel.get("ndvi_zone_1") and cache_stats.get(site_id, {}).get("ndvi_zone_1"):
-                    sentinel["ndvi_zone_1"] = cache_stats[site_id]["ndvi_zone_1"]
+                # Propager stats FAI/NDVI manquantes depuis cache_stats + recalculer scores
+                fai_injecte = cache_stats.get(site_id, {}).get("fai_zone_2") if not sentinel.get("fai_zone_2") else None
+                ndvi_injecte = cache_stats.get(site_id, {}).get("ndvi_zone_1") if not sentinel.get("ndvi_zone_1") else None
+                if fai_injecte:
+                    sentinel["fai_zone_2"] = fai_injecte
+                if ndvi_injecte:
+                    sentinel["ndvi_zone_1"] = ndvi_injecte
                 sentinel["est_fallback"] = True
                 site["sentinel"] = sentinel
+                if fai_injecte or ndvi_injecte:
+                    _recalculer_scores_sentinel(site, fai_injecte, ndvi_injecte, donnees.get("poids_appliques", {}))
                 modifie = True
 
         if modifie:
