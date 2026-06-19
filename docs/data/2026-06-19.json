@@ -1,6 +1,6 @@
 {
   "date": "2026-06-19",
-  "horodatage_generation_utc": "2026-06-19T11:53:28Z",
+  "horodatage_generation_utc": "2026-06-19T21:03:00Z",
   "sites": [
     {
       "site_id": "guisseny_curnic",
@@ -13,10 +13,10 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 35.4,
-          "niveau": 2,
-          "nom_niveau": "Vigilance",
-          "couleur": "#F1C40F",
+          "score": 50.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
@@ -24,7 +24,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 100.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -73,7 +73,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 41.9,
+          "score": 41.2,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -84,7 +84,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 56.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -103,10 +103,10 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 44.6,
-          "niveau": 2,
-          "nom_niveau": "Vigilance",
-          "couleur": "#F1C40F",
+          "score": 56.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
@@ -114,7 +114,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 92.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -133,7 +133,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 46.6,
+          "score": 45.4,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -144,7 +144,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 54.4,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -272,45 +272,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 14.4,
-            "vent_max_kmh": 25.1,
-            "direction_dominante_deg": 225.0
+            "vent_moyen_kmh": 14.6,
+            "vent_max_kmh": 27.0,
+            "direction_dominante_deg": 218.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.5,
-            "vent_max_kmh": 16.9,
-            "direction_dominante_deg": 250.0
+            "vent_moyen_kmh": 10.6,
+            "vent_max_kmh": 16.7,
+            "direction_dominante_deg": 294.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 17.6,
-            "vent_max_kmh": 24.0,
-            "direction_dominante_deg": 54.0
+            "vent_moyen_kmh": 20.5,
+            "vent_max_kmh": 29.1,
+            "direction_dominante_deg": 60.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 12.6,
-            "vent_max_kmh": 15.6,
-            "direction_dominante_deg": 57.0
+            "vent_moyen_kmh": 9.5,
+            "vent_max_kmh": 13.9,
+            "direction_dominante_deg": 43.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 10.6,
-            "vent_max_kmh": 16.2,
-            "direction_dominante_deg": 114.0
+            "vent_moyen_kmh": 8.2,
+            "vent_max_kmh": 14.2,
+            "direction_dominante_deg": 16.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 16.0,
-            "vent_max_kmh": 20.4,
-            "direction_dominante_deg": 51.0
+            "vent_moyen_kmh": 9.1,
+            "vent_max_kmh": 15.9,
+            "direction_dominante_deg": 50.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 19.5,
-            "vent_max_kmh": 21.2,
-            "direction_dominante_deg": 75.0
+            "vent_moyen_kmh": 17.5,
+            "vent_max_kmh": 21.9,
+            "direction_dominante_deg": 123.0
           }
         ],
         "avertissement": null
@@ -502,7 +502,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 41.5,
+          "score": 40.0,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -513,7 +513,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 53.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -532,7 +532,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 44.3,
+          "score": 38.1,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -543,7 +543,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 40.4,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -562,7 +562,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 46.3,
+          "score": 41.6,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -573,7 +573,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 44.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -701,45 +701,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 12.1,
-            "vent_max_kmh": 20.3,
-            "direction_dominante_deg": 260.0
+            "vent_moyen_kmh": 11.9,
+            "vent_max_kmh": 21.5,
+            "direction_dominante_deg": 257.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 22.0,
-            "direction_dominante_deg": 239.0
+            "vent_moyen_kmh": 10.2,
+            "vent_max_kmh": 20.2,
+            "direction_dominante_deg": 237.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 18.5,
-            "direction_dominante_deg": 36.0
+            "vent_moyen_kmh": 12.3,
+            "vent_max_kmh": 19.6,
+            "direction_dominante_deg": 72.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 11.9,
-            "vent_max_kmh": 21.6,
-            "direction_dominante_deg": 109.0
+            "vent_moyen_kmh": 8.9,
+            "vent_max_kmh": 16.7,
+            "direction_dominante_deg": 49.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 10.4,
-            "vent_max_kmh": 20.0,
-            "direction_dominante_deg": 80.0
+            "vent_moyen_kmh": 5.6,
+            "vent_max_kmh": 15.2,
+            "direction_dominante_deg": 278.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 13.9,
-            "vent_max_kmh": 19.8,
-            "direction_dominante_deg": 36.0
+            "vent_moyen_kmh": 6.7,
+            "vent_max_kmh": 9.6,
+            "direction_dominante_deg": 88.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 16.6,
-            "vent_max_kmh": 21.9,
-            "direction_dominante_deg": 103.0
+            "vent_moyen_kmh": 18.8,
+            "vent_max_kmh": 22.8,
+            "direction_dominante_deg": 124.0
           }
         ],
         "avertissement": null
@@ -871,7 +871,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 63.0,
+          "score": 62.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -882,7 +882,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 99.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -931,7 +931,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 54.8,
+          "score": 53.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -942,7 +942,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 53.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -961,7 +961,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 54.8,
+          "score": 51.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -972,7 +972,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 50.0,
+              "valeur": 39.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -991,7 +991,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 59.5,
+          "score": 57.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1002,7 +1002,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 50.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1130,45 +1130,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 11.4,
-            "vent_max_kmh": 19.8,
-            "direction_dominante_deg": 269.0
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 19.7,
+            "direction_dominante_deg": 266.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.5,
-            "vent_max_kmh": 22.2,
-            "direction_dominante_deg": 261.0
+            "vent_moyen_kmh": 9.9,
+            "vent_max_kmh": 20.8,
+            "direction_dominante_deg": 256.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 12.1,
-            "vent_max_kmh": 18.5,
-            "direction_dominante_deg": 62.0
+            "vent_moyen_kmh": 14.7,
+            "vent_max_kmh": 24.0,
+            "direction_dominante_deg": 79.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 11.9,
-            "vent_max_kmh": 21.6,
-            "direction_dominante_deg": 109.0
+            "vent_moyen_kmh": 8.9,
+            "vent_max_kmh": 16.7,
+            "direction_dominante_deg": 49.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 8.0,
-            "vent_max_kmh": 15.0,
-            "direction_dominante_deg": 329.0
+            "vent_moyen_kmh": 5.4,
+            "vent_max_kmh": 15.7,
+            "direction_dominante_deg": 280.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 10.4,
-            "vent_max_kmh": 15.1,
-            "direction_dominante_deg": 59.0
+            "vent_moyen_kmh": 8.2,
+            "vent_max_kmh": 12.1,
+            "direction_dominante_deg": 120.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 16.9,
-            "vent_max_kmh": 20.9,
-            "direction_dominante_deg": 102.0
+            "vent_moyen_kmh": 17.1,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 121.0
           }
         ],
         "avertissement": null
@@ -1300,7 +1300,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 63.0,
+          "score": 62.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1311,7 +1311,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 99.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1360,7 +1360,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 54.8,
+          "score": 51.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1371,7 +1371,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 49.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1390,7 +1390,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 56.4,
+          "score": 52.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1401,7 +1401,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 54.8,
+              "valeur": 43.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1420,7 +1420,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 59.5,
+          "score": 57.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1431,7 +1431,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 50.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1559,45 +1559,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 11.5,
-            "vent_max_kmh": 19.8,
-            "direction_dominante_deg": 269.0
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 19.7,
+            "direction_dominante_deg": 266.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.3,
-            "vent_max_kmh": 20.6,
-            "direction_dominante_deg": 261.0
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 20.5,
+            "direction_dominante_deg": 257.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 11.0,
-            "vent_max_kmh": 19.5,
-            "direction_dominante_deg": 65.0
+            "vent_moyen_kmh": 13.5,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 89.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 11.6,
-            "vent_max_kmh": 17.7,
-            "direction_dominante_deg": 114.0
+            "vent_moyen_kmh": 7.8,
+            "vent_max_kmh": 12.3,
+            "direction_dominante_deg": 70.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 9.2,
-            "vent_max_kmh": 15.0,
-            "direction_dominante_deg": 110.0
+            "vent_moyen_kmh": 6.4,
+            "vent_max_kmh": 13.0,
+            "direction_dominante_deg": 293.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 10.4,
-            "vent_max_kmh": 15.1,
-            "direction_dominante_deg": 59.0
+            "vent_moyen_kmh": 8.2,
+            "vent_max_kmh": 12.1,
+            "direction_dominante_deg": 120.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 16.9,
-            "vent_max_kmh": 20.9,
-            "direction_dominante_deg": 102.0
+            "vent_moyen_kmh": 17.1,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 121.0
           }
         ],
         "avertissement": null
@@ -1729,7 +1729,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 48.3,
+          "score": 47.6,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -1740,7 +1740,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 56.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1789,7 +1789,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 54.8,
+          "score": 51.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1800,7 +1800,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 49.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1819,7 +1819,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 56.6,
+          "score": 67.2,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1830,7 +1830,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 55.2,
+              "valeur": 85.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1849,7 +1849,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 59.5,
+          "score": 58.6,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -1860,7 +1860,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 55.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -1988,45 +1988,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 9.4,
-            "vent_max_kmh": 16.8,
-            "direction_dominante_deg": 272.0
+            "vent_moyen_kmh": 9.1,
+            "vent_max_kmh": 17.5,
+            "direction_dominante_deg": 262.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.3,
-            "vent_max_kmh": 20.5,
-            "direction_dominante_deg": 267.0
+            "vent_moyen_kmh": 9.5,
+            "vent_max_kmh": 20.3,
+            "direction_dominante_deg": 261.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 10.4,
-            "vent_max_kmh": 19.5,
-            "direction_dominante_deg": 58.0
+            "vent_moyen_kmh": 12.3,
+            "vent_max_kmh": 19.3,
+            "direction_dominante_deg": 81.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 11.6,
-            "vent_max_kmh": 17.7,
-            "direction_dominante_deg": 114.0
+            "vent_moyen_kmh": 7.8,
+            "vent_max_kmh": 12.3,
+            "direction_dominante_deg": 70.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 9.3,
-            "vent_max_kmh": 14.7,
-            "direction_dominante_deg": 127.0
+            "vent_moyen_kmh": 6.4,
+            "vent_max_kmh": 13.0,
+            "direction_dominante_deg": 323.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 16.4,
-            "direction_dominante_deg": 59.0
+            "vent_moyen_kmh": 9.3,
+            "vent_max_kmh": 13.1,
+            "direction_dominante_deg": 120.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 17.4,
-            "vent_max_kmh": 21.0,
-            "direction_dominante_deg": 102.0
+            "vent_moyen_kmh": 17.7,
+            "vent_max_kmh": 24.2,
+            "direction_dominante_deg": 122.0
           }
         ],
         "avertissement": null
@@ -2188,7 +2188,7 @@
         {
           "horizon": "J+2",
           "date": "2026-06-21",
-          "score": 44.7,
+          "score": 44.5,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -2199,7 +2199,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 56.8,
+              "valeur": 56.4,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2218,7 +2218,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 48.4,
+          "score": 45.3,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -2229,7 +2229,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 49.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2248,7 +2248,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 51.1,
+          "score": 61.0,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2259,7 +2259,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 86.4,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2278,7 +2278,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 53.1,
+          "score": 52.8,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2289,7 +2289,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 57.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2417,45 +2417,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 11.5,
-            "vent_max_kmh": 22.0,
+            "vent_moyen_kmh": 12.1,
+            "vent_max_kmh": 22.9,
             "direction_dominante_deg": 264.0
           },
           {
             "date": "2026-06-20",
             "vent_moyen_kmh": 9.3,
-            "vent_max_kmh": 18.6,
-            "direction_dominante_deg": 274.0
+            "vent_max_kmh": 17.8,
+            "direction_dominante_deg": 271.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 9.7,
-            "vent_max_kmh": 19.5,
-            "direction_dominante_deg": 50.0
+            "vent_moyen_kmh": 9.6,
+            "vent_max_kmh": 14.5,
+            "direction_dominante_deg": 57.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 11.6,
-            "vent_max_kmh": 17.7,
-            "direction_dominante_deg": 114.0
+            "vent_moyen_kmh": 7.8,
+            "vent_max_kmh": 12.3,
+            "direction_dominante_deg": 70.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 10.5,
-            "vent_max_kmh": 17.6,
-            "direction_dominante_deg": 121.0
+            "vent_moyen_kmh": 6.6,
+            "vent_max_kmh": 13.0,
+            "direction_dominante_deg": 334.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 10.2,
-            "vent_max_kmh": 17.6,
-            "direction_dominante_deg": 42.0
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 14.7,
+            "direction_dominante_deg": 106.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 18.2,
-            "vent_max_kmh": 23.7,
-            "direction_dominante_deg": 106.0
+            "vent_moyen_kmh": 19.2,
+            "vent_max_kmh": 25.3,
+            "direction_dominante_deg": 123.0
           }
         ],
         "avertissement": null
@@ -2587,7 +2587,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 46.5,
+          "score": 45.8,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -2598,7 +2598,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 56.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2647,7 +2647,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 68.4,
+          "score": 63.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2658,7 +2658,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 85.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2677,7 +2677,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 53.2,
+          "score": 51.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2688,7 +2688,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 48.0,
+              "valeur": 42.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2707,7 +2707,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 73.4,
+          "score": 70.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2718,7 +2718,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 92.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2737,7 +2737,7 @@
         {
           "horizon": "J+6",
           "date": "2026-06-25",
-          "score": 74.4,
+          "score": 59.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -2748,7 +2748,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 58.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -2846,45 +2846,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 7.8,
-            "vent_max_kmh": 13.5,
-            "direction_dominante_deg": 259.0
+            "vent_moyen_kmh": 7.2,
+            "vent_max_kmh": 15.1,
+            "direction_dominante_deg": 295.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 19.3,
-            "direction_dominante_deg": 332.0
+            "vent_moyen_kmh": 9.5,
+            "vent_max_kmh": 21.7,
+            "direction_dominante_deg": 281.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 12.7,
-            "vent_max_kmh": 21.1,
-            "direction_dominante_deg": 38.0
+            "vent_moyen_kmh": 14.8,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 66.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 12.8,
-            "vent_max_kmh": 17.0,
-            "direction_dominante_deg": 69.0
+            "vent_moyen_kmh": 6.3,
+            "vent_max_kmh": 14.2,
+            "direction_dominante_deg": 44.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 7.5,
-            "vent_max_kmh": 14.6,
-            "direction_dominante_deg": 334.0
+            "vent_moyen_kmh": 6.0,
+            "vent_max_kmh": 15.3,
+            "direction_dominante_deg": 312.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 11.3,
-            "vent_max_kmh": 16.6,
-            "direction_dominante_deg": 53.0
+            "vent_moyen_kmh": 8.2,
+            "vent_max_kmh": 17.9,
+            "direction_dominante_deg": 87.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 18.0,
-            "vent_max_kmh": 20.4,
-            "direction_dominante_deg": 85.0
+            "vent_moyen_kmh": 15.7,
+            "vent_max_kmh": 23.7,
+            "direction_dominante_deg": 114.0
           }
         ],
         "avertissement": null
@@ -3016,7 +3016,7 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 42.8,
+          "score": 41.3,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -3027,7 +3027,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 53.6,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3076,7 +3076,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 64.8,
+          "score": 59.6,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3087,7 +3087,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 85.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3106,7 +3106,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 49.6,
+          "score": 47.5,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
@@ -3117,7 +3117,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 48.0,
+              "valeur": 42.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3136,7 +3136,7 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 69.8,
+          "score": 67.3,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3147,7 +3147,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 92.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3166,7 +3166,7 @@
         {
           "horizon": "J+6",
           "date": "2026-06-25",
-          "score": 70.8,
+          "score": 56.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3177,7 +3177,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 58.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3275,45 +3275,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 8.7,
-            "vent_max_kmh": 18.8,
-            "direction_dominante_deg": 261.0
+            "vent_moyen_kmh": 8.0,
+            "vent_max_kmh": 21.5,
+            "direction_dominante_deg": 282.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.3,
-            "vent_max_kmh": 19.1,
-            "direction_dominante_deg": 343.0
+            "vent_moyen_kmh": 8.9,
+            "vent_max_kmh": 20.4,
+            "direction_dominante_deg": 321.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 12.5,
-            "vent_max_kmh": 21.1,
-            "direction_dominante_deg": 41.0
+            "vent_moyen_kmh": 14.1,
+            "vent_max_kmh": 26.3,
+            "direction_dominante_deg": 59.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 12.8,
-            "vent_max_kmh": 17.0,
-            "direction_dominante_deg": 69.0
+            "vent_moyen_kmh": 6.3,
+            "vent_max_kmh": 14.2,
+            "direction_dominante_deg": 44.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 7.5,
-            "vent_max_kmh": 14.6,
-            "direction_dominante_deg": 334.0
+            "vent_moyen_kmh": 6.0,
+            "vent_max_kmh": 15.3,
+            "direction_dominante_deg": 312.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 11.3,
-            "vent_max_kmh": 16.6,
-            "direction_dominante_deg": 53.0
+            "vent_moyen_kmh": 8.2,
+            "vent_max_kmh": 17.9,
+            "direction_dominante_deg": 87.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 18.0,
-            "vent_max_kmh": 20.4,
-            "direction_dominante_deg": 85.0
+            "vent_moyen_kmh": 15.7,
+            "vent_max_kmh": 23.7,
+            "direction_dominante_deg": 114.0
           }
         ],
         "avertissement": null
@@ -3445,10 +3445,10 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 44.9,
-          "niveau": 2,
-          "nom_niveau": "Vigilance",
-          "couleur": "#F1C40F",
+          "score": 59.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
@@ -3456,7 +3456,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 98.8,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3475,10 +3475,10 @@
         {
           "horizon": "J+2",
           "date": "2026-06-21",
-          "score": 63.1,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 48.4,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
@@ -3486,7 +3486,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
+              "valeur": 58.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3505,7 +3505,7 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 52.2,
+          "score": 66.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3516,7 +3516,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
+              "valeur": 100.0,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3535,7 +3535,7 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 68.5,
+          "score": 66.8,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
@@ -3546,7 +3546,7 @@
               "disponible": true
             },
             "vent": {
-              "valeur": 96.0,
+              "valeur": 91.2,
               "poids_applique": 0.35,
               "disponible": true
             },
@@ -3704,45 +3704,45 @@
         "previsions": [
           {
             "date": "2026-06-19",
-            "vent_moyen_kmh": 12.2,
-            "vent_max_kmh": 22.0,
-            "direction_dominante_deg": 220.0
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 19.3,
+            "direction_dominante_deg": 211.0
           },
           {
             "date": "2026-06-20",
-            "vent_moyen_kmh": 10.1,
-            "vent_max_kmh": 14.3,
-            "direction_dominante_deg": 270.0
+            "vent_moyen_kmh": 9.7,
+            "vent_max_kmh": 17.3,
+            "direction_dominante_deg": 312.0
           },
           {
             "date": "2026-06-21",
-            "vent_moyen_kmh": 16.8,
-            "vent_max_kmh": 26.2,
-            "direction_dominante_deg": 58.0
+            "vent_moyen_kmh": 20.0,
+            "vent_max_kmh": 31.0,
+            "direction_dominante_deg": 62.0
           },
           {
             "date": "2026-06-22",
-            "vent_moyen_kmh": 17.5,
-            "vent_max_kmh": 20.8,
-            "direction_dominante_deg": 69.0
+            "vent_moyen_kmh": 11.7,
+            "vent_max_kmh": 19.1,
+            "direction_dominante_deg": 56.0
           },
           {
             "date": "2026-06-23",
-            "vent_moyen_kmh": 9.0,
-            "vent_max_kmh": 16.1,
-            "direction_dominante_deg": 29.0
+            "vent_moyen_kmh": 7.8,
+            "vent_max_kmh": 14.2,
+            "direction_dominante_deg": 352.0
           },
           {
             "date": "2026-06-24",
-            "vent_moyen_kmh": 15.7,
-            "vent_max_kmh": 22.4,
-            "direction_dominante_deg": 55.0
+            "vent_moyen_kmh": 11.2,
+            "vent_max_kmh": 21.9,
+            "direction_dominante_deg": 42.0
           },
           {
             "date": "2026-06-25",
-            "vent_moyen_kmh": 21.9,
-            "vent_max_kmh": 26.3,
-            "direction_dominante_deg": 71.0
+            "vent_moyen_kmh": 17.1,
+            "vent_max_kmh": 22.8,
+            "direction_dominante_deg": 113.0
           }
         ],
         "avertissement": null
@@ -3874,29 +3874,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 45.2,
+          "score": 40.3,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 54.4,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 39.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -3904,29 +3904,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-21",
-          "score": 64.7,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 45.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 53.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -3934,29 +3934,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 68.4,
+          "score": 51.4,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 68.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -3964,29 +3964,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 69.1,
+          "score": 56.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 93.2,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 80.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -3994,29 +3994,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 73.4,
+          "score": 59.1,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 88.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4024,29 +4024,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-25",
-          "score": 59.7,
+          "score": 60.7,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 92.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 82.2,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4129,52 +4129,9 @@
         "avertissement": null
       },
       "meteo": {
-        "source": "Open-Meteo",
-        "previsions": [
-          {
-            "date": "2026-06-19",
-            "vent_moyen_kmh": 10.7,
-            "vent_max_kmh": 19.6,
-            "direction_dominante_deg": 215.0
-          },
-          {
-            "date": "2026-06-20",
-            "vent_moyen_kmh": 9.1,
-            "vent_max_kmh": 12.8,
-            "direction_dominante_deg": 252.0
-          },
-          {
-            "date": "2026-06-21",
-            "vent_moyen_kmh": 14.6,
-            "vent_max_kmh": 24.5,
-            "direction_dominante_deg": 54.0
-          },
-          {
-            "date": "2026-06-22",
-            "vent_moyen_kmh": 14.8,
-            "vent_max_kmh": 18.7,
-            "direction_dominante_deg": 59.0
-          },
-          {
-            "date": "2026-06-23",
-            "vent_moyen_kmh": 8.3,
-            "vent_max_kmh": 16.0,
-            "direction_dominante_deg": 19.0
-          },
-          {
-            "date": "2026-06-24",
-            "vent_moyen_kmh": 15.7,
-            "vent_max_kmh": 22.4,
-            "direction_dominante_deg": 55.0
-          },
-          {
-            "date": "2026-06-25",
-            "vent_moyen_kmh": 21.9,
-            "vent_max_kmh": 26.3,
-            "direction_dominante_deg": 71.0
-          }
-        ],
-        "avertissement": null
+        "source": null,
+        "previsions": [],
+        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
       },
       "maree": {
         "port": "Roscoff",
@@ -4303,29 +4260,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 36.3,
+          "score": 25.3,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 56.8,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 39.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4333,29 +4290,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-21",
-          "score": 54.9,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 30.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 53.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4363,29 +4320,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 58.7,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 36.4,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 68.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4393,29 +4350,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 59.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 41.0,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 93.2,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 80.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4423,29 +4380,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 63.7,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 44.1,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 88.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4453,29 +4410,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-25",
-          "score": 50.0,
+          "score": 45.7,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 92.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 33.4,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4558,52 +4515,9 @@
         "avertissement": null
       },
       "meteo": {
-        "source": "Open-Meteo",
-        "previsions": [
-          {
-            "date": "2026-06-19",
-            "vent_moyen_kmh": 11.7,
-            "vent_max_kmh": 25.4,
-            "direction_dominante_deg": 236.0
-          },
-          {
-            "date": "2026-06-20",
-            "vent_moyen_kmh": 9.7,
-            "vent_max_kmh": 13.9,
-            "direction_dominante_deg": 262.0
-          },
-          {
-            "date": "2026-06-21",
-            "vent_moyen_kmh": 15.5,
-            "vent_max_kmh": 24.5,
-            "direction_dominante_deg": 54.0
-          },
-          {
-            "date": "2026-06-22",
-            "vent_moyen_kmh": 14.8,
-            "vent_max_kmh": 18.7,
-            "direction_dominante_deg": 59.0
-          },
-          {
-            "date": "2026-06-23",
-            "vent_moyen_kmh": 8.3,
-            "vent_max_kmh": 16.0,
-            "direction_dominante_deg": 19.0
-          },
-          {
-            "date": "2026-06-24",
-            "vent_moyen_kmh": 15.7,
-            "vent_max_kmh": 22.4,
-            "direction_dominante_deg": 55.0
-          },
-          {
-            "date": "2026-06-25",
-            "vent_moyen_kmh": 21.9,
-            "vent_max_kmh": 26.3,
-            "direction_dominante_deg": 71.0
-          }
-        ],
-        "avertissement": null
+        "source": null,
+        "previsions": [],
+        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
       },
       "maree": {
         "port": "Roscoff",
@@ -4732,29 +4646,29 @@
         {
           "horizon": "J+1",
           "date": "2026-06-20",
-          "score": 43.1,
+          "score": 35.1,
           "niveau": 2,
           "nom_niveau": "Vigilance",
           "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 39.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4762,29 +4676,29 @@
         {
           "horizon": "J+2",
           "date": "2026-06-21",
-          "score": 61.3,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 40.5,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 53.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4792,29 +4706,29 @@
         {
           "horizon": "J+3",
           "date": "2026-06-22",
-          "score": 65.1,
-          "niveau": 3,
-          "nom_niveau": "Alerte",
-          "couleur": "#E67E22",
+          "score": 46.2,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 68.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4822,29 +4736,29 @@
         {
           "horizon": "J+4",
           "date": "2026-06-23",
-          "score": 65.0,
+          "score": 50.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 91.2,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 80.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4852,29 +4766,29 @@
         {
           "horizon": "J+5",
           "date": "2026-06-24",
-          "score": 70.1,
+          "score": 53.9,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 100.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 88.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4882,29 +4796,29 @@
         {
           "horizon": "J+6",
           "date": "2026-06-25",
-          "score": 56.4,
+          "score": 55.5,
           "niveau": 3,
           "nom_niveau": "Alerte",
           "couleur": "#E67E22",
           "facteurs": {
             "fai_zone_2": {
               "valeur": 0.0,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             },
             "vent": {
-              "valeur": 58.0,
-              "poids_applique": 0.35,
-              "disponible": true
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
             },
             "coef_maree": {
               "valeur": 92.0,
-              "poids_applique": 0.25,
+              "poids_applique": 0.385,
               "disponible": true
             },
             "ndvi_zone_1": {
               "valeur": 65.3,
-              "poids_applique": 0.2,
+              "poids_applique": 0.308,
               "disponible": true
             }
           }
@@ -4987,52 +4901,9 @@
         "avertissement": null
       },
       "meteo": {
-        "source": "Open-Meteo",
-        "previsions": [
-          {
-            "date": "2026-06-19",
-            "vent_moyen_kmh": 11.8,
-            "vent_max_kmh": 23.3,
-            "direction_dominante_deg": 222.0
-          },
-          {
-            "date": "2026-06-20",
-            "vent_moyen_kmh": 10.8,
-            "vent_max_kmh": 16.6,
-            "direction_dominante_deg": 260.0
-          },
-          {
-            "date": "2026-06-21",
-            "vent_moyen_kmh": 14.4,
-            "vent_max_kmh": 19.1,
-            "direction_dominante_deg": 42.0
-          },
-          {
-            "date": "2026-06-22",
-            "vent_moyen_kmh": 10.8,
-            "vent_max_kmh": 15.6,
-            "direction_dominante_deg": 52.0
-          },
-          {
-            "date": "2026-06-23",
-            "vent_moyen_kmh": 7.8,
-            "vent_max_kmh": 14.2,
-            "direction_dominante_deg": 37.0
-          },
-          {
-            "date": "2026-06-24",
-            "vent_moyen_kmh": 13.9,
-            "vent_max_kmh": 20.4,
-            "direction_dominante_deg": 49.0
-          },
-          {
-            "date": "2026-06-25",
-            "vent_moyen_kmh": 19.4,
-            "vent_max_kmh": 23.5,
-            "direction_dominante_deg": 71.0
-          }
-        ],
-        "avertissement": null
+        "source": null,
+        "previsions": [],
+        "avertissement": "Données vent indisponibles (Météo-France et Open-Meteo en échec)."
       },
       "maree": {
         "port": "Roscoff",
