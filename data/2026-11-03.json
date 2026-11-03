@@ -1,0 +1,4732 @@
+{
+  "date": "2026-11-03",
+  "horodatage_generation_utc": "2026-11-03T22:08:07Z",
+  "sites": [
+    {
+      "site_id": "guisseny_curnic",
+      "site_nom": "Plage du Curnic",
+      "baie": "Baie de Guissény",
+      "lat": 48.6464,
+      "lon": -4.4133,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 60.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 52.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 43.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 44.1,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 35.8,
+            "vent_max_kmh": 45.0,
+            "direction_dominante_deg": 55.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 19.7,
+            "vent_max_kmh": 32.2,
+            "direction_dominante_deg": 98.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 8.7,
+            "vent_max_kmh": 16.2,
+            "direction_dominante_deg": 106.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 4.7,
+            "vent_max_kmh": 9.7,
+            "direction_dominante_deg": 125.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 4.6,
+            "vent_max_kmh": 8.3,
+            "direction_dominante_deg": 175.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 10.7,
+            "vent_max_kmh": 17.9,
+            "direction_dominante_deg": 113.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 14.0,
+            "vent_max_kmh": 21.0,
+            "direction_dominante_deg": 93.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "ploeven_ty_an_quer",
+      "site_nom": "Ploéven — Plage de Ty an Quer",
+      "baie": "Baie de Douarnenez (Nord)",
+      "lat": 48.1808,
+      "lon": -4.3194,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 63.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 57.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 56.7,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 43.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 15.6,
+            "vent_max_kmh": 25.2,
+            "direction_dominante_deg": 31.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 16.4,
+            "vent_max_kmh": 22.2,
+            "direction_dominante_deg": 67.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 10.2,
+            "vent_max_kmh": 21.0,
+            "direction_dominante_deg": 78.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 13.1,
+            "direction_dominante_deg": 73.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 6.4,
+            "vent_max_kmh": 8.9,
+            "direction_dominante_deg": 107.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 11.5,
+            "vent_max_kmh": 16.9,
+            "direction_dominante_deg": 89.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 13.6,
+            "vent_max_kmh": 22.3,
+            "direction_dominante_deg": 90.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "plonevez_sainte_anne_la_palud",
+      "site_nom": "Plonévez-Porzay — Plage de Sainte-Anne-la-Palud",
+      "baie": "Baie de Douarnenez (Nord)",
+      "lat": 48.1583,
+      "lon": -4.28,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 63.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 57.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 56.7,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 43.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 12.6,
+            "vent_max_kmh": 19.6,
+            "direction_dominante_deg": 38.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 15.1,
+            "vent_max_kmh": 26.1,
+            "direction_dominante_deg": 70.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 11.3,
+            "vent_max_kmh": 20.1,
+            "direction_dominante_deg": 85.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 13.1,
+            "direction_dominante_deg": 73.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 6.4,
+            "vent_max_kmh": 8.9,
+            "direction_dominante_deg": 111.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 11.9,
+            "vent_max_kmh": 17.3,
+            "direction_dominante_deg": 90.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 14.6,
+            "vent_max_kmh": 22.3,
+            "direction_dominante_deg": 99.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "plonevez_trefeuntec",
+      "site_nom": "Plonévez-Porzay — Anse de Tréfeuntec",
+      "baie": "Baie de Douarnenez (Nord)",
+      "lat": 48.1486,
+      "lon": -4.2664,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 63.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 58.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 48.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 55.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 41.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 12.6,
+            "vent_max_kmh": 19.6,
+            "direction_dominante_deg": 38.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 15.3,
+            "vent_max_kmh": 27.5,
+            "direction_dominante_deg": 69.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 10.9,
+            "vent_max_kmh": 19.3,
+            "direction_dominante_deg": 87.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 7.5,
+            "vent_max_kmh": 11.4,
+            "direction_dominante_deg": 92.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 5.9,
+            "vent_max_kmh": 10.4,
+            "direction_dominante_deg": 121.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 11.9,
+            "vent_max_kmh": 17.3,
+            "direction_dominante_deg": 90.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 14.6,
+            "vent_max_kmh": 22.3,
+            "direction_dominante_deg": 99.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "kerlaz_trezmalaouen",
+      "site_nom": "Kerlaz — Plage de Trezmalaouen",
+      "baie": "Baie de Douarnenez (Sud)",
+      "lat": 48.1086,
+      "lon": -4.2772,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 63.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 58.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 48.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 55.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 41.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 19.9,
+            "direction_dominante_deg": 34.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 13.4,
+            "vent_max_kmh": 25.8,
+            "direction_dominante_deg": 75.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 10.3,
+            "vent_max_kmh": 19.4,
+            "direction_dominante_deg": 90.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 7.5,
+            "vent_max_kmh": 11.4,
+            "direction_dominante_deg": 92.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 5.9,
+            "vent_max_kmh": 10.4,
+            "direction_dominante_deg": 131.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 12.4,
+            "vent_max_kmh": 17.9,
+            "direction_dominante_deg": 90.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 15.0,
+            "vent_max_kmh": 23.3,
+            "direction_dominante_deg": 102.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "douarnenez_ris",
+      "site_nom": "Douarnenez — Plage du Ris",
+      "baie": "Baie de Douarnenez (Sud)",
+      "lat": 48.1136,
+      "lon": -4.3128,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 60.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 64.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 56.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 46.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 70.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 58.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 48.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 74.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 55.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 41.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 63.4,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 71.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 60.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 63.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 53.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 53.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 18.4,
+            "vent_max_kmh": 26.2,
+            "direction_dominante_deg": 37.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 14.2,
+            "vent_max_kmh": 24.8,
+            "direction_dominante_deg": 71.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 7.2,
+            "vent_max_kmh": 11.3,
+            "direction_dominante_deg": 86.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 7.5,
+            "vent_max_kmh": 11.4,
+            "direction_dominante_deg": 92.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 5.9,
+            "vent_max_kmh": 10.4,
+            "direction_dominante_deg": 127.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 13.0,
+            "vent_max_kmh": 18.6,
+            "direction_dominante_deg": 90.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 15.7,
+            "vent_max_kmh": 25.3,
+            "direction_dominante_deg": 105.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Brest",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Brest",
+            "coefficient": 75,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T15:45:00+00:00",
+              "hauteur_m": 6.63
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:00:00+00:00",
+              "hauteur_m": 1.6
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Brest",
+            "coefficient": 84,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:25:00+00:00",
+              "hauteur_m": 6.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T22:35:00+00:00",
+              "hauteur_m": 1.32
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Brest",
+            "coefficient": 90,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:05:00+00:00",
+              "hauteur_m": 7.12
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:15:00+00:00",
+              "hauteur_m": 1.16
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Brest",
+            "coefficient": 94,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:25:00+00:00",
+              "hauteur_m": 7.26
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T23:55:00+00:00",
+              "hauteur_m": 1.12
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Brest",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:05:00+00:00",
+              "hauteur_m": 7.28
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T12:15:00+00:00",
+              "hauteur_m": 1.24
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Brest",
+            "coefficient": 91,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T06:50:00+00:00",
+              "hauteur_m": 7.16
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T00:35:00+00:00",
+              "hauteur_m": 1.23
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Brest",
+            "coefficient": 83,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T07:35:00+00:00",
+              "hauteur_m": 6.91
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:20:00+00:00",
+              "hauteur_m": 1.46
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Brest",
+            "coefficient": 73,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:25:00+00:00",
+              "hauteur_m": 6.58
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:10:00+00:00",
+              "hauteur_m": 1.8
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "locquirec_fond_baie",
+      "site_nom": "Locquirec — Fond de la baie",
+      "baie": "Baie de Locquirec",
+      "lat": 48.6814,
+      "lon": -3.6358,
+      "year_round": true,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 89.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 100.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 62.7,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 49.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 60.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 42.4,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 59.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 40.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 67.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 57.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 18.9,
+            "vent_max_kmh": 27.7,
+            "direction_dominante_deg": 54.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 19.2,
+            "vent_max_kmh": 31.7,
+            "direction_dominante_deg": 84.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 7.9,
+            "vent_max_kmh": 12.0,
+            "direction_dominante_deg": 120.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 6.1,
+            "vent_max_kmh": 8.1,
+            "direction_dominante_deg": 147.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 5.7,
+            "vent_max_kmh": 10.6,
+            "direction_dominante_deg": 161.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 15.9,
+            "direction_dominante_deg": 123.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 13.9,
+            "vent_max_kmh": 21.1,
+            "direction_dominante_deg": 101.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "locquirec_moulin_de_la_rive",
+      "site_nom": "Locquirec — Moulin de la Rive",
+      "baie": "Baie de Locquirec",
+      "lat": 48.6928,
+      "lon": -3.6622,
+      "year_round": true,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 89.6,
+          "niveau": 4,
+          "nom_niveau": "Critique",
+          "couleur": "#C0392B",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 100.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 64.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 52.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 60.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 42.4,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 59.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 40.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 67.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 57.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 26.9,
+            "vent_max_kmh": 37.5,
+            "direction_dominante_deg": 59.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 21.8,
+            "vent_max_kmh": 33.4,
+            "direction_dominante_deg": 85.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 8.7,
+            "vent_max_kmh": 13.1,
+            "direction_dominante_deg": 125.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 6.1,
+            "vent_max_kmh": 8.1,
+            "direction_dominante_deg": 147.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 5.7,
+            "vent_max_kmh": 10.6,
+            "direction_dominante_deg": 161.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 15.9,
+            "direction_dominante_deg": 123.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 13.9,
+            "vent_max_kmh": 21.1,
+            "direction_dominante_deg": 101.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "sibiril_mogueriec",
+      "site_nom": "Sibiril — Moguériec (le port)",
+      "baie": "Bassin de Horn-Guillec",
+      "lat": 48.685,
+      "lon": -4.0747,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 65.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 67.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 57.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 61.8,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 45.2,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 48.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 67.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 26.6,
+            "vent_max_kmh": 32.8,
+            "direction_dominante_deg": 60.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 23.4,
+            "vent_max_kmh": 34.2,
+            "direction_dominante_deg": 91.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 9.8,
+            "vent_max_kmh": 15.5,
+            "direction_dominante_deg": 112.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 6.8,
+            "vent_max_kmh": 9.2,
+            "direction_dominante_deg": 126.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 4.9,
+            "vent_max_kmh": 7.1,
+            "direction_dominante_deg": 184.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 18.8,
+            "direction_dominante_deg": 116.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 15.5,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 95.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "plougoulm_toul_an_ouch",
+      "site_nom": "Plougoulm — Toul an Ouch",
+      "baie": "Bassin de Horn-Guillec",
+      "lat": 48.6803,
+      "lon": -4.0494,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 65.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 65.5,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 54.4,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 61.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 44.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 48.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 67.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 25.6,
+            "vent_max_kmh": 33.1,
+            "direction_dominante_deg": 61.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 20.2,
+            "vent_max_kmh": 30.2,
+            "direction_dominante_deg": 91.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 9.1,
+            "vent_max_kmh": 13.0,
+            "direction_dominante_deg": 115.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 6.5,
+            "vent_max_kmh": 8.2,
+            "direction_dominante_deg": 140.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 4.7,
+            "vent_max_kmh": 7.3,
+            "direction_dominante_deg": 190.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 18.8,
+            "direction_dominante_deg": 116.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 15.5,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 95.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "santec_dossen",
+      "site_nom": "Santec — Plage du Dossen",
+      "baie": "Bassin de Horn-Guillec",
+      "lat": 48.7044,
+      "lon": -4.0356,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 65.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 66.9,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 56.8,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 61.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 44.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 48.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 67.6,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 32.0,
+            "vent_max_kmh": 40.7,
+            "direction_dominante_deg": 59.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 24.1,
+            "vent_max_kmh": 34.3,
+            "direction_dominante_deg": 89.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 9.7,
+            "vent_max_kmh": 15.7,
+            "direction_dominante_deg": 112.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 6.5,
+            "vent_max_kmh": 8.2,
+            "direction_dominante_deg": 140.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 4.7,
+            "vent_max_kmh": 7.3,
+            "direction_dominante_deg": 190.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 10.1,
+            "vent_max_kmh": 18.8,
+            "direction_dominante_deg": 116.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 15.5,
+            "vent_max_kmh": 22.9,
+            "direction_dominante_deg": 95.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    },
+    {
+      "site_id": "carantec",
+      "site_nom": "Carantec — Plage de Pen al Lann",
+      "baie": "Baie de Carantec",
+      "lat": 48.6739,
+      "lon": -3.9119,
+      "year_round": false,
+      "previsions": [
+        {
+          "horizon": "J+1",
+          "date": "2026-11-04",
+          "score": 65.1,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 75.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+2",
+          "date": "2026-11-05",
+          "score": 66.7,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 56.4,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+3",
+          "date": "2026-11-06",
+          "score": 48.2,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 85.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+4",
+          "date": "2026-11-07",
+          "score": 48.7,
+          "niveau": 2,
+          "nom_niveau": "Vigilance",
+          "couleur": "#F1C40F",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 22.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 86.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+5",
+          "date": "2026-11-08",
+          "score": 66.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 55.6,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 81.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+6",
+          "date": "2026-11-09",
+          "score": 64.2,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": 58.0,
+              "poids_applique": 0.583,
+              "disponible": true
+            },
+            "coef_maree": {
+              "valeur": 73.0,
+              "poids_applique": 0.417,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        },
+        {
+          "horizon": "J+7",
+          "date": "2026-11-10",
+          "score": 62.0,
+          "niveau": 3,
+          "nom_niveau": "Alerte",
+          "couleur": "#E67E22",
+          "facteurs": {
+            "fai_zone_2": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "vent": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            },
+            "coef_maree": {
+              "valeur": 62.0,
+              "poids_applique": 1.0,
+              "disponible": true
+            },
+            "ndvi_zone_1": {
+              "valeur": null,
+              "poids_applique": 0,
+              "disponible": false
+            }
+          }
+        }
+      ],
+      "sentinel": {
+        "image_la_plus_recente": null,
+        "image_non_exploitee": null,
+        "image_miniature": null,
+        "image_miniature_pelagique": null,
+        "ndvi_zone_0": null,
+        "ndvi_zone_1": null,
+        "fai_zone_2": null,
+        "avertissement": null
+      },
+      "meteo": {
+        "source": "Open-Meteo",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "vent_moyen_kmh": 33.6,
+            "vent_max_kmh": 44.6,
+            "direction_dominante_deg": 65.0
+          },
+          {
+            "date": "2026-11-04",
+            "vent_moyen_kmh": 23.1,
+            "vent_max_kmh": 34.8,
+            "direction_dominante_deg": 89.0
+          },
+          {
+            "date": "2026-11-05",
+            "vent_moyen_kmh": 9.6,
+            "vent_max_kmh": 17.7,
+            "direction_dominante_deg": 108.0
+          },
+          {
+            "date": "2026-11-06",
+            "vent_moyen_kmh": 4.2,
+            "vent_max_kmh": 8.4,
+            "direction_dominante_deg": 135.0
+          },
+          {
+            "date": "2026-11-07",
+            "vent_moyen_kmh": 4.2,
+            "vent_max_kmh": 9.4,
+            "direction_dominante_deg": 163.0
+          },
+          {
+            "date": "2026-11-08",
+            "vent_moyen_kmh": 9.4,
+            "vent_max_kmh": 16.8,
+            "direction_dominante_deg": 120.0
+          },
+          {
+            "date": "2026-11-09",
+            "vent_moyen_kmh": 14.0,
+            "vent_max_kmh": 21.3,
+            "direction_dominante_deg": 94.0
+          }
+        ],
+        "avertissement": null
+      },
+      "maree": {
+        "port": "Roscoff",
+        "previsions": [
+          {
+            "date": "2026-11-03",
+            "port": "Roscoff",
+            "coefficient": 85,
+            "pleine_mer": {
+              "heure_utc": "2026-11-03T16:10:00+00:00",
+              "hauteur_m": 8.51
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-03T22:25:00+00:00",
+              "hauteur_m": 1.19
+            }
+          },
+          {
+            "date": "2026-11-04",
+            "port": "Roscoff",
+            "coefficient": 95,
+            "pleine_mer": {
+              "heure_utc": "2026-11-04T16:50:00+00:00",
+              "hauteur_m": 8.93
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-04T23:00:00+00:00",
+              "hauteur_m": 0.79
+            }
+          },
+          {
+            "date": "2026-11-05",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-05T17:30:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-05T23:40:00+00:00",
+              "hauteur_m": 0.55
+            }
+          },
+          {
+            "date": "2026-11-06",
+            "port": "Roscoff",
+            "coefficient": 105,
+            "pleine_mer": {
+              "heure_utc": "2026-11-06T05:50:00+00:00",
+              "hauteur_m": 9.37
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-06T12:00:00+00:00",
+              "hauteur_m": 0.61
+            }
+          },
+          {
+            "date": "2026-11-07",
+            "port": "Roscoff",
+            "coefficient": 106,
+            "pleine_mer": {
+              "heure_utc": "2026-11-07T06:35:00+00:00",
+              "hauteur_m": 9.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-07T00:20:00+00:00",
+              "hauteur_m": 0.5
+            }
+          },
+          {
+            "date": "2026-11-08",
+            "port": "Roscoff",
+            "coefficient": 101,
+            "pleine_mer": {
+              "heure_utc": "2026-11-08T07:15:00+00:00",
+              "hauteur_m": 9.21
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-08T01:05:00+00:00",
+              "hauteur_m": 0.65
+            }
+          },
+          {
+            "date": "2026-11-09",
+            "port": "Roscoff",
+            "coefficient": 93,
+            "pleine_mer": {
+              "heure_utc": "2026-11-09T08:00:00+00:00",
+              "hauteur_m": 8.86
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-09T01:50:00+00:00",
+              "hauteur_m": 0.98
+            }
+          },
+          {
+            "date": "2026-11-10",
+            "port": "Roscoff",
+            "coefficient": 82,
+            "pleine_mer": {
+              "heure_utc": "2026-11-10T08:55:00+00:00",
+              "hauteur_m": 8.39
+            },
+            "basse_mer": {
+              "heure_utc": "2026-11-10T02:40:00+00:00",
+              "hauteur_m": 1.46
+            }
+          }
+        ],
+        "avertissement": null
+      },
+      "airbreizh": {
+        "station": null,
+        "mesure": null,
+        "raison": "Hors saison de surveillance H2S."
+      }
+    }
+  ],
+  "avertissements_globaux": [
+    "Données Sentinel-2 indisponibles aujourd'hui : Authentification CDSE impossible (clés manquantes ou erreur réseau)."
+  ],
+  "poids_appliques": {
+    "fai_zone_2": 0.2,
+    "vent": 0.35,
+    "coef_maree": 0.25,
+    "ndvi_zone_1": 0.2
+  },
+  "airbreizh_statut": "hors_saison"
+}
